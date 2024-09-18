@@ -13,6 +13,7 @@ package com.carlos.EjerciciosListas;
  * Created on 17 sept 2024
  */
 public class Informe {
+    
     public final String[] tareas={"administrativo", "empresarial", "personal"};
     private int codigo;
     private String tarea;

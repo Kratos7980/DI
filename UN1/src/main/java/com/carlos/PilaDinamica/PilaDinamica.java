@@ -38,6 +38,7 @@ public class PilaDinamica <T>{
         return this.tamanio;
     }
     
+    
     public T top(){
         if(isEmpty()){
             return null;
