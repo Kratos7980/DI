@@ -8,7 +8,7 @@ package com.carlos.EjerciciosListas;
 /**
  *
  *
- * @author KRATOS
+ * @author Carlos-García-Villa
  * @version 1.0
  * Created on 17 sept 2024
  */
