@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Ejercicios1
 {
-    internal class Program
+    internal class Operaciones
     {
-        static void Main(string[] args)
-        {
 
-        }
     }
 }
