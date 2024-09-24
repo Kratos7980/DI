@@ -10,7 +10,7 @@ namespace Ejercicios1
     {
         static void Main(string[] args)
         {
-            Operaciones.aleatorio();
+            
         }
     }
 }
