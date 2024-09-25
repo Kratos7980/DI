@@ -135,9 +135,15 @@ namespace Ejercicios1
         {
             List<int> list = new List<int>(100);
             Random r = new Random();
-            foreach (int i in list)
+            int i = 0;
+            while ( i < list.Count()) 
             {
-                list.Add(r.Next(1, 51));
+                i = r.Next(1, 51);
+                if (!list.Contains(i))
+                {
+                    list.Add(i);
+                    i++;
+                }
             }
 
             return list;

@@ -10,7 +10,12 @@ namespace Ejercicios1
     {
         static void Main(string[] args)
         {
-            
+            List<int> lista = Operaciones.listaNumerosAleatorios();
+            foreach(int i in lista)
+            {
+                Console.WriteLine(i);
+            }
+            Console.ReadKey();
         }
     }
 }
