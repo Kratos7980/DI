@@ -1,13 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Ejercicios1\\",
+  "WorkspaceRootPath": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\Ejercicios1\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{EAF81813-72D6-4E93-9B9A-412915D2CEFA}|Ejercicios1\\Ejercicios1.csproj|c:\\users\\kratos\\desktop\\dam2\\di\\un1\\ejercicios1\\ejercicios1\\operaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EAF81813-72D6-4E93-9B9A-412915D2CEFA}|Ejercicios1\\Ejercicios1.csproj|solutionrelative:ejercicios1\\operaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EAF81813-72D6-4E93-9B9A-412915D2CEFA}|Ejercicios1\\Ejercicios1.csproj|C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Ejercicios1\\ejercicios1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+=======
+      "AbsoluteMoniker": "D:0:0:{EAF81813-72D6-4E93-9B9A-412915D2CEFA}|Ejercicios1\\Ejercicios1.csproj|C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\Ejercicios1\\ejercicios1\\operaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAF81813-72D6-4E93-9B9A-412915D2CEFA}|Ejercicios1\\Ejercicios1.csproj|solutionrelative:ejercicios1\\operaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAF81813-72D6-4E93-9B9A-412915D2CEFA}|Ejercicios1\\Ejercicios1.csproj|c:\\users\\b15-01m\\desktop\\di\\un1\\ejercicios1\\ejercicios1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> 5abdc7b1af0388771c3249bed6afdde55fcb885a
       "RelativeMoniker": "D:0:0:{EAF81813-72D6-4E93-9B9A-412915D2CEFA}|Ejercicios1\\Ejercicios1.csproj|solutionrelative:ejercicios1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +32,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Operaciones.cs",
-              "DocumentMoniker": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Ejercicios1\\Ejercicios1\\Operaciones.cs",
+              "DocumentMoniker": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\Ejercicios1\\Ejercicios1\\Operaciones.cs",
               "RelativeDocumentMoniker": "Ejercicios1\\Operaciones.cs",
-              "ToolTip": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Ejercicios1\\Ejercicios1\\Operaciones.cs",
+              "ToolTip": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\Ejercicios1\\Ejercicios1\\Operaciones.cs",
               "RelativeToolTip": "Ejercicios1\\Operaciones.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAUwJQAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAUwJYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T10:08:58.094Z",
               "EditorCaption": ""
@@ -37,9 +45,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Ejercicios1\\Ejercicios1\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\Ejercicios1\\Ejercicios1\\Program.cs",
               "RelativeDocumentMoniker": "Ejercicios1\\Program.cs",
-              "ToolTip": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Ejercicios1\\Ejercicios1\\Program.cs",
+              "ToolTip": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\Ejercicios1\\Ejercicios1\\Program.cs",
               "RelativeToolTip": "Ejercicios1\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
