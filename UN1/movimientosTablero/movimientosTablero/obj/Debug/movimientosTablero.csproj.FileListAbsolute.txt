@@ -5,3 +5,10 @@ C:\Users\b15-01m\Desktop\DI\UN1\movimientosTablero\movimientosTablero\obj\Debug\
 C:\Users\b15-01m\Desktop\DI\UN1\movimientosTablero\movimientosTablero\obj\Debug\movimientosTablero.csproj.CoreCompileInputs.cache
 C:\Users\b15-01m\Desktop\DI\UN1\movimientosTablero\movimientosTablero\obj\Debug\movimientosTablero.exe
 C:\Users\b15-01m\Desktop\DI\UN1\movimientosTablero\movimientosTablero\obj\Debug\movimientosTablero.pdb
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\movimientosTablero\movimientosTablero\bin\Debug\movimientosTablero.exe.config
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\movimientosTablero\movimientosTablero\bin\Debug\movimientosTablero.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\movimientosTablero\movimientosTablero\bin\Debug\movimientosTablero.pdb
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\movimientosTablero\movimientosTablero\obj\Debug\movimientosTablero.csproj.AssemblyReference.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\movimientosTablero\movimientosTablero\obj\Debug\movimientosTablero.csproj.CoreCompileInputs.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\movimientosTablero\movimientosTablero\obj\Debug\movimientosTablero.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\movimientosTablero\movimientosTablero\obj\Debug\movimientosTablero.pdb

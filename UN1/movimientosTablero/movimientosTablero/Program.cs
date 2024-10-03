@@ -10,12 +10,13 @@ namespace movimientosTablero
     {
         static void Main(string[] args)
         {
-            string[,] tablero = new string[4, 4];
+            string[,] tablero = new string[4,4];
             int posI = 0;
             int posJ = 0;
             Operaciones.rellenarMatriz(tablero, "X");
             Operaciones.ponerPosicion(tablero, posI, posJ, "0");
-            //Operaciones.mostrarMatriz(tablero);
+            Operaciones.mostrarMatriz(tablero);
+            Console.WriteLine();
             Operaciones.entradaOpcion(tablero, posI, posJ);
 
             Console.ReadKey();

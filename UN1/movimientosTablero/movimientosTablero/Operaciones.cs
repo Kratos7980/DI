@@ -50,27 +50,38 @@ namespace movimientosTablero
                                 tablero[posI, posJ] = "0";
                                 break;
                             case 2:
+                                tablero[posI, posJ] = "X";
+                                posJ--;
+                                tablero[posI, posJ] = "0";
                                 break;
                             case 3:
+                                tablero[posI, posJ] = "X";
+                                posI++;
+                                tablero[posI, posJ] = "0";
                                 break;
                             case 4:
+                                tablero[posI, posJ] = "X";
+                                posI--;
+                                tablero[posI, posJ] = "0";
                                 break;
                             case 5:
                                 salir = true;
                                 break;
-                            default:
-                                Console.WriteLine("Solo opciones entre 1 y 5");
-                                Console.ReadKey();
-                                break;
                         }
+                        Console.WriteLine();
+                        mostrarMatriz(tablero);
                     }
-                    mostrarMatriz(tablero);
+                    else
+                    {
+                        Console.WriteLine("Solo opciones entre 1 y 5");
+                    }
+                    
                 }
                 #endregion
             }
             catch (Exception e)
             {
-                Console.WriteLine("Se ha producido un error " + e.ToString());
+                Console.WriteLine("Se ha producido un error loco " + e.ToString());
                 Console.ReadKey();
             }
         }
@@ -81,17 +92,18 @@ namespace movimientosTablero
             Console.WriteLine("2.Izquierda");
             Console.WriteLine("3.Abajo");
             Console.WriteLine("4.Arriba");
-            Console.WriteLine("5.Salir");
+            Console.WriteLine("5.Mostrar tablero");
+            Console.WriteLine("6.Salir");
         }
 
-        public static void mostrarMatriz(string[,] matriz)
+        public static void mostrarMatriz(string[,] tablero)
         {
-            for (int i = 0; i < matriz.GetLength(0); i++)
+            for (int i = 0; i < tablero.GetLength(0); i++)
             {
-                Console.Write(matriz[i, 0] + " ");
-                for (int j = 1; j < matriz.GetLength(1); j++)
+                Console.Write(tablero[i, 0] + " ");
+                for (int j = 1; j < tablero.GetLength(1); j++)
                 {
-                    Console.Write(matriz[j, 1] + " ");
+                    Console.Write(tablero[i, j] + " ");
                 }
                 Console.WriteLine();
             }
