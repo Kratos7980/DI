@@ -1,0 +1,7 @@
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.csproj.AssemblyReference.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.csproj.CoreCompileInputs.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\MarioBros\MarioBros\bin\Debug\MarioBros.exe.config
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\MarioBros\MarioBros\bin\Debug\MarioBros.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\MarioBros\MarioBros\bin\Debug\MarioBros.pdb
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.pdb
