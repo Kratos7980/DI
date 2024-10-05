@@ -92,8 +92,7 @@ namespace movimientosTablero
             Console.WriteLine("2.Izquierda");
             Console.WriteLine("3.Abajo");
             Console.WriteLine("4.Arriba");
-            Console.WriteLine("5.Mostrar tablero");
-            Console.WriteLine("6.Salir");
+            Console.WriteLine("5.Salir");
         }
 
         public static void mostrarMatriz(string[,] tablero)
