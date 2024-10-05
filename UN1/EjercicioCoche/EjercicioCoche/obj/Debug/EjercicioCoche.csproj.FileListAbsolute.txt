@@ -1,0 +1,7 @@
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjercicioCoche\EjercicioCoche\obj\Debug\EjercicioCoche.csproj.AssemblyReference.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjercicioCoche\EjercicioCoche\obj\Debug\EjercicioCoche.csproj.CoreCompileInputs.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjercicioCoche\EjercicioCoche\bin\Debug\EjercicioCoche.exe.config
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjercicioCoche\EjercicioCoche\bin\Debug\EjercicioCoche.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjercicioCoche\EjercicioCoche\bin\Debug\EjercicioCoche.pdb
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjercicioCoche\EjercicioCoche\obj\Debug\EjercicioCoche.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjercicioCoche\EjercicioCoche\obj\Debug\EjercicioCoche.pdb
