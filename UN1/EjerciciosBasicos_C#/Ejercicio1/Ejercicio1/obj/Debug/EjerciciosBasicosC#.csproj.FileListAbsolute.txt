@@ -5,3 +5,10 @@ C:\Users\b15-01m\Desktop\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\obj\D
 C:\Users\b15-01m\Desktop\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\obj\Debug\EjerciciosBasicosC#.csproj.CoreCompileInputs.cache
 C:\Users\b15-01m\Desktop\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\obj\Debug\Ejercicio1.exe
 C:\Users\b15-01m\Desktop\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\obj\Debug\Ejercicio1.pdb
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\bin\Debug\Ejercicio1.exe.config
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\bin\Debug\Ejercicio1.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\bin\Debug\Ejercicio1.pdb
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\obj\Debug\EjerciciosBasicosC#.csproj.AssemblyReference.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\obj\Debug\EjerciciosBasicosC#.csproj.CoreCompileInputs.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\obj\Debug\Ejercicio1.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\EjerciciosBasicos_C#\Ejercicio1\Ejercicio1\obj\Debug\Ejercicio1.pdb

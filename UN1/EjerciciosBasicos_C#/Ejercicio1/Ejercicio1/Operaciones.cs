@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -159,7 +160,22 @@ namespace Ejercicio1
 
         public static void ejercicio5()
         {
+            int top = 73;
+            double suma = 0;
+            double resta = 0;
+            double multi = 0;
+            double div =  1d/3d;
 
+            for(double i = 3; i <= top;)
+            {
+                suma += (1d / i);
+                i += 2;
+            }
+            resta = suma - 1d;
+            multi = resta * 4;
+
+            Console.WriteLine("El valor de PI es: {0:F5}",multi);
+            Console.ReadKey();
         }
 
 

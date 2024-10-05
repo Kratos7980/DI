@@ -10,7 +10,7 @@ namespace Ejercicio1
     {
         static void Main(string[] args)
         {
-            Operaciones.ejercicio4();
+            Operaciones.ejercicio5();
         }
     }
 }

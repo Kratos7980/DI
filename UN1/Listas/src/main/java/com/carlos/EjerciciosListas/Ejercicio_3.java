@@ -21,24 +21,6 @@ public class Ejercicio_3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /**
-         *  Un amigo funcionario nos pide que le hagamos un informe para sus
-            informes.
-            Debemos gestionar informes que están formados de un código
-            numérico y una tarea que pueden ser ADMINISTRATIVO, EMPRESARIAL y
-            PERSONAL. 
-            
-            Debe comprobarse que la tarea es alguna de estas.
-            Nuestro amigo quiere que seamos capaz de agregar y eliminar informes en
-            forma de pila (el último en entrar, es el primero en salir). Agrega 10 informes y
-            muestra su contenido, elimina todo el contenido y agrega de nuevo 5
-            informes.
-             
-            
-            Puedes crear los informes como quieras.
-            Copia la clase informe que se incluye de ayuda a continuación.
-
-         */
         
         int top = 0;
         int codigo;
