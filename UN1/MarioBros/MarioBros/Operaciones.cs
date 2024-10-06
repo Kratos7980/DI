@@ -133,7 +133,7 @@ namespace MarioBros
             Console.ReadKey();
         }
 
-        public static void moverPersonaje(string[,] tablero, int posI, int posJ)
+        public static void iniciarJuego(string[,] tablero, int posI, int posJ)
         {
             int vidas = 3;
             int pocimas = 0;

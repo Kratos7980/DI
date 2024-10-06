@@ -34,7 +34,7 @@ namespace MarioBros
             Operaciones.mostrarTablero(tablero);
 
             //Comienza el Juego
-            Operaciones.moverPersonaje(tablero,posI,posJ);
+            Operaciones.iniciarJuego(tablero,posI,posJ);
             
         }
     }
