@@ -32,6 +32,9 @@ namespace MarioBros
 
             //Muestro el tablero
             Operaciones.mostrarTablero(tablero);
+
+            //Comienza el Juego
+            Operaciones.moverPersonaje(tablero,posI,posJ);
             
         }
     }
