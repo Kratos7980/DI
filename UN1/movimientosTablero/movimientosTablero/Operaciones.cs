@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,37 +47,29 @@ namespace movimientosTablero
                         switch (opcionNum)
                         {
                             case 1:
-                                tablero[posI, posJ] = "X";
-                                posJ++;
-                                tablero[posI, posJ] = "0";
+                                moverDerecha(ref tablero,ref posI,ref posJ);
                                 break;
                             case 2:
-                                tablero[posI, posJ] = "X";
-                                posJ--;
-                                tablero[posI, posJ] = "0";
+                                moverIzquierda(ref tablero, ref posI, ref posJ);
                                 break;
                             case 3:
-                                tablero[posI, posJ] = "X";
-                                posI++;
-                                tablero[posI, posJ] = "0";
+                                moverAbajo(ref tablero, ref posI, ref posJ);
                                 break;
                             case 4:
-                                tablero[posI, posJ] = "X";
-                                posI--;
-                                tablero[posI, posJ] = "0";
+                                moverArriba(ref tablero, ref posI, ref posJ);
                                 break;
                             case 5:
                                 salir = true;
                                 break;
                         }
-                        Console.WriteLine();
-                        mostrarMatriz(tablero);
+                        Console.Clear();
+                        mostrarTablero(tablero);
                     }
                     else
                     {
                         Console.WriteLine("Movimiento inválido");
                         Console.ReadKey();
-                        mostrarMatriz(tablero);
+                        mostrarTablero(tablero);
                     }
                     
                 }
@@ -98,7 +91,7 @@ namespace movimientosTablero
             Console.WriteLine("5.Salir");
         }
 
-        public static void mostrarMatriz(string[,] tablero)
+        public static void mostrarTablero(string[,] tablero)
         {
             for (int i = 0; i < tablero.GetLength(0); i++)
             {
@@ -108,6 +101,70 @@ namespace movimientosTablero
                     Console.Write(tablero[i, j] + " ");
                 }
                 Console.WriteLine();
+            }
+        }
+
+        public static void moverDerecha(ref string[,]tablero, ref int posI, ref int posJ) 
+        {
+            if (posJ+1 >= tablero.GetLength(1))
+            {
+                Console.WriteLine("Has llegado al límite");
+                Console.ReadKey();
+
+            }
+            else
+            {
+                tablero[posI, posJ] = "X";
+                posJ++;
+                tablero[posI, posJ] = "0";
+            }
+        }
+
+        public static void moverIzquierda(ref string[,] tablero, ref int posI, ref int posJ)
+        {
+            if (posJ - 1 < 0)
+            {
+                Console.WriteLine("Has llegado al límite");
+                Console.ReadKey();
+
+            }
+            else
+            {
+                tablero[posI, posJ] = "X";
+                posJ--;
+                tablero[posI, posJ] = "0";
+            }
+        }
+
+        public static void moverArriba(ref string[,]tablero, ref int posI, ref int posJ)
+        {
+            if (posI - 1 < 0)
+            {
+                Console.WriteLine("Has llegado al límite");
+                Console.ReadKey();
+
+            }
+            else
+            {
+                tablero[posI, posJ] = "X";
+                posI--;
+                tablero[posI, posJ] = "0";
+            }
+        }
+
+        public static void moverAbajo(ref string[,] tablero, ref int posI, ref int posJ)
+        {
+            if (posI + 1 >= tablero.GetLength(1))
+            {
+                Console.WriteLine("Has llegado al límite");
+                Console.ReadKey();
+
+            }
+            else
+            {
+                tablero[posI, posJ] = "X";
+                posI++;
+                tablero[posI, posJ] = "0";
             }
         }
     }

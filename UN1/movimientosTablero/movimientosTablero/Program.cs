@@ -15,7 +15,7 @@ namespace movimientosTablero
             int posJ = 0;
             Operaciones.rellenarMatriz(tablero, "X");
             Operaciones.ponerPosicion(tablero, posI, posJ, "0");
-            Operaciones.mostrarMatriz(tablero);
+            Operaciones.mostrarTablero(tablero);
             Console.WriteLine();
             Operaciones.entradaOpcion(tablero, posI, posJ);
 

@@ -31,7 +31,7 @@ namespace MarioBros
             Operaciones.posicionInicial(tablero, posI, posJ, "M");
 
             //Muestro el tablero
-            Operaciones.mostrarTablero(tablero);
+            Operaciones.mostrarTablero(tablero,posI,posJ);
 
             //Comienza el Juego
             Operaciones.iniciarJuego(tablero,posI,posJ);
