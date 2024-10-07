@@ -77,7 +77,19 @@ namespace MarioBros
             }
         }
 
-        public static int vidasPocimas(string[,] tablero, int posI, int posJ, int vidas, int pocimas)
+        public static void mostrarTablero(string[,] tablero, int posMario)
+        {
+            for (int i = 0; i < tablero.GetLength(0); i++)
+            {
+                for (int j = 0; j < tablero.GetLength(1); j++)
+                {
+                    Console.Write(tablero[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void vidasPocimas(string[,] tablero, int posI, int posJ, ref int vidas, ref int pocimas)
         {
             int n = Int32.Parse(tablero[posI,posJ]);
             int v = vidas;
@@ -93,14 +105,7 @@ namespace MarioBros
                     pocimas++;
                     break;
             }
-            if (vidas != v)
-            {
-                return vidas;
-            }
-            else
-            {
-                return pocimas;
-            }
+            
             
         }
 
@@ -121,6 +126,15 @@ namespace MarioBros
                     break;
             }
             return vidas;
+        }
+
+        public static void actualizarContadores(ref string[,]tablero, ref int posI, ref int posJ, ref int vidas, ref int pocimas)
+        {
+            posJ++;
+           
+            vidasPocimas(tablero, posI, posJ, ref vidas, ref pocimas);
+            
+            posJ--;
         }
 
         public static void mostrarFinal()
@@ -159,16 +173,7 @@ namespace MarioBros
                         switch (movimiento)
                         {
                             case 1:
-                                posJ++;
-                                if (comprobarVidas(tablero, posI, posJ))
-                                {
-                                    vidas = vidasPocimas(tablero, posI, posJ, vidas, pocimas);
-                                }
-                                else
-                                {
-                                    pocimas = vidasPocimas(tablero, posI, posJ, vidas, pocimas);
-                                }
-                                posJ--;
+                                actualizarContadores(ref tablero, ref posI, ref posJ, ref vidas, ref pocimas);
                                 n = r.Next(0, 3);
                                 pieza = n.ToString();
                                 tablero[posI, posJ] = pieza;
@@ -176,16 +181,7 @@ namespace MarioBros
                                 tablero[posI, posJ] = jugador;
                                 break;
                             case 2:
-                                posJ--;
-                                if (comprobarVidas(tablero, posI, posJ))
-                                {
-                                    vidas = vidasPocimas(tablero, posI, posJ, vidas, pocimas);
-                                }
-                                else
-                                {
-                                    pocimas = vidasPocimas(tablero, posI, posJ, vidas, pocimas);
-                                }
-                                posJ++;
+                                actualizarContadores(ref tablero, ref posI, ref posJ, ref vidas, ref pocimas);
                                 n = r.Next(0, 3);
                                 pieza = n.ToString();
                                 tablero[posI, posJ] = pieza;
@@ -193,16 +189,7 @@ namespace MarioBros
                                 tablero[posI, posJ] = jugador;
                                 break;
                             case 3:
-                                posI--;
-                                if (comprobarVidas(tablero, posI, posJ))
-                                {
-                                    vidas = vidasPocimas(tablero, posI, posJ, vidas, pocimas);
-                                }
-                                else
-                                {
-                                    pocimas = vidasPocimas(tablero, posI, posJ, vidas, pocimas);
-                                }
-                                posI++;
+                                actualizarContadores(ref tablero, ref posI, ref posJ, ref vidas, ref pocimas);
                                 n = r.Next(0, 3);
                                 pieza = n.ToString();
                                 tablero[posI, posJ] = pieza;
@@ -210,16 +197,7 @@ namespace MarioBros
                                 tablero[posI, posJ] = jugador;
                                 break;
                             case 4:
-                                posI++;
-                                if (comprobarVidas(tablero, posI, posJ))
-                                {
-                                    vidas = vidasPocimas(tablero, posI, posJ, vidas, pocimas);
-                                }
-                                else
-                                {
-                                    pocimas = vidasPocimas(tablero, posI, posJ, vidas, pocimas);
-                                }
-                                posI--;
+                                actualizarContadores(ref tablero, ref posI, ref posJ, ref vidas, ref pocimas);
                                 n = r.Next(0, 3);
                                 pieza = n.ToString();
                                 tablero[posI, posJ] = pieza;

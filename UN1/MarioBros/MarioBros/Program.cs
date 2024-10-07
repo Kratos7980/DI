@@ -11,8 +11,8 @@ namespace MarioBros
         static void Main(string[] args)
         {
             //Variable posiciones
-            int posI = 3;
-            int posJ = 3;
+            int posI = 0;
+            int posJ = 0;
             
 
             //Inicio del Juego.

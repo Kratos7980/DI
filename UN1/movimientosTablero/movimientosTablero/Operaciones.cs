@@ -35,12 +35,13 @@ namespace movimientosTablero
                 bool salir = false;
                 #endregion
                 #region logicalWhile
+                
                 while (!salir)
                 {
                     mostrarOpciones();
                     opcion = Console.ReadLine();
 
-                    if (Int32.TryParse(opcion, out opcionNum))
+                    if (Int32.TryParse(opcion, out opcionNum) && posI >= 0 && posJ >= 0)
                     {
                         switch (opcionNum)
                         {
@@ -73,7 +74,9 @@ namespace movimientosTablero
                     }
                     else
                     {
-                        Console.WriteLine("Solo opciones entre 1 y 5");
+                        Console.WriteLine("Movimiento inválido");
+                        Console.ReadKey();
+                        mostrarMatriz(tablero);
                     }
                     
                 }
