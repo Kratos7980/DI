@@ -262,13 +262,14 @@ namespace MarioBros
                                 moverAbajo(ref tablero, ref posI, ref posJ, ref vidas, ref pocimas);
                                 break;
 
+
                         }
                         Console.Clear();
                         mostrarTablero(tablero, posI, posJ);
                     }
                     else
                     {
-                        Console.Clear();
+                        
                         Console.WriteLine("Movimiento equivocado");
                         Console.ReadKey();
                         Console.Clear();

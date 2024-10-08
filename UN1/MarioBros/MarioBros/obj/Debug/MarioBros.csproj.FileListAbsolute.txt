@@ -12,3 +12,10 @@ C:\Users\b15-01m\Desktop\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.csproj.A
 C:\Users\b15-01m\Desktop\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.csproj.CoreCompileInputs.cache
 C:\Users\b15-01m\Desktop\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.exe
 C:\Users\b15-01m\Desktop\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.pdb
+C:\Users\carlo\Desktop\DI\UN1\MarioBros\MarioBros\bin\Debug\MarioBros.exe.config
+C:\Users\carlo\Desktop\DI\UN1\MarioBros\MarioBros\bin\Debug\MarioBros.exe
+C:\Users\carlo\Desktop\DI\UN1\MarioBros\MarioBros\bin\Debug\MarioBros.pdb
+C:\Users\carlo\Desktop\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.csproj.AssemblyReference.cache
+C:\Users\carlo\Desktop\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Desktop\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.exe
+C:\Users\carlo\Desktop\DI\UN1\MarioBros\MarioBros\obj\Debug\MarioBros.pdb
