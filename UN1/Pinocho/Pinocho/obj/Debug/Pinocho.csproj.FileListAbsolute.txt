@@ -1,0 +1,7 @@
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\Pinocho\Pinocho\bin\Debug\Pinocho.exe.config
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\Pinocho\Pinocho\bin\Debug\Pinocho.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\Pinocho\Pinocho\bin\Debug\Pinocho.pdb
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\Pinocho\Pinocho\obj\Debug\Pinocho.csproj.AssemblyReference.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\Pinocho\Pinocho\obj\Debug\Pinocho.csproj.CoreCompileInputs.cache
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\Pinocho\Pinocho\obj\Debug\Pinocho.exe
+C:\Users\KRATOS\Desktop\DAM2\DI\UN1\Pinocho\Pinocho\obj\Debug\Pinocho.pdb
