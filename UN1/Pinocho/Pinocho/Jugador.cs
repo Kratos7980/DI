@@ -8,20 +8,27 @@ namespace Pinocho
 {
     internal class Jugador
     {
-        private String name;
+        private String id;
         private int vidas;
         private int peces;
+        private int saltos;
+        private int posI;
+        private int posJ;
 
-        public Jugador(String name)
+
+        public Jugador(string id)
         {
-            this.name = name;
-            this.vidas = 3;
+            this.id = id;
+            this.vidas = 10;
             this.peces = 0;
+            this.saltos = 18;
+            this.posI = 0;
+            this.posJ = 0;
         }
 
-        public String getName()
+        public String getId()
         {
-            return this.name;
+            return this.id;
         }
 
         public int getVidas()
@@ -32,6 +39,20 @@ namespace Pinocho
         public int getPeces()
         {
             return this.peces;
+        }
+        public int getSaltos()
+        {
+            return this.saltos;
+        }
+
+        public int getPosI()
+        {
+            return this.posI;
+        }
+
+        public int getPosJ()
+        {
+            return this.posJ;
         }
 
         public void setVidas(int vidas)
@@ -44,9 +65,19 @@ namespace Pinocho
             this.peces = peces;
         }
 
-        public String toString(String jugador) 
+        public void setSaltos(int saltos)
         {
-            return jugador;
+            this.saltos = saltos;
+        }
+
+        public void setPosI(int pos)
+        {
+            this.posI= pos;
+        }
+
+        public void setPosJ(int pos)
+        {
+            this.posJ= pos;
         }
     }
 }

@@ -10,12 +10,9 @@ namespace Pinocho
 {
     internal class Helpers
     {
-        //Constantes Random.
-        private const int MAX = 3;
-        private const int MIN = 0;
+        private static Random r = new Random(DateTime.Now.Millisecond);
         public static int numRandom(int n1, int n2)
         {
-            Random r = new Random(DateTime.Now.Millisecond);
             return r.Next(n1, n2+1);
         }
 
@@ -26,7 +23,7 @@ namespace Pinocho
             {
                 for (int j = 0; j < tablero.GetLength(1); j++)
                 {
-                    int num = numRandom(MIN, MAX);
+                    int num = numRandom(0, 3);
                     string n = num.ToString();
                     tablero[i, j] = n;
                 }
@@ -78,10 +75,10 @@ namespace Pinocho
             {
                 case 0:
                     vidas--;
-                    saltos++;
+                    saltos--;
                     break;
                 case 1:
-                    saltos++;
+                    saltos--;
                     break;
                 case 2:
                     if (peces == 0)
@@ -92,7 +89,7 @@ namespace Pinocho
                     {
                         peces--;
                     }
-                    saltos++;
+                    saltos--;
                     break;
                 case 3:
                     if(peces == 5)
@@ -103,15 +100,14 @@ namespace Pinocho
                     {
                         peces++;
                     }
-                    saltos++;
+                    saltos--;
                     break;
             }
             posJ--;
 
-
         }
 
-        public static void moverDerecha(ref string[,] tablero, String jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos)
+        public static void moverDerecha(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
         {
 
             int n;
@@ -119,66 +115,64 @@ namespace Pinocho
 
             if (posJ + 1 >= tablero.GetLength(1))
             {
-                Console.WriteLine("Has llegado al límite");
-                Console.ReadKey();
+                moverIzquierda(ref tablero, idJugador, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
             }
-            else
+            else if (!tablero[posI, posJ + 1].Equals(jugador.getId()) && !tablero[posI, posJ + 1].Equals(jugador.getId()))
             {
                 actualizarContadores(ref tablero, ref posI, ref posJ, ref vidas, ref peces, ref saltos);
-                n = numRandom(MIN, MAX);
+                n = numRandom(min, max);
                 pieza = n.ToString();
                 tablero[posI, posJ] = pieza;
                 posJ++;
-                tablero[posI, posJ] = jugador;
+                tablero[posI, posJ] = idJugador;
             }
 
         }
 
-        public static void moverIzquierda(ref string[,] tablero, String jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos)
+        public static void moverIzquierda(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
         {
             int n;
             String pieza;
-
+            
             if (posJ - 1 < 0)
             {
-                Console.WriteLine("Has llegado al límite");
-                Console.ReadKey();
+                moverDerecha(ref tablero, idJugador, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
             }
-            else
+            else if (!tablero[posI, posJ-1].Equals(jugador.getId()) && !tablero[posI, posJ-1].Equals(jugador.getId()))
             {
                 actualizarContadores(ref tablero, ref posI, ref posJ, ref vidas, ref peces, ref saltos);
-                n = numRandom(MIN, MAX);
+                n = numRandom(min, max);
                 pieza = n.ToString();
                 tablero[posI, posJ] = pieza;
                 posJ--;
-                tablero[posI, posJ] = jugador;
+                tablero[posI, posJ] = idJugador;
             }
+            
 
         }
 
-        public static void moverArriba(ref string[,] tablero, String jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos)
+        public static void moverArriba(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
         {
             int n;
             String pieza;
 
             if (posI - 1 < 0)
             {
-                Console.WriteLine("Has llegado al límite");
-                Console.ReadKey();
+                moverAbajo(ref tablero, idJugador, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
             }
-            else
+            else if (!tablero[posI - 1, posJ].Equals(jugador.getId()) && !tablero[posI - 1, posJ].Equals(jugador.getId()))
             {
                 actualizarContadores(ref tablero, ref posI, ref posJ, ref vidas, ref peces,ref saltos);
-                n = numRandom(MIN, MAX);
+                n = numRandom(min, max);
                 pieza = n.ToString();
                 tablero[posI, posJ] = pieza;
                 posI--;
-                tablero[posI, posJ] = jugador;
+                tablero[posI, posJ] = idJugador;
             }
 
         }
 
-        public static void moverAbajo(ref string[,] tablero, String jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos)
+        public static void moverAbajo(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
         {
 
             int n;
@@ -186,38 +180,37 @@ namespace Pinocho
 
             if (posI + 1 >= tablero.GetLength(1))
             {
-                Console.WriteLine("Has llegado al límite");
-                Console.ReadKey();
+                moverArriba(ref tablero, idJugador, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
             }
-            else
+            else if (!tablero[posI + 1, posJ].Equals(jugador.getId()) && !tablero[posI + 1, posJ].Equals(jugador.getId()))
             {
                 actualizarContadores(ref tablero, ref posI, ref posJ, ref vidas, ref peces, ref saltos);
-                n = numRandom(MIN, MAX);
+                n = numRandom(min, max);
                 pieza = n.ToString();
                 tablero[posI, posJ] = pieza;
                 posI++;
-                tablero[posI, posJ] = jugador;
+                tablero[posI, posJ] = idJugador;
             }
 
         }
 
-        public static void moverJugador(ref string[,]tablero, String jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos)
+        public static void moverJugador(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
         {
             int movimiento = numRandom(1, 4);
 
             switch (movimiento)
             {
                 case 1:
-                    Helpers.moverDerecha(ref tablero, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos);
+                    moverDerecha(ref tablero, idJugador, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
                     break;
                 case 2:
-                    Helpers.moverIzquierda(ref tablero, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos);
+                    moverIzquierda(ref tablero, idJugador, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
                     break;
                 case 3:
-                    Helpers.moverArriba(ref tablero, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos);
+                    moverArriba(ref tablero, idJugador, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
                     break;
                 case 4:
-                    Helpers.moverAbajo(ref tablero, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos);
+                    moverAbajo(ref tablero, idJugador, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
                     break;
             }
         }
