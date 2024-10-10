@@ -20,7 +20,7 @@ namespace Pinocho
             //Relleno la matriz.
             Helpers.rellenarTablero(tablero);
             //Helpers.mostrarTablero(tablero);
-            //Console.ReadKey();
+            // Console.ReadKey();
 
 
             #region Variables
