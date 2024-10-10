@@ -11,6 +11,10 @@ namespace Pinocho
     internal class Helpers
     {
         private static Random r = new Random(DateTime.Now.Millisecond);
+        private static bool derecha = false;
+        private static bool izquierda = false;
+        private static bool arriba = false;
+        private static bool abajo = false;
         public static int numRandom(int n1, int n2)
         {
             return r.Next(n1, n2+1);
@@ -69,47 +73,91 @@ namespace Pinocho
 
         public static void actualizarContadores(ref string[,] tablero, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos)
         {
-            posJ++;
-            int n = Int32.Parse(tablero[posI, posJ]);
-            switch (n)
+            if (!(posJ +1 >= tablero.GetLength(1)) || !(posJ - 1 < 0) || !(posI - 1 < 0) || !(posI + 1 >= tablero.GetLength(0)))
             {
-                case 0:
-                    vidas--;
-                    saltos--;
-                    break;
-                case 1:
-                    saltos--;
-                    break;
-                case 2:
-                    if (peces == 0)
+                if (derecha && !(posJ + 1 >= tablero.GetLength(1)))
+                {
+                    posJ++;
+                }
+                if (izquierda && !(posJ - 1 < 0))
+                {
+                    posJ--;
+                }
+                if (arriba && !(posI - 1 < 0))
+                {
+                    posI--;
+                }
+                if(abajo && !(posI + 1 >= tablero.GetLength(0)))
+                {
+                    posI++;
+                }
+                
+                string str = tablero[posI, posJ].ToString();
+                if (!str.Equals("P") || !str.Equals("p"))
+                {
+                    int n = Int32.Parse(str);
+                    switch (n)
                     {
-                        peces = 0;
+                        case 0:
+                            vidas--;
+                            saltos--;
+                            break;
+                        case 1:
+                            saltos--;
+                            break;
+                        case 2:
+                            if (peces == 0)
+                            {
+                                peces = 0;
+                            }
+                            else
+                            {
+                                peces--;
+                            }
+                            saltos--;
+                            break;
+                        case 3:
+                            if (peces == 5)
+                            {
+                                peces = 5;
+                            }
+                            else
+                            {
+                                peces++;
+                            }
+                            saltos--;
+                            break;
                     }
-                    else
-                    {
-                        peces--;
-                    }
-                    saltos--;
-                    break;
-                case 3:
-                    if(peces == 5)
-                    {
-                        peces = 5;
-                    }
-                    else
-                    {
-                        peces++;
-                    }
-                    saltos--;
-                    break;
+                }
+
+                if (derecha)
+                {
+                    posJ--;
+                    derecha = false;
+                }
+                if (izquierda)
+                {
+                    posJ++;
+                    izquierda = false;
+                }
+                if (arriba)
+                {
+                    posI++;
+                    arriba = false;
+                }
+                if (abajo)
+                {
+                    posI--;
+                    abajo = false;
+                }
+                
             }
-            posJ--;
 
         }
 
         public static void moverDerecha(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
         {
-
+            derecha = true;
             int n;
             String pieza;
 
@@ -126,11 +174,11 @@ namespace Pinocho
                 posJ++;
                 tablero[posI, posJ] = idJugador;
             }
-
         }
 
         public static void moverIzquierda(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
         {
+            izquierda = true;
             int n;
             String pieza;
             
@@ -146,13 +194,12 @@ namespace Pinocho
                 tablero[posI, posJ] = pieza;
                 posJ--;
                 tablero[posI, posJ] = idJugador;
-            }
-            
-
+            } 
         }
 
         public static void moverArriba(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
         {
+            arriba = true;
             int n;
             String pieza;
 
@@ -169,16 +216,16 @@ namespace Pinocho
                 posI--;
                 tablero[posI, posJ] = idJugador;
             }
-
+            
         }
 
         public static void moverAbajo(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
         {
-
+            abajo = true;
             int n;
             String pieza;
 
-            if (posI + 1 >= tablero.GetLength(1))
+            if (posI + 1 >= tablero.GetLength(0))
             {
                 moverArriba(ref tablero, idJugador, jugador, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
             }
@@ -190,8 +237,7 @@ namespace Pinocho
                 tablero[posI, posJ] = pieza;
                 posI++;
                 tablero[posI, posJ] = idJugador;
-            }
-
+            } 
         }
 
         public static void moverJugador(ref string[,] tablero, String idJugador, Jugador jugador, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)

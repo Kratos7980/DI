@@ -69,7 +69,7 @@ namespace Pinocho
             
             try
             {
-                while (true)
+                while (vidasP > 0)
                 {
                     Helpers.moverJugador(ref tablero, pinocho.getId(), pepito, ref posIP, ref posJP, ref vidasP, ref pecesP, ref saltosP, min, max);
 
@@ -85,8 +85,12 @@ namespace Pinocho
                     pecesP = pinocho.getPeces();
                     saltosP = pinocho.getSaltos();
 
-                    /*
+                    
                     Helpers.moverJugador(ref tablero, pepito.getId(), pinocho, ref posIp, ref posJp, ref vidasg, ref pecesg, ref saltosp, min, max);
+                    Helpers.mostrarTablero(tablero);
+                    Console.WriteLine();
+                    Console.ReadKey();
+                    movimientosp.Add("(" + posIp + "," + posJp + ")");
                     pepito.setPosI(posIp);
                     pepito.setPosJ(posIp);
                     pepito.setVidas(vidasg);
@@ -97,12 +101,10 @@ namespace Pinocho
                     vidasg = pepito.getVidas();
                     pecesg = pepito.getPeces();
                     saltosp = pepito.getSaltos();
+                    
+                    
+                    
 
-                    Helpers.mostrarTablero(tablero);
-                    Console.WriteLine();
-                    Console.ReadKey();
-                    Console.Clear();
-                    */
                 }
 
             }
@@ -111,12 +113,18 @@ namespace Pinocho
                 Console.WriteLine("Se ha producido un error, " + ex.ToString());
             }
             #endregion
-
+            Console.Write("Paths pinocho: ");
             foreach (String str in movimientosP)
             {
-                Console.Write("Paths: ");
                 Console.Write(str + " ");
             }
+            Console.WriteLine();
+            Console.Write("Paths pepito: ");
+            foreach (String str in movimientosp)
+            {
+                Console.Write(str + " ");
+            }
+            Console.WriteLine();
             Console.ReadKey();
         }
     }
