@@ -19,7 +19,7 @@ namespace Pinocho
         public Jugador(string id)
         {
             this.id = id;
-            this.vidas = 10;
+            this.vidas = 3;
             this.peces = 0;
             this.saltos = 18;
             this.posI = 0;
