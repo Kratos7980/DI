@@ -26,78 +26,41 @@ namespace Pinocho
             #region Variables
             List<string> movimientosP = new List<string>();
             List<string> movimientosp = new List<string>();
-            int min = 0;
-            int max = 3;
             bool exit = false;
             #endregion
 
             #region Juego
-            //Posiciono a pinocho.
+
             Helpers.posicionInicial(tablero, pinocho.getPosI(), pinocho.getPosJ(), pinocho.getId());
-            /*
-            Helpers.mostrarTablero(tablero);
-            Console.WriteLine();
-            Console.ReadKey();
-            */
 
             Helpers.moverJugador(ref tablero, pinocho, pepito);
-            pinocho.setPosI(posIP);
-            pinocho.setPosJ(posJP);
-            posIP = pinocho.getPosI();
-            posJP = pinocho.getPosJ();
-            /*
-            Helpers.mostrarTablero(tablero);
-            Console.WriteLine();
-            Console.ReadKey();
-            */
+            movimientosP.Add("(" + pinocho.getPosI() + "," + pinocho.getPosJ() + ")");
 
-            //Helpers.posicionInicial(tablero, pepito.getPosI(), pepito.getPosJ(), pepito.getId());
-            /*
-            Helpers.mostrarTablero(tablero);
-            Console.WriteLine();
-            Console.ReadKey();
-            */
-            
+            Helpers.posicionInicial(tablero, pepito.getPosI(), pepito.getPosJ(), pepito.getId());
+
             try
             {
                 while (!exit)
                 {
-                    if (pinocho.getVidas() > 0  && pinocho.getSaltos() > 0)
-                    {
-                        Helpers.moverJugador(ref tablero, pinocho, pepito);
-                        movimientosP.Add("(" + posIP + "," + posJP + ")");
-                        pinocho.setPosI(posIP);
-                        pinocho.setPosJ(posJP);
-                        pinocho.setVidas(vidasP);
-                        pinocho.setPeces(pecesP);
-                        pinocho.setSaltos(saltosP);
-                        posIP = pinocho.getPosI();
-                        posJP = pinocho.getPosJ();
-                        vidasP = pinocho.getVidas();
-                        pecesP = pinocho.getPeces();
-                        saltosP = pinocho.getSaltos();
-                    }
-                    /*
+                    
                     if (pepito.getVidas() > 0 && pepito.getSaltos() > 0)
                     {
-                        Helpers.moverJugador(ref tablero, pepito, pinocho, ref posIp, ref posJp, ref vidasg, ref pecesg, ref saltosp, min, max);
-                        movimientosp.Add("(" + posIp + "," + posJp + ")");
-                        pepito.setPosI(posIp);
-                        pepito.setPosJ(posIp);
-                        pepito.setVidas(vidasg);
-                        pepito.setPeces(pecesg);
-                        pepito.setSaltos(saltosp);
-                        posIp = pepito.getPosI();
-                        posJp = pepito.getPosJ();
-                        vidasg = pepito.getVidas();
-                        pecesg = pepito.getPeces();
-                        saltosp = pepito.getSaltos();
+                        Helpers.moverJugador(ref tablero, pepito, pinocho);
+                        movimientosp.Add("(" + pepito.getPosI() + "," + pepito.getPosJ() + ")");
                     }
-                    if(pinocho.getVidas() == 0 && pepito.getVidas() == 0)
+
+                    if (pinocho.getVidas() > 0 && pinocho.getSaltos() > 0)
+                    {
+                        Helpers.moverJugador(ref tablero, pinocho, pepito);
+                        movimientosP.Add("(" + pinocho.getPosI() + "," + pinocho.getPosJ() + ")");
+
+                    }
+
+                    if (pinocho.getVidas() == 0 && pepito.getVidas() == 0)
                     {
                         exit = true;
                     }
-                    */
+                    
                     if(pepito.getPeces() == 5 && pepito.getPosI() == 5 && pepito.getPosJ() == 5)
                     {
                         exit = true;
@@ -107,10 +70,11 @@ namespace Pinocho
                     {
                         exit = true;
                     }
-                    Helpers.mostrarTablero(tablero);
-                    Console.WriteLine();
-                    Console.ReadKey();
 
+                    if (pinocho.getSaltos() <= 0 && pepito.getSaltos() <= 0)
+                    {
+                        exit = true;
+                    }
 
                 }
 
