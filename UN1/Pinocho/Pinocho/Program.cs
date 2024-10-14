@@ -26,16 +26,6 @@ namespace Pinocho
             #region Variables
             List<string> movimientosP = new List<string>();
             List<string> movimientosp = new List<string>();
-            int vidasP = pinocho.getVidas();
-            int pecesP = pinocho.getPeces();
-            int vidasg = pepito.getVidas();
-            int pecesg = pepito.getPeces();
-            int posIP = pinocho.getPosI();
-            int posJP = pinocho.getPosJ();
-            int posIp = pepito.getPosI();
-            int posJp = pepito.getPosJ();
-            int saltosP = pinocho.getSaltos();
-            int saltosp = pepito.getSaltos();
             int min = 0;
             int max = 3;
             bool exit = false;
@@ -50,7 +40,7 @@ namespace Pinocho
             Console.ReadKey();
             */
 
-            Helpers.moverJugador(ref tablero, pinocho, pepito, ref posIP,ref posJP,ref vidasP,ref pecesP,ref saltosP,min,max);
+            Helpers.moverJugador(ref tablero, pinocho, pepito);
             pinocho.setPosI(posIP);
             pinocho.setPosJ(posJP);
             posIP = pinocho.getPosI();
@@ -74,7 +64,7 @@ namespace Pinocho
                 {
                     if (pinocho.getVidas() > 0  && pinocho.getSaltos() > 0)
                     {
-                        Helpers.moverJugador(ref tablero, pinocho, pepito, ref posIP, ref posJP, ref vidasP, ref pecesP, ref saltosP, min, max);
+                        Helpers.moverJugador(ref tablero, pinocho, pepito);
                         movimientosP.Add("(" + posIP + "," + posJP + ")");
                         pinocho.setPosI(posIP);
                         pinocho.setPosJ(posJP);
