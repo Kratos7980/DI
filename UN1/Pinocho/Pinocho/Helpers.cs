@@ -71,23 +71,23 @@ namespace Pinocho
             }
         }
 
-        public static void actualizarContadores(ref string[,] tablero,Jugador jugador1,Jugador jugador2, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos)
+        public static void actualizarContadores(ref string[,] tablero,Jugador jugador1,Jugador jugador2)
         {
-            if (!(posJ +1 >= tablero.GetLength(1)) || !(posJ - 1 < 0) || !(posI - 1 < 0) || !(posI + 1 >= tablero.GetLength(0)))
+            if (!(jugador1.getPosJ() +1 >= tablero.GetLength(1)) || !(jugador1.getPosJ() - 1 < 0) || !(jugador1.getPosI() - 1 < 0) || !(jugador1.getPosI() + 1 >= tablero.GetLength(0)))
             {
-                if (derecha && !(posJ + 1 >= tablero.GetLength(1)))
+                if (derecha && jugador1.getPosJ() + 1 >= tablero.GetLength(1))
                 {
-                    posJ++;
+                    jugador1.setPosJ(jugador1.getPosJ()+1);
                 }
-                if (izquierda && !(posJ - 1 < 0))
+                if (izquierda && jugador1.getPosJ() - 1 < 0)
                 {
-                    posJ--;
+                    jugador1.setPosJ(jugador1.getPosJ()-1);
                 }
-                if (arriba && !(posI - 1 < 0))
+                if (arriba)
                 {
-                    posI--;
+                    jugador1.setPosI(jugador1.getPosI()-1);
                 }
-                if(abajo && !(posI + 1 >= tablero.GetLength(0)))
+                if(abajo)
                 {
                     posI++;
                 }
@@ -155,28 +155,66 @@ namespace Pinocho
 
         }
 
-        public static void moverDerecha(ref string[,] tablero, String idJugador, Jugador jugador1, Jugador jugador2, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
+        public static void actualizar(ref string[,] tablero, Jugador jugador1, Jugador jugador2)
+        {
+            string str = tablero[jugador1.getPosI(), jugador1.getPosJ()].ToString();
+            if (!str.Equals(jugador1.getId()) && !str.Equals(jugador2.getId()))
+            {
+                int n = Int32.Parse(str);
+                switch (n)
+                {
+                    case 0:
+                        jugador1.setVidas(jugador1.getVidas()-1);
+                        jugador1.setSaltos(jugador1.getSaltos()-1);
+                        break;
+                    case 1:
+                        jugador1.setSaltos(jugador1.getSaltos() - 1);
+                        break;
+                    case 2:
+                        if (!(jugador1.getPeces() == 0))
+                        {
+                            jugador1.setPeces(jugador1.getPeces() - 1);
+                        }
+
+                        jugador1.setSaltos(jugador1.getSaltos() - 1);
+                        break;
+                    case 3:
+                        if (!(jugador1.getPeces() == 5))
+                        {
+                            jugador1.setPeces(jugador1.getPeces()+1);
+                        }
+                        else
+                        {
+                            peces++;
+                        }
+                        jugador1.setSaltos(jugador1.getSaltos() - 1);
+                        break;
+                }
+            }
+        }
+
+        public static void moverDerecha(ref string[,] tablero, Jugador jugador1, Jugador jugador2)
         {
             derecha = true;
             int n;
             String pieza;
 
-            if (posJ + 1 >= tablero.GetLength(1))
+            if (jugador1.getPosJ() + 1 >= tablero.GetLength(1))
             {
-                moverIzquierda(ref tablero, idJugador, jugador1, jugador2, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
+                moverIzquierda(ref tablero, jugador1, jugador2);
             }
-            else if (!tablero[posI, posJ + 1].Equals(jugador1.getId()) && !tablero[posI, posJ + 1].Equals(jugador1.getId()))
+            else if (!tablero[jugador1.getPosI(), jugador1.getPosJ() + 1].Equals(jugador1.getId()) && !tablero[jugador1.getPosI(), jugador1.getPosJ() + 1].Equals(jugador1.getId()))
             {
-                actualizarContadores(ref tablero, jugador1, jugador2, ref posI, ref posJ, ref vidas, ref peces, ref saltos);
-                n = numRandom(min, max);
+                actualizarContadores(ref tablero, jugador1, jugador2);
+                n = numRandom(0, 3);
                 pieza = n.ToString();
-                tablero[posI, posJ] = pieza;
-                posJ++;
-                tablero[posI, posJ] = idJugador;
+                tablero[jugador1.getPosI(),jugador1.getPosJ()] = pieza;
+                jugador1.setPosJ(jugador1.getPosJ()+1);
+                tablero[jugador1.getPosI(), jugador1.getPosJ()] = jugador1.getId();
             }
         }
 
-        public static void moverIzquierda(ref string[,] tablero, String idJugador, Jugador jugador1, Jugador jugador2, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
+        public static void moverIzquierda(ref string[,] tablero, Jugador jugador1, Jugador jugador2)
         {
             izquierda = true;
             int n;
@@ -197,7 +235,7 @@ namespace Pinocho
             } 
         }
 
-        public static void moverArriba(ref string[,] tablero, String idJugador, Jugador jugador1, Jugador jugador2, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
+        public static void moverArriba(ref string[,] tablero, Jugador jugador1, Jugador jugador2)
         {
             arriba = true;
             int n;
@@ -219,7 +257,7 @@ namespace Pinocho
             
         }
 
-        public static void moverAbajo(ref string[,] tablero, String idJugador, Jugador jugador1, Jugador jugador2, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
+        public static void moverAbajo(ref string[,] tablero, Jugador jugador1, Jugador jugador2)
         {
             abajo = true;
             int n;
@@ -240,23 +278,23 @@ namespace Pinocho
             } 
         }
 
-        public static void moverJugador(ref string[,] tablero, Jugador jugador1, Jugador jugador2, ref int posI, ref int posJ, ref int vidas, ref int peces, ref int saltos, int min, int max)
+        public static void moverJugador(ref string[,] tablero, Jugador jugador1, Jugador jugador2)
         {
             int movimiento = numRandom(1, 4);
 
             switch (movimiento)
             {
                 case 1:
-                    moverDerecha(ref tablero, jugador1.getId(), jugador1, jugador2, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
+                    moverDerecha(ref tablero, jugador1.getId(), jugador1, jugador2);
                     break;
                 case 2:
-                    moverIzquierda(ref tablero, jugador1.getId(), jugador1, jugador2, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
+                    moverIzquierda(ref tablero, jugador1.getId(), jugador1, jugador2);
                     break;
                 case 3:
-                    moverArriba(ref tablero, jugador1.getId(), jugador1, jugador2, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
+                    moverArriba(ref tablero, jugador1.getId(), jugador1, jugador2);
                     break;
                 case 4:
-                    moverAbajo(ref tablero, jugador1.getId(), jugador1, jugador2, ref posI, ref posJ, ref vidas, ref peces, ref saltos, min, max);
+                    moverAbajo(ref tablero, jugador1.getId(), jugador1, jugador2);
                     break;
             }
         }

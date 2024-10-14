@@ -61,7 +61,7 @@ namespace Pinocho
             Console.ReadKey();
             */
 
-            Helpers.posicionInicial(tablero, pepito.getPosI(), pepito.getPosJ(), pepito.getId());
+            //Helpers.posicionInicial(tablero, pepito.getPosI(), pepito.getPosJ(), pepito.getId());
             /*
             Helpers.mostrarTablero(tablero);
             Console.WriteLine();
@@ -87,7 +87,7 @@ namespace Pinocho
                         pecesP = pinocho.getPeces();
                         saltosP = pinocho.getSaltos();
                     }
-
+                    /*
                     if (pepito.getVidas() > 0 && pepito.getSaltos() > 0)
                     {
                         Helpers.moverJugador(ref tablero, pepito, pinocho, ref posIp, ref posJp, ref vidasg, ref pecesg, ref saltosp, min, max);
@@ -107,7 +107,7 @@ namespace Pinocho
                     {
                         exit = true;
                     }
-                    
+                    */
                     if(pepito.getPeces() == 5 && pepito.getPosI() == 5 && pepito.getPosJ() == 5)
                     {
                         exit = true;
