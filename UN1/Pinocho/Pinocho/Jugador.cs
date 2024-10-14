@@ -18,11 +18,8 @@ namespace Pinocho
 
         public Jugador(string id)
         {
-
-            //Debido a que el jugador sólo tiene 3 vidas y 18 movimientos nunca gana nadie, por eso he modificado el
-            //el número de vidas y el número de saltos disponibles.
             this.id = id;
-            this.vidas = 10;
+            this.vidas = 3;
             this.peces = 0;
             this.saltos = 18;
             this.posI = 0;
