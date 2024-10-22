@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="235,104,0,0" VerticalAlignment="Top" Height="37" Width="62" FontSize="18" Name="loginLabel"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="235,180,0,0" VerticalAlignment="Top" Height="37" Width="105" FontSize="18" Name="passLabel"/>
+        <TextBox HorizontalAlignment="Left" Margin="363,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="191" Height="37" Name="loginText"/>
+        <TextBox HorizontalAlignment="Left" Margin="363,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="191" Height="37" Name="passText"/>
+        <Button Content="Añadir a Combo" HorizontalAlignment="Left" Margin="363,254,0,0" VerticalAlignment="Top" Click="addButton_Click" Height="37" Width="154" Name="addButton"/>
+        <ComboBox HorizontalAlignment="Left" Margin="363,317,0,0" VerticalAlignment="Top" Width="293" Height="35" Name="logpassCombo">
+        </ComboBox>
 
     </Grid>
 </Window>

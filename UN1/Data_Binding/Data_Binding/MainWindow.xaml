@@ -7,15 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
-        <TextBlock Name="LblEjemploTexto" FontSize="{Binding ElementName=MiSlide, Path=Value, Mode=TwoWay}" Text="This is a Binding" Margin="185,111,265,263"/>
-        <Slider Name="MiSlide" HorizontalAlignment="Left" Width="497" Margin="190,60,0,323" Minimum="10" Maximum="20"/>
-        <Button Name="Samall" Content="Small" Margin="142,176,524,195" Click="Samall_Click"/>
-        <Button x:Name="Medium" Content="Medium" Margin="293,176,373,195" Click="Medium_Click"/>
-        <Button x:Name="Big" Content="Big" Margin="438,176,230,195" Click="Big_Click"/>
-        <Label Content="Size" Margin="185,258,567,106"/>
-        <TextBox Name="TxtExacto" HorizontalAlignment="Left" Margin="233,258,0,129" Width="170"
-                 TextWrapping="Wrap" Text="{Binding ElementName=LblEjemploTexto, Path=FontSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Slider HorizontalAlignment="Left" Margin="71,69,0,0" VerticalAlignment="Top" Width="385" Name="MiSlide" Height="20" Minimum="10" Maximum="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="71,89,0,0" TextWrapping="Wrap" Text="This is Binding" VerticalAlignment="Top" FontSize="{Binding ElementName=MiSlide, Path=Value, Mode=TwoWay}" Height="59" Width="400" Name="textboxEjemeplo"/>
+        <Button Content="Small" HorizontalAlignment="Left" Margin="71,158,0,0" VerticalAlignment="Top" Click="Small_Click"/>
+        <Button Content="Medium" HorizontalAlignment="Left" Margin="109,158,0,0" VerticalAlignment="Top" Click="Medium_Click"/>
+        <Button Content="Big" HorizontalAlignment="Left" Margin="162,158,0,0" VerticalAlignment="Top" Click="Big_Click"/>
+        <Label Content="Size" HorizontalAlignment="Left" Margin="71,199,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="112,207,0,0" TextWrapping="Wrap" Text="{Binding ElementName=textboxEjemeplo, Path=FontSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

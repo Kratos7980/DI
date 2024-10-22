@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using LoginUserPassword.Domain;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,14 @@ namespace LoginUserPassword
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            Users user = new Users(loginText.Text, passText.Text);
+            logpassCombo.Items.Add(user);
+            loginText.Text = "";
+            passText.Text = "";
         }
     }
 }

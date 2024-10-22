@@ -22,12 +22,7 @@ namespace Data_Binding
             InitializeComponent();
         }
 
-        private void Big_Click(object sender, RoutedEventArgs e)
-        {
-            MiSlide.Value = 20;
-        }
-
-        private void Samall_Click(object sender, RoutedEventArgs e)
+        private void Small_Click(object sender, RoutedEventArgs e)
         {
             MiSlide.Value = 10;
         }
@@ -35,6 +30,11 @@ namespace Data_Binding
         private void Medium_Click(object sender, RoutedEventArgs e)
         {
             MiSlide.Value = 15;
+        }
+
+        private void Big_Click(object sender, RoutedEventArgs e)
+        {
+            MiSlide.Value = 20;
         }
     }
 }
