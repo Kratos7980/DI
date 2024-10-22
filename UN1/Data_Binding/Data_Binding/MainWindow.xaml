@@ -1,0 +1,21 @@
+﻿<Window x:Class="Data_Binding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Data_Binding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <TextBlock Name="LblEjemploTexto" FontSize="{Binding ElementName=MiSlide, Path=Value, Mode=TwoWay}" Text="This is a Binding" Margin="185,111,265,263"/>
+        <Slider Name="MiSlide" HorizontalAlignment="Left" Width="497" Margin="190,60,0,323" Minimum="10" Maximum="20"/>
+        <Button Name="Samall" Content="Small" Margin="142,176,524,195" Click="Samall_Click"/>
+        <Button x:Name="Medium" Content="Medium" Margin="293,176,373,195" Click="Medium_Click"/>
+        <Button x:Name="Big" Content="Big" Margin="438,176,230,195" Click="Big_Click"/>
+        <Label Content="Size" Margin="185,258,567,106"/>
+        <TextBox Name="TxtExacto" HorizontalAlignment="Left" Margin="233,258,0,129" Width="170"
+                 TextWrapping="Wrap" Text="{Binding ElementName=LblEjemploTexto, Path=FontSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+    </Grid>
+</Window>
