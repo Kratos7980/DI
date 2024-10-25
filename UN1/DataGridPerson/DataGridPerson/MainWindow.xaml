@@ -20,8 +20,8 @@
                 <DataGridTextColumn Header="Age" Binding="{Binding Age}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Add Person" HorizontalAlignment="Left" Margin="56,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="addPerson_Click"/>
-        <Button Content="Modify" HorizontalAlignment="Left" Margin="202,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="modify_Click"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="348,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="delete_Click"/>
+        <Button Content="Add Person" HorizontalAlignment="Left" Margin="56,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="addPerson_Click" Name="Agregar"/>
+        <Button Content="Modify" HorizontalAlignment="Left" Margin="202,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="modify_Click" Name="btnModificar"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="348,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="delete_Click" Name="Eliminar"/>
     </Grid>
 </Window>

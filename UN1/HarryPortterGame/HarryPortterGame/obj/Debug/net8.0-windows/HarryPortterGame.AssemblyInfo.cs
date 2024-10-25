@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("DataGridPerson")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("HarryPortterGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f474b5ce76fdc21189213b3a3e11a901caa79839")]
-[assembly: System.Reflection.AssemblyProductAttribute("DataGridPerson")]
-[assembly: System.Reflection.AssemblyTitleAttribute("DataGridPerson")]
+[assembly: System.Reflection.AssemblyProductAttribute("HarryPortterGame")]
+[assembly: System.Reflection.AssemblyTitleAttribute("HarryPortterGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
