@@ -28,6 +28,27 @@
                         <Button x:Name="btnNew" Content="New" Width="100" HorizontalAlignment="Left" Margin="20"/>
                         <Button x:Name="btnDelete" Content="Delete" Width="100" HorizontalAlignment="Left" Margin="20"/>
                     </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Margin="10">
+                        <Label Content="Purcharsed Products"></Label>
+                        <DataGrid x:Name="dgvStore" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding id}" Header="id"/>
+                                <DataGridTextColumn Binding="{Binding name}" Header="Ability"/>
+                                <DataGridTextColumn Binding="{Binding points}" Header="Points"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="3">
+                        <Separator Visibility="Hidden" Grid.Column="1" Grid.RowSpan="3"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Border BorderBrush="Gray">
+                                <StackPanel Orientation="Vertical">
+                                    <Image x:Name="imgWand" Tag="Wand" Source="./images/wand.jpg" PreviewMouseLeftButtonDown="Image_Click" IsEnabled="True"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                    </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>

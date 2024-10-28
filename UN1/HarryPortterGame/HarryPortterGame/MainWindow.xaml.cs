@@ -25,8 +25,7 @@ namespace HarryPortterGame
         {
             switch (cboPlayer.SelectedIndex)
             {
-                case 0:
-                    lblAvaible.Content = "Avaible Points" 
+               
             }
         }
     }
