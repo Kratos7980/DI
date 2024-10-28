@@ -22,7 +22,7 @@
                     <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
                         <Label Content="Select Player" HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Center"/>
                         <ComboBox x:Name="cboPlayer" Width="230" Margin="15" SelectionChanged="cboPlayer_SelectionChanged"/>
-                        <Label x:Name="lblAvaible" Content="Avaible Points:" Margin="5" Height="28"/>
+                        <Label x:Name="lblAvaible" Content="Avaible Points:" Height="28"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
                         <Button x:Name="btnNew" Content="New" Width="100" HorizontalAlignment="Left" Margin="20"/>
@@ -38,20 +38,33 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="3">
-                        <Separator Visibility="Hidden" Grid.Column="1" Grid.RowSpan="3"/>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
+                        <Separator Visibility="Hidden" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3"/>
                         <StackPanel Orientation="Horizontal">
                             <Border BorderBrush="Gray">
                                 <StackPanel Orientation="Vertical">
-                                    <Image x:Name="imgWand" Tag="Wand" Source="./images/wand.jpg" PreviewMouseLeftButtonDown="Image_Click" IsEnabled="True"/>
+                                    <Image x:Name="imgWand" Tag="Wand" Source="../images/wand.jpg"  IsEnabled="True" Height="40" Width="41"/>
+                                    <Label Content="100pt"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="Gray">
+                                <StackPanel Orientation="Vertical">
+                                    <Image x:Name="imgLightning" Tag="Lightning" Source="../images/lightning.jpg"  IsEnabled="True" Height="40" Width="41"/>
+                                    <Label Content="50pt"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="Gray">
+                                <StackPanel Orientation="Vertical">
+                                    <Image x:Name="imgBrain" Tag="Brain" Source="../images/brain.jpg"  IsEnabled="True" Height="40" Width="41"/>
+                                    <Label Content="50pt"/>
                                 </StackPanel>
                             </Border>
                         </StackPanel>
-
+                        <Button x:Name="btnSave" Content="SAVE" Margin="50" Click="btnSave_Click"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>
-        
+
     </Grid>
 </Window>
