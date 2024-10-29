@@ -18,9 +18,11 @@ namespace HarryPortterGame.domain
             this.points = 100;
         }
 
-        public Ability(String name, int points) {
+        public Ability(String name, int points)
+        {
             this.id = 0;
             this.name = name;
             this.points = points;
+        }
     }
 }

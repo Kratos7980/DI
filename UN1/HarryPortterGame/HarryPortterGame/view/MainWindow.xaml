@@ -25,8 +25,8 @@
                         <Label x:Name="lblAvaible" Content="Avaible Points:" Height="28"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
-                        <Button x:Name="btnNew" Content="New" Width="100" HorizontalAlignment="Left" Margin="20"/>
-                        <Button x:Name="btnDelete" Content="Delete" Width="100" HorizontalAlignment="Left" Margin="20"/>
+                        <Button x:Name="btnNew" Content="New" Width="100" HorizontalAlignment="Left" Margin="20" Click="btnNew_Click"/>
+                        <Button x:Name="btnDelete" Content="Delete" Width="100" HorizontalAlignment="Left" Margin="20" Click="btnDelete_Click"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Margin="10">
                         <Label Content="Purcharsed Products"></Label>
@@ -43,19 +43,19 @@
                         <StackPanel Orientation="Horizontal">
                             <Border BorderBrush="Gray">
                                 <StackPanel Orientation="Vertical">
-                                    <Image x:Name="imgWand" Tag="Wand" Source="../images/wand.jpg"  IsEnabled="True" Height="40" Width="41"/>
+                                    <Image x:Name="imgWand" Tag="Wand" Source="../images/wand.jpg"  IsEnabled="True" Height="40" Width="41" PreviewMouseLeftButtonDown="wand_Click"/>
                                     <Label Content="100pt"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderBrush="Gray">
                                 <StackPanel Orientation="Vertical">
-                                    <Image x:Name="imgLightning" Tag="Lightning" Source="../images/lightning.jpg"  IsEnabled="True" Height="40" Width="41"/>
+                                    <Image x:Name="imgLightning" Tag="Lightning" Source="../images/lightning.jpg"  IsEnabled="True" Height="40" Width="41" PreviewMouseLeftButtonDown="lightning_Click"/>
                                     <Label Content="50pt"/>
                                 </StackPanel>
                             </Border>
                             <Border BorderBrush="Gray">
                                 <StackPanel Orientation="Vertical">
-                                    <Image x:Name="imgBrain" Tag="Brain" Source="../images/brain.jpg"  IsEnabled="True" Height="40" Width="41"/>
+                                    <Image x:Name="imgBrain" Tag="Brain" Source="../images/brain.jpg"  IsEnabled="True" Height="40" Width="41" PreviewMouseLeftButtonDown="brain_Click"/>
                                     <Label Content="50pt"/>
                                 </StackPanel>
                             </Border>
@@ -64,7 +64,53 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
+            <TabItem Header="GAME">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                        <Label Content="HT" FontSize="12"></Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0">
+                        <Label Content="AD" FontSize="12"></Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0">
+                        <Label Content="RW" FontSize="12"></Label>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
         </TabControl>
-
     </Grid>
 </Window>
