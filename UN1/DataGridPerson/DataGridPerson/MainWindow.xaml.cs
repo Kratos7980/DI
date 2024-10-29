@@ -32,40 +32,57 @@ namespace DataGridPerson
         {
             listPerson.Add(new Person(nameText.Text, surnameText.Text, int.Parse(ageText.Text)));
             dataPerson.Items.Refresh();
+
+            nameText.Clear();
+            surnameText.Clear();
+            ageText.Clear();
+
+            if(btnAgregar.Content.Equals("Update"))
+            {
+                listPerson.Where(p => p.Name.Equals(nameText.Text) && p.SurName.Equals(surnameText.Text)).ToList().ForEach(p =>
+                {
+                    p.Name = nameText.Text;
+                    p.SurName = surnameText.Text;
+                    p.Age = int.Parse(ageText.Text);
+                });
+                dataPerson.Items.Refresh();
+                nameText.Clear();
+                surnameText.Clear();
+                ageText.Clear();
+                btnModificar.IsEnabled = true;
+                btnEliminar.IsEnabled = true;
+                btnAgregar.Content = " Add Person";
+            }
+            else
+            {
+                /*
+                if (listPerson.Where(p => p.Name.Equals(nameText.Text) && p.SurName.Equals(surnameText.Text)).ToList().Any() == false)
+                {
+                    listPerson.Add(new Person(nameText.Text, surnameText.Text, int.Parse(ageText.Text)));
+                    dataPerson.Items.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("La persona ya existe en la lista de persona. No se añade de nuevo.");
+                }
+                */
+            }
         }
 
         private void modify_Click(object sender, RoutedEventArgs e)
         {
-
-            Agregar.Content = "Actualizar";
-            Eliminar.IsEnabled = false;
-            btnModificar.IsEnabled = false;
-
-            listPerson.Where(p => p.Name.Equals(nameText.Text) && p.SurName.Equals(surnameText.Text)).ToList().ForEach(p =>
-            {
-                p.Name = nameText.Text;
-                p.SurName = surnameText.Text;
-                p.Age = int.Parse(ageText.Text);
-            });
-            dataPerson.Items.Refresh();
-            nameText.Clear();
-            surnameText.Clear();
-            ageText.Clear();
-            btnModificar.IsEnabled = true;
-            Eliminar.IsEnabled = true;
-            Agregar.Content = " Add Person";
+            btnAgregar.Content = "Update";
+            btnEliminar.IsEnabled = false;
+            btnModificar.IsEnabled = false;           
             
-
-
-            if (listPerson.Where(p => p.Name.Equals(nameText.Text) && p.SurName.Equals(surnameText.Text)).ToList().Any() == false)
+            Person person = (Person) dataPerson.SelectedItem;
+            
+            listPerson.Where(p => p.Name.Equals(person.Name) && p.SurName.Equals(person.SurName)).ToList().ForEach(p =>
             {
-                listPerson.Add(new Person(nameText.Text,surnameText.Text,int.Parse(ageText.Text)));
-            }
-            else
-            {
-                MessageBox.Show("La persona ya existe en la lista de persona. No se añade de nuevo.");
-            }
-
+                nameText.Text = p.Name;
+                surnameText.Text = p.SurName;
+                ageText.Text = p.Age.ToString();
+            });
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
