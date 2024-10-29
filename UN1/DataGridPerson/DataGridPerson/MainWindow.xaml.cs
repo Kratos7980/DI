@@ -21,29 +21,42 @@ namespace DataGridPerson
     public partial class MainWindow : Window
     {
         private List<Person> listPerson;
+        private Boolean interruptor;
         public MainWindow()
         {
             InitializeComponent();
             listPerson = new List<Person>();
             dataPerson.ItemsSource = listPerson;
+            interruptor = false;
         }
 
         private void addPerson_Click(object sender, RoutedEventArgs e)
         {
-            listPerson.Add(new Person(nameText.Text, surnameText.Text, int.Parse(ageText.Text)));
-            dataPerson.Items.Refresh();
+            if (!btnAgregar.Content.Equals("Update"))
+            {
+               
+                if (listPerson.Where(p => p.Name.Equals(nameText.Text) && p.SurName.Equals(surnameText.Text)).ToList().Any() == false)
+                {
 
-            nameText.Clear();
-            surnameText.Clear();
-            ageText.Clear();
-
+                    listPerson.Add(new Person(nameText.Text, surnameText.Text, Int32.Parse(ageText.Text)));
+                    dataPerson.Items.Refresh();
+                    nameText.Clear();
+                    surnameText.Clear();
+                    ageText.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("La persona ya existe en la lista de persona. No se añade de nuevo.");
+                } 
+            }
+            
             if(btnAgregar.Content.Equals("Update"))
             {
                 listPerson.Where(p => p.Name.Equals(nameText.Text) && p.SurName.Equals(surnameText.Text)).ToList().ForEach(p =>
                 {
                     p.Name = nameText.Text;
                     p.SurName = surnameText.Text;
-                    p.Age = int.Parse(ageText.Text);
+                    p.Age = Int32.Parse(ageText.Text);
                 });
                 dataPerson.Items.Refresh();
                 nameText.Clear();
@@ -52,20 +65,6 @@ namespace DataGridPerson
                 btnModificar.IsEnabled = true;
                 btnEliminar.IsEnabled = true;
                 btnAgregar.Content = " Add Person";
-            }
-            else
-            {
-                /*
-                if (listPerson.Where(p => p.Name.Equals(nameText.Text) && p.SurName.Equals(surnameText.Text)).ToList().Any() == false)
-                {
-                    listPerson.Add(new Person(nameText.Text, surnameText.Text, int.Parse(ageText.Text)));
-                    dataPerson.Items.Refresh();
-                }
-                else
-                {
-                    MessageBox.Show("La persona ya existe en la lista de persona. No se añade de nuevo.");
-                }
-                */
             }
         }
 
@@ -83,6 +82,7 @@ namespace DataGridPerson
                 surnameText.Text = p.SurName;
                 ageText.Text = p.Age.ToString();
             });
+            interruptor = true;
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
