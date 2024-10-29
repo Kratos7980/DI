@@ -1,5 +1,5 @@
 ﻿MarioBross_wpf
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\KRATOS\Desktop\DAM2\DI\UN1\MarioBross_wpf\MarioBross_wpf\App.xaml
 1-521423388
 
-71456127438
+5-471782958
 198-556154604
 view\MainWindow.xaml;
 
-True
+False
 
