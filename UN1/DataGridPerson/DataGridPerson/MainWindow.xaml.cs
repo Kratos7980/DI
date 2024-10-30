@@ -21,13 +21,12 @@ namespace DataGridPerson
     public partial class MainWindow : Window
     {
         private List<Person> listPerson;
-        private Boolean interruptor;
         public MainWindow()
         {
             InitializeComponent();
+            
             listPerson = new List<Person>();
             dataPerson.ItemsSource = listPerson;
-            interruptor = false;
         }
 
         private void addPerson_Click(object sender, RoutedEventArgs e)
@@ -82,7 +81,6 @@ namespace DataGridPerson
                 surnameText.Text = p.SurName;
                 ageText.Text = p.Age.ToString();
             });
-            interruptor = true;
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)

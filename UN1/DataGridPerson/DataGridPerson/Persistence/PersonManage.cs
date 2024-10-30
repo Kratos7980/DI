@@ -1,5 +1,6 @@
 ﻿using DataGridPerson.Domain;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,11 @@ namespace DataGridPerson.Persistance
 {
     class PersonManage
     {
-        private DataGrid dataGrid = new DataGrid();
         private List<Person> listPerson;
+
+        public PersonManage()
+        {
+            listPerson = new List<Person>();
+        }
     }
 }
