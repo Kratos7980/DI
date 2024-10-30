@@ -11,19 +11,27 @@
             <TabItem Header="STORE">
                 <Grid Background="#FFE5E5E5">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="1.5*"></RowDefinition>
+                        <RowDefinition Height="150"></RowDefinition>
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="0">
-                        <Label Content="NºLives"></Label>
-                        <Label Content="NºPotions"></Label>
-                        <Button Content="START"></Button>
+                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                        <Label Content="NºLives:" HorizontalAlignment="Right" Margin="0,20,0,0" Width="60"/>
+                        <Label Content="NºPotions:" HorizontalAlignment="Right" Margin="0,20,0,0" Width="70"/>
                     </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                        <TextBox TextWrapping="Wrap" Text="" Width="120" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="0,25" x:Name="textLives"/>
+                        <TextBox TextWrapping="Wrap" Text="" Width="120" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="0,4" x:Name="textPotions"/>
+                        <Button Content="START" HorizontalAlignment="Left" Margin="0,20,0,0" Width="80" x:Name="btnStart" Click="btnStart_Click"/>
+                    </StackPanel>
+
                 </Grid>
             </TabItem>
             <TabItem Header="GAME">
-                <Grid>
+                <Grid ShowGridLines="True">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
@@ -45,7 +53,7 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
-                        <Label Content="M" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label Content="M" FontSize="12" HorizontalAlignment="Center" Margin="0,15"/>
                     </StackPanel>
                 </Grid>
             </TabItem>

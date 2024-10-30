@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="domain\" />
     <Folder Include="performance\" />
   </ItemGroup>
 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\MarioBross_wpf.csproj": {}
+    "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\MarioBross_wpf.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\MarioBross_wpf.csproj": {
+    "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\MarioBross_wpf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\MarioBross_wpf.csproj",
+        "projectUniqueName": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\MarioBross_wpf.csproj",
         "projectName": "MarioBross_wpf",
-        "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\MarioBross_wpf.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\obj\\",
+        "projectPath": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\MarioBross_wpf.csproj",
+        "packagesPath": "C:\\Users\\KRATOS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\MarioBross_wpf\\MarioBross_wpf\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KRATOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
