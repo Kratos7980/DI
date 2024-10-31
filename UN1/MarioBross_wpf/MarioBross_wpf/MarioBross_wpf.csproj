@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="image\mario.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="performance\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\mario.jpg" />
   </ItemGroup>
 
 </Project>
