@@ -12,10 +12,11 @@
                 <Grid Background="#FFE5E5E5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="150"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
@@ -26,35 +27,32 @@
                         <TextBox TextWrapping="Wrap" Text="" Width="120" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="0,25" x:Name="textLives"/>
                         <TextBox TextWrapping="Wrap" Text="" Width="120" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="0,4" x:Name="textPotions"/>
                         <Button Content="START" HorizontalAlignment="Left" Margin="0,20,0,0" Width="80" x:Name="btnStart" Click="btnStart_Click"/>
+                        <Image Tag="Mario" HorizontalAlignment="Right" Margin="0,0,10,100" Source="../image/mario.jpg" Height="171" Width="488"/>
                     </StackPanel>
-
                 </Grid>
             </TabItem>
             <TabItem Header="GAME">
-                <Grid ShowGridLines="True">
+                <Grid ShowGridLines="True" Name="tablero">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
-                        <Label Content="M" FontSize="12" HorizontalAlignment="Center" Margin="0,15"/>
-                    </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -19,7 +19,7 @@ namespace MarioBross_wpf
     public partial class MainWindow : Window
     {
         Player mario = null;
-        private int topPotions = 0;
+        Random rnd = new Random();
         public MainWindow()
         {
             InitializeComponent();
@@ -32,8 +32,8 @@ namespace MarioBross_wpf
                 if (Int32.TryParse(textLives.Text, out Int32 lives) && Int32.TryParse(textPotions.Text, out Int32 potions))
                 {
                     btnStart.IsEnabled = false;
-                    mario = new Player("M", lives);
-                    topPotions = potions;
+                    mario = new Player("M", lives, potions);
+                    rellenarGrid(mario);
                 }
                 else
                 {
@@ -44,6 +44,33 @@ namespace MarioBross_wpf
             else
             {
                 MessageBox.Show("Ambos campos deben rellenarse");
+            }
+        }
+
+        private void rellenarGrid(Player p)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    Label label = new Label();
+                    if(i == 0 && j == 0)
+                    {
+                        label.Content = p.getName();
+                    }
+                    else
+                    {
+                        int pieza = rnd.Next(0,3);
+
+                        label.Content = pieza.ToString();
+                    }
+                    
+                    label.HorizontalAlignment = HorizontalAlignment.Center;
+                    label.VerticalAlignment = VerticalAlignment.Center;
+                    Grid.SetRow(label, i);
+                    Grid.SetColumn(label, j);
+                    tablero.Children.Add(label);
+                }
             }
         }
     }

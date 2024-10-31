@@ -8,14 +8,42 @@ namespace MarioBross_wpf.domain
 {
     internal class Player
     {
-        private int lives {  get; set; }
+        private int lives;
         private String name;
-        private int potions {  get; set; }
+        private int potions;
 
-        public Player(string name, int lives)
+        public Player(string name, int lives, int potions)
         {
             this.lives = lives;
             this.name = name;
+            if(potions >= 5)
+            {
+                this.potions = potions;
+            }
+            else
+            {
+                this.potions = 0;
+            }
+            
+        }
+
+        public String getName()
+        {
+            return this.name;
+        }
+
+        public int getLives()
+        {
+            return this.lives;
+        }
+
+        public int getPotions()
+        {
+            return this.potions;
+        }
+
+        public void setPotions()
+        {
             this.potions = 0;
         }
 
