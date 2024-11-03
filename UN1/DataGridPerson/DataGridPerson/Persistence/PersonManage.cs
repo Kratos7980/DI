@@ -11,11 +11,6 @@ namespace DataGridPerson.Persistance
 {
     class PersonManage
     {
-        private List<Person> listPerson;
-
-        public PersonManage()
-        {
-            listPerson = new List<Person>();
-        }
+        
     }
 }
