@@ -25,7 +25,7 @@ namespace DataGridPerson
         {
             InitializeComponent();
             
-            listPerson = new List<Person>();
+            listPerson = PersonManage.leePersonas();
             dataPerson.ItemsSource = listPerson;
         }
 

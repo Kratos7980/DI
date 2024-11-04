@@ -17,7 +17,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/> 
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
@@ -29,8 +29,14 @@
                         <TextBox TextWrapping="Wrap" Text="" Width="120" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="0,4" x:Name="textPotions"/>
                         <Button Content="START" HorizontalAlignment="Left" Margin="0,20,0,0" Width="80" x:Name="btnStart" Click="btnStart_Click"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="3" Width="220">
+                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="2" Width="220">
                         <Image x:Name="imgMario" Tag="Mario" HorizontalAlignment="Center" VerticalAlignment="Center" Source="../image/mario.jpg" IsEnabled="True" Height="146" Width="488"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+                        <Image x:Name="imgPeach" Tag="Peach" HorizontalAlignment="Center" Source="../image/peach.jpg" IsEnabled="True" Height="271" Width="256"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2">
+                        <Image x:Name="imgMarioBros" Tag="MarioBros" HorizontalAlignment="Center" Source="../image/mariobros.jpg" IsEnabled="True" Height="271" Width="256"/>
                     </StackPanel>
                 </Grid>
             </TabItem>

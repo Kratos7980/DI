@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="image\mario.jpg" />
+    <None Remove="image\mariobros.jpg" />
+    <None Remove="image\peach.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +20,8 @@
 
   <ItemGroup>
     <Resource Include="image\mario.jpg" />
+    <Resource Include="image\mariobros.jpg" />
+    <Resource Include="image\peach.jpg" />
   </ItemGroup>
 
 </Project>
