@@ -20,6 +20,10 @@ namespace Data_Binding
         public MainWindow()
         {
             InitializeComponent();
+            colores.Items.Add("Rojo");
+            colores.Items.Add("Verde");
+            colores.Items.Add("Azul");
+            colores.Items.Add("Amarillo");
         }
 
         private void Small_Click(object sender, RoutedEventArgs e)
@@ -35,6 +39,33 @@ namespace Data_Binding
         private void Big_Click(object sender, RoutedEventArgs e)
         {
             MiSlide.Value = 20;
+        }
+
+        private void colores_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch(colores.SelectedIndex)
+            {
+                case 0:
+                    {
+                        textboxEjemplo.Foreground = Brushes.Red;
+                        break;
+                    }
+                case 1:
+                    {
+                        textboxEjemplo.Foreground = Brushes.Green;
+                        break;
+                    }
+                case 2:
+                    {
+                        textboxEjemplo.Foreground = Brushes.Blue;
+                        break;
+                    }
+                case 3:
+                    {
+                        textboxEjemplo.Foreground = Brushes.Yellow;
+                        break;
+                    }
+            }
         }
     }
 }

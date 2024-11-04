@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj": {}
+    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj": {
+    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj",
         "projectName": "ContainerExampleProyect",
-        "projectPath": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj",
-        "packagesPath": "C:\\Users\\KRATOS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KRATOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

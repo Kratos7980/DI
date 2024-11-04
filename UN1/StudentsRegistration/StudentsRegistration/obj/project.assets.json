@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\KRATOS\\.nuget\\packages\\": {}
+    "C:\\Users\\carlo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\StudentsRegistration\\StudentsRegistration\\StudentsRegistration.csproj",
+      "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\StudentsRegistration\\StudentsRegistration\\StudentsRegistration.csproj",
       "projectName": "StudentsRegistration",
-      "projectPath": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\StudentsRegistration\\StudentsRegistration\\StudentsRegistration.csproj",
-      "packagesPath": "C:\\Users\\KRATOS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\StudentsRegistration\\StudentsRegistration\\obj\\",
+      "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\StudentsRegistration\\StudentsRegistration\\StudentsRegistration.csproj",
+      "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\StudentsRegistration\\StudentsRegistration\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\KRATOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

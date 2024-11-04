@@ -73,5 +73,10 @@ namespace MarioBross_wpf
                 }
             }
         }
+
+        private void movePlayer()
+        {
+            
+        }
     }
 }

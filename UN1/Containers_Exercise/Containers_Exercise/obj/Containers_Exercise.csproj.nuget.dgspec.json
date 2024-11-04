@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj": {}
+    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj": {
+    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj",
         "projectName": "Containers_Exercise",
-        "projectPath": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj",
-        "packagesPath": "C:\\Users\\KRATOS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KRATOS\\Desktop\\DAM2\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KRATOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

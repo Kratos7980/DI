@@ -8,12 +8,12 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Slider HorizontalAlignment="Left" Margin="71,69,0,0" VerticalAlignment="Top" Width="385" Name="MiSlide" Height="20" Minimum="10" Maximum="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="71,89,0,0" TextWrapping="Wrap" Text="This is Binding" VerticalAlignment="Top" FontSize="{Binding ElementName=MiSlide, Path=Value, Mode=TwoWay}" Height="59" Width="400" Name="textboxEjemeplo"/>
+        <TextBlock HorizontalAlignment="Left" Margin="71,89,0,0" TextWrapping="Wrap" Text="This is Binding" VerticalAlignment="Top" FontSize="{Binding ElementName=MiSlide, Path=Value, Mode=TwoWay}" Height="59" Width="400" Name="textboxEjemplo"/>
         <Button Content="Small" HorizontalAlignment="Left" Margin="71,158,0,0" VerticalAlignment="Top" Click="Small_Click"/>
         <Button Content="Medium" HorizontalAlignment="Left" Margin="109,158,0,0" VerticalAlignment="Top" Click="Medium_Click"/>
         <Button Content="Big" HorizontalAlignment="Left" Margin="162,158,0,0" VerticalAlignment="Top" Click="Big_Click"/>
         <Label Content="Size" HorizontalAlignment="Left" Margin="71,199,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="112,207,0,0" TextWrapping="Wrap" Text="{Binding ElementName=textboxEjemeplo, Path=FontSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-
+        <TextBox HorizontalAlignment="Left" Margin="112,207,0,0" TextWrapping="Wrap" Text="{Binding ElementName=textboxEjemplo, Path=FontSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <ListBox Margin="304,118,363,199" Name="colores" SelectionChanged="colores_SelectionChanged"/>
     </Grid>
 </Window>
