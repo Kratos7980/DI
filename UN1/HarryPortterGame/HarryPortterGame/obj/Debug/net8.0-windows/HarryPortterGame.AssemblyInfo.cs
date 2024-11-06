@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HarryPortterGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d8cd4d60ad9b90d115262c1b69f2d4312304a8d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aafee6e685396fca11faa3f26de98029f98d4ba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("HarryPortterGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HarryPortterGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
