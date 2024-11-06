@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Containers_Exercise")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf60655032c2a8f1c8aa23c9a8efdcb57cfb4b61")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aafee6e685396fca11faa3f26de98029f98d4ba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Containers_Exercise")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Containers_Exercise")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

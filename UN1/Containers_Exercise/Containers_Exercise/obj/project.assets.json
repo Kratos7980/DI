@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\carlo\\.nuget\\packages\\": {}
+    "C:\\Users\\b15-01m\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj",
+      "projectUniqueName": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj",
       "projectName": "Containers_Exercise",
-      "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj",
-      "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\obj\\",
+      "projectPath": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\Containers_Exercise.csproj",
+      "packagesPath": "C:\\Users\\b15-01m\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\Containers_Exercise\\Containers_Exercise\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\b15-01m\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
