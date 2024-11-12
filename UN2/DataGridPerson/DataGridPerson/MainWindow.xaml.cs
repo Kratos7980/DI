@@ -1,5 +1,4 @@
 ﻿using DataGridPerson.Domain;
-using DataGridPerson.Persistance;
 using System.Text;
 using System.Linq;
 using System.Windows;
@@ -11,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DataGridPerson.Persistence.Manage;
 
 
 namespace DataGridPerson
@@ -20,12 +20,12 @@ namespace DataGridPerson
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Person> listPerson;
+        private List<People> listPerson;
         public MainWindow()
         {
             InitializeComponent();
             
-            listPerson = PersonManage.leePersonas();
+            listPerson = PeopleManage.readPeople();
             dataPerson.ItemsSource = listPerson;
         }
 
@@ -37,7 +37,7 @@ namespace DataGridPerson
                 if (listPerson.Where(p => p.Name.Equals(nameText.Text) && p.SurName.Equals(surnameText.Text)).ToList().Any() == false)
                 {
 
-                    listPerson.Add(new Person(nameText.Text, surnameText.Text, Int32.Parse(ageText.Text)));
+                    listPerson.Add(new People(nameText.Text, surnameText.Text, Int32.Parse(ageText.Text)));
                     dataPerson.Items.Refresh();
                     nameText.Clear();
                     surnameText.Clear();
@@ -73,7 +73,7 @@ namespace DataGridPerson
             btnEliminar.IsEnabled = false;
             btnModificar.IsEnabled = false;           
             
-            Person person = (Person) dataPerson.SelectedItem;
+            People person = (People) dataPerson.SelectedItem;
             
             listPerson.Where(p => p.Name.Equals(person.Name) && p.SurName.Equals(person.SurName)).ToList().ForEach(p =>
             {
@@ -85,7 +85,7 @@ namespace DataGridPerson
 
         private void delete_Click(object sender, RoutedEventArgs e)
         {
-            listPerson.Remove((Person)dataPerson.SelectedItem);
+            listPerson.Remove((People)dataPerson.SelectedItem);
             dataPerson.Items.Refresh();
         }
     }

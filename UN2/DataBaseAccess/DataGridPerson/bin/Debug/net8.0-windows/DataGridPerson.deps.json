@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DataGridPerson/1.0.0": {
+        "runtime": {
+          "DataGridPerson.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DataGridPerson/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

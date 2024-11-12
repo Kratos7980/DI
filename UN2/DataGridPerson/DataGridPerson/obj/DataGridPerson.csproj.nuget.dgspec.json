@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {}
+    "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {}
   },
   "projects": {
-    "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {
+    "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
         "projectName": "DataGridPerson",
-        "projectPath": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
-        "packagesPath": "C:\\Users\\b15-01m\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\b15-01m\\Desktop\\DI\\UN1\\DataGridPerson\\DataGridPerson\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\b15-01m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

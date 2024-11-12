@@ -1,0 +1,27 @@
+﻿<Window x:Class="DataGridPerson.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataGridPerson"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="24,23,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="56,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="nameText"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Margin="24,72,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="56,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="surnameText"/>
+        <Label Content="Age" HorizontalAlignment="Left" Margin="24,116,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="56,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="ageText"/>
+        <DataGrid AutoGenerateColumns="false" Margin="206,10,159,152" Name="dataPerson">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Surname" Binding="{Binding SurName}"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add Person" HorizontalAlignment="Left" Margin="56,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="addPerson_Click" Name="btnAgregar"/>
+        <Button Content="Modify" HorizontalAlignment="Left" Margin="202,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="modify_Click" Name="btnModificar"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="348,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="delete_Click" Name="btnEliminar"/>
+    </Grid>
+</Window>
