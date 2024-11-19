@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridPerson.Persistence.Manage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,29 +8,55 @@ using System.Transactions;
 
 namespace DataGridPerson.Domain
 {
-    class People
+    internal class People
     {
-        private String name;
-        private String surName;
-        private int age;
-        private int id;
+        public int id { get; set; }
+        public String name { get; set; }   
+        public int age { get; set; }
 
+        public PeopleManage Pm { get; set; }
+        
+        public People()
+        {
+            Pm = new PeopleManage();
+        }
         public People(int id)
         {
+            Pm = new PeopleManage();
             this.id = id;
         }
-
-        public People(int id, String name, String surName, int age)
+        public People(String name, int age)
         {
-            this.id = id;
             this.name = name;
-            this.surName = surName;
             this.age = age;
+            Pm = new PeopleManage();
+        }
+
+        public void readP()
+        {
+            Pm.readPeople();
+        }
+
+        public List<People> getListPeople()
+        {
+            return Pm.listPeople;
+        }
+
+        public void insert()
+        {
+            Pm.insertPeople(this);
+        }
+
+        public void last()
+        {
+            Pm.lastId(this);
+        }
+
+        public void delete()
+        {
+            Pm.deletePeople(this);
         }
 
 
-        public string Name { get => this.name; set => this.name = value; }
-        public string SurName { get => this.surName; set => this.surName = value; }
-        public int Age { get => this.age; set => this.age = value; }
     }
 }

@@ -9,19 +9,18 @@
     <Grid>
         <Label Content="Name" HorizontalAlignment="Left" Margin="24,23,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="56,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="nameText"/>
-        <Label Content="Surname" HorizontalAlignment="Left" Margin="24,72,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="56,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="surnameText"/>
-        <Label Content="Age" HorizontalAlignment="Left" Margin="24,116,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="56,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="ageText"/>
-        <DataGrid AutoGenerateColumns="false" Margin="206,10,159,152" Name="dataPerson">
+        <Label Content="Age" HorizontalAlignment="Left" Margin="35,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.505,0.655"/>
+        <TextBox HorizontalAlignment="Left" Margin="56,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="ageText"/>
+        <DataGrid AutoGenerateColumns="false" Margin="206,10,159,152" Name="dataPerson" SelectionChanged="dataPerson_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Surname" Binding="{Binding SurName}"/>
-                <DataGridTextColumn Header="Age" Binding="{Binding Age}"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding age}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Add Person" HorizontalAlignment="Left" Margin="56,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="addPerson_Click" Name="btnAgregar"/>
-        <Button Content="Modify" HorizontalAlignment="Left" Margin="202,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="modify_Click" Name="btnModificar"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="348,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="delete_Click" Name="btnEliminar"/>
+        <Button Content="New" HorizontalAlignment="Left" Margin="56,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="new_Click" Name="btnNew"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="358,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="save_Click" Name="btnSave"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="207,309,0,0" VerticalAlignment="Top" Height="40" Width="146" Click="delete_Click" Name="btnDelete"/>
     </Grid>
 </Window>
+ 
