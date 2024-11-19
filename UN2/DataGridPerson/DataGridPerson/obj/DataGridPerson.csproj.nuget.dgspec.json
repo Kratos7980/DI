@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {}
+    "C:\\Users\\b15-01m\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {
+    "C:\\Users\\b15-01m\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
+        "projectUniqueName": "C:\\Users\\b15-01m\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
         "projectName": "DataGridPerson",
-        "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\obj\\",
+        "projectPath": "C:\\Users\\b15-01m\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\DataGridPerson.csproj",
+        "packagesPath": "C:\\Users\\b15-01m\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\b15-01m\\Desktop\\DI\\UN2\\DataGridPerson\\DataGridPerson\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\b15-01m\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
