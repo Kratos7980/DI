@@ -1,0 +1,15 @@
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\bin\Debug\TPV_Proyecto.exe.config
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\bin\Debug\TPV_Proyecto.exe
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\bin\Debug\TPV_Proyecto.pdb
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proyecto.csproj.AssemblyReference.cache
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\App.g.cs
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proyecto_MarkupCompile.cache
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proyecto_MarkupCompile.lref
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proyecto.g.resources
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proyecto.Properties.Resources.resources
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proyecto.csproj.GenerateResource.cache
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proyecto.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proyecto.exe
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proyecto.pdb
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\View\MainWindow.g.cs
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\View\MainWindow.baml
