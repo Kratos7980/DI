@@ -80,7 +80,7 @@
                         <StackPanel>
                             <TabControl Height="298">
                                 <TabItem Header="Cervezas" Height="50">
-                                    <Grid>
+                                    <Grid Name="cervezaContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -96,13 +96,13 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <Button Content="Mahou" Grid.Column="0" Grid.Row="0" Name="btnMahou"/>
+                                        <!--<Button Content="Mahou" Grid.Column="0" Grid.Row="0" Name="btnMahou"/>
                                         <Button Content="Amstel" Grid.Column="1" Grid.Row="0" Name="btnAmstel"/>
-                                        <Button Content="Sin Alcohol" Grid.Column="2" Grid.Row="0" Name="btnSin"/>
+                                        <Button Content="Sin Alcohol" Grid.Column="2" Grid.Row="0" Name="btnSin"/>-->
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Vinos" Height="50">
-                                    <Grid>
+                                    <Grid Name="vinosContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -118,13 +118,13 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <Button Content="Tinto" Grid.Column="0" Grid.Row="0" Name="btnTinto"/>
+                                        <!--<Button Content="Tinto" Grid.Column="0" Grid.Row="0" Name="btnTinto"/>
                                         <Button Content="Blanco" Grid.Column="1" Grid.Row="0" Name="btnBlanco"/>
-                                        <Button Content="Rosado" Grid.Column="2" Grid.Row="0" Name="btnRosado"/>
+                                        <Button Content="Rosado" Grid.Column="2" Grid.Row="0" Name="btnRosado"/>-->
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Refrescos" Height="50">
-                                    <Grid>
+                                    <Grid Name="refrescosContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -140,13 +140,13 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <Button Content="Coca Cola" Grid.Column="0" Grid.Row="0" Name="btnCola"/>
+                                        <!--<Button Content="Coca Cola" Grid.Column="0" Grid.Row="0" Name="btnCola"/>
                                         <Button Content="Fanta Naranja" Grid.Column="1" Grid.Row="0" Name="btnNaranja"/>
-                                        <Button Content="Nestea" Grid.Column="2" Grid.Row="0" Name="btnNestea"/>
+                                        <Button Content="Nestea" Grid.Column="2" Grid.Row="0" Name="btnNestea"/>-->
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Combinados" Height="50">
-                                    <Grid>
+                                    <Grid Name="comboContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -162,13 +162,13 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions> 
-                                        <Button Content="Wiskie" Grid.Column="0" Grid.Row="0" Name="btnWiskie"/>
+                                        <!--<Button Content="Wiskie" Grid.Column="0" Grid.Row="0" Name="btnWiskie"/>
                                         <Button Content="Ginebra" Grid.Column="1" Grid.Row="0" Name="btnGinebra"/>
-                                        <Button Content="Ron" Grid.Column="2" Grid.Row="0" Name="btnRon"/>
+                                        <Button Content="Ron" Grid.Column="2" Grid.Row="0" Name="btnRon"/>-->
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Licores" Height="50">
-                                    <Grid>
+                                    <Grid Name="licoresContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -187,7 +187,7 @@
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Cafés/Infusiones" Height="50">
-                                    <Grid>
+                                    <Grid Name="cafesContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -209,7 +209,7 @@
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Menús" Height="50">
-                        <Grid>
+                        <Grid Name="menusContenedor">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
@@ -225,12 +225,12 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Button Content="Menú dia" Grid.Column="0" Grid.Row="0" Name ="btnMenuDia"/>
-                            <Button Content="Menú festivo" Grid.Column="1" Grid.Row="0" Name="btnMenuFest"/>
+                            <!--<Button Content="Menú dia" Grid.Column="0" Grid.Row="0" Name ="btnMenuDia"/>
+                            <Button Content="Menú festivo" Grid.Column="1" Grid.Row="0" Name="btnMenuFest"/>-->
                         </Grid>
                     </TabItem>
                     <TabItem Header="Platos combinados" Height="50">
-                        <Grid>
+                        <Grid Name="combinadosContenedor">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
@@ -246,13 +246,13 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Button Content="Nº1" Grid.Column="0" Grid.Row="0" Name="btnCombi1"/>
+                            <!--<Button Content="Nº1" Grid.Column="0" Grid.Row="0" Name="btnCombi1"/>
                             <Button Content="Nº2" Grid.Column="1" Grid.Row="0" Name="btnCombi2"/>
-                            <Button Content="Nº3" Grid.Column="2" Grid.Row="0" Name="btnCombi3"/>
+                            <Button Content="Nº3" Grid.Column="2" Grid.Row="0" Name="btnCombi3"/>-->
                         </Grid>
                     </TabItem>
                     <TabItem Header="Postres" Height="50">
-                        <Grid>
+                        <Grid Name="postresContenedor">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
@@ -268,9 +268,9 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Button Content="Tarta Queso" Grid.Column="0" Grid.Row="0" Name="btnTarta"/>
+                            <!--<Button Content="Tarta Queso" Grid.Column="0" Grid.Row="0" Name="btnTarta"/>
                             <Button Content="Flan Casero" Grid.Column="1" Grid.Row="0" Name="btnFlan"/>
-                            <Button Content="Coulant" Grid.Column="2" Grid.Row="0" Name="btnCoulant"/>
+                            <Button Content="Coulant" Grid.Column="2" Grid.Row="0" Name="btnCoulant"/>-->
                         </Grid>
                     </TabItem>
                 </TabControl>

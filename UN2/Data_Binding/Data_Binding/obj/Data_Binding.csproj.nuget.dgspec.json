@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Data_Binding\\Data_Binding\\Data_Binding.csproj": {}
+    "C:\\Users\\carlo\\Desktop\\DI\\UN2\\Data_Binding\\Data_Binding\\Data_Binding.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Data_Binding\\Data_Binding\\Data_Binding.csproj": {
+    "C:\\Users\\carlo\\Desktop\\DI\\UN2\\Data_Binding\\Data_Binding\\Data_Binding.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Data_Binding\\Data_Binding\\Data_Binding.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\Data_Binding\\Data_Binding\\Data_Binding.csproj",
         "projectName": "Data_Binding",
-        "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Data_Binding\\Data_Binding\\Data_Binding.csproj",
+        "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\Data_Binding\\Data_Binding\\Data_Binding.csproj",
         "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\Data_Binding\\Data_Binding\\obj\\",
+        "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\Data_Binding\\Data_Binding\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",

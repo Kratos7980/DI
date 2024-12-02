@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GRIDS_EXERCISES")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aafee6e685396fca11faa3f26de98029f98d4ba5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b002ee12a44041bfee0780b0a96c38bc0afebe5")]
 [assembly: System.Reflection.AssemblyProductAttribute("GRIDS_EXERCISES")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GRIDS_EXERCISES")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

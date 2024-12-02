@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj": {}
+    "C:\\Users\\carlo\\Desktop\\DI\\UN2\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj": {
+    "C:\\Users\\carlo\\Desktop\\DI\\UN2\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj",
         "projectName": "ContainerExampleProyect",
-        "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj",
+        "projectPath": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\ContainerExampleProyect\\ContainerExampleProyect\\ContainerExampleProyect.csproj",
         "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN1\\ContainerExampleProyect\\ContainerExampleProyect\\obj\\",
+        "outputPath": "C:\\Users\\carlo\\Desktop\\DI\\UN2\\ContainerExampleProyect\\ContainerExampleProyect\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TPV_Proyecto.Domain;
+using TPV_Proyecto.Persistence.Manage;
 
 namespace TPV_Proyecto
 {
@@ -23,6 +25,36 @@ namespace TPV_Proyecto
         public MainWindow()
         {
             InitializeComponent();
+            
+            ProductoManage pm = new ProductoManage();
+            CategoriaManage cm = new CategoriaManage();
+            List<Producto> listProducto = new List<Producto>();
+            List<Categoria> listCategoria = new List<Categoria>();
+            List<Grid> listGrid = new List<Grid>();
+            listGrid.Add(cervezaContenedor);
+            listGrid.Add(vinosContenedor);
+            listGrid.Add(refrescosContenedor);
+            listGrid.Add(comboContenedor);
+            listGrid.Add(licoresContenedor);
+            listGrid.Add(cafesContenedor);
+            listGrid.Add(menusContenedor);
+            listGrid.Add(combinadosContenedor);
+            listGrid.Add(postresContenedor);
+            listCategoria = cm.readCategoria();
+            for(int i = 0; i < listCategoria.Count(); i++)
+            {
+                listProducto = pm.readProducto(i);
+                for (int j = 0; j > listProducto.Count(); j++)
+                {
+                    Label label = new Label();
+                    label.Content = listProducto[j].nombre +"\n"+ listProducto[j].precio;
+                    label.HorizontalAlignment = HorizontalAlignment.Center;
+                    label.VerticalAlignment = VerticalAlignment.Center;
+                    Grid.SetRow(label, i);
+                    Grid.SetColumn(label, j);
+                    listGrid[i].Children.Add(label);
+                }
+            }
         }
 
 
