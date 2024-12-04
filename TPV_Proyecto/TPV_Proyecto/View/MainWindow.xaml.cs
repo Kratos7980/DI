@@ -24,13 +24,14 @@ namespace TPV_Proyecto
     public partial class MainWindow : Window
     {
         private List<Producto> listProducto;
-        private Button button;
+        
         public MainWindow()
         {
             InitializeComponent();
             DBBroker.obtenerAgente().conectar();
             ProductoManage pm = new ProductoManage();
             CategoriaManage cm = new CategoriaManage();
+            List<Button> listButton = new List<Button>();
             List<Categoria> listCategoria = new List<Categoria>();
             List<Grid> listGrid = new List<Grid>();
             listGrid.Add(cervezaContenedor);
@@ -44,17 +45,36 @@ namespace TPV_Proyecto
             listGrid.Add(postresContenedor);
             listCategoria = cm.readCategoria();
             int i = 1;
-            while( i <= listCategoria.Count())
+            
+            //Sirven para el nombre de los botones de los menus y los platos combinados que se repiten.
+            //Ya que al coger sólo la primera palabra con Split para el nombre los nombres quedan iguales.
+            int m = 0;
+            int c = 0;
+            while ( i <= listCategoria.Count())
             {
                 
                 List<Producto> listProducto = new List<Producto>();
                 listProducto = pm.readProducto(i);
                 for (int j = 0; j < listProducto.Count(); j++)
                 {
-                    button = new Button();
-                    button.Content = listProducto[j].nombre + "\n" + listProducto[j].precio +"€";
+                    Button button = new Button();
+                    button.Content = listProducto[j].nombre + "\n" + listProducto[j].precio+" €";
                     String name = listProducto[j].nombre.Split(' ')[0];
-                    button.Name = name;
+                    
+                    if(name.Contains("menu"))
+                    {
+                        m++;
+                        button.Name = name + m;
+                    }
+                    else if(name.Contains("combinado"))
+                    {
+                        c++;
+                        button.Name = name + c;
+                    }
+                    else
+                    {
+                        button.Name = name;
+                    }
                     button.Click += btn_Click;
                     Grid.SetRow(button, 0);
                     Grid.SetColumn(button, j);
@@ -69,11 +89,34 @@ namespace TPV_Proyecto
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(button.Content.ToString());
+            Button button = (Button)sender;
+            
+            string[] list = button.Content.ToString().Split('\n');
 
+            String name = list[0];
+            double precio = Double.Parse(list[1].Split(' ')[0]);
+            int cantidad = 1;
+            double total = 0;
+            if (textNumber.Text.Contains("X"))
+            {
+                int num = Int32.Parse(textNumber.Text.ToString().Split('X')[0]);
+                cantidad = num;
+                total = cantidad * precio;
+            }
+            else
+            {
+                total = precio;
+            }
+
+            MessageBox.Show("Cantidad: " + cantidad+"\n"+
+                            "Descripcion: " + name + "\n"+
+                            "Precio: " + precio +"\n"+
+                            "Total: "+total);
+            
+            
             //Crear un metodo que me devuelva el contenido de un botón pasándole el botón.
             //Crear Ticket
-            
+
         }
         private void btn7_Click(object sender, RoutedEventArgs e)
         {
