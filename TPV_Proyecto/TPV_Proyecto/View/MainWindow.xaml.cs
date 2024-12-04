@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TPV_Proyecto.Domain;
+using TPV_Proyecto.Persistence;
 using TPV_Proyecto.Persistence.Manage;
 
 namespace TPV_Proyecto
@@ -22,13 +23,14 @@ namespace TPV_Proyecto
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Producto> listProducto;
+        private Button button;
         public MainWindow()
         {
             InitializeComponent();
-            
+            DBBroker.obtenerAgente().conectar();
             ProductoManage pm = new ProductoManage();
             CategoriaManage cm = new CategoriaManage();
-            List<Producto> listProducto = new List<Producto>();
             List<Categoria> listCategoria = new List<Categoria>();
             List<Grid> listGrid = new List<Grid>();
             listGrid.Add(cervezaContenedor);
@@ -41,24 +43,38 @@ namespace TPV_Proyecto
             listGrid.Add(combinadosContenedor);
             listGrid.Add(postresContenedor);
             listCategoria = cm.readCategoria();
-            for(int i = 0; i < listCategoria.Count(); i++)
+            int i = 1;
+            while( i <= listCategoria.Count())
             {
+                
+                List<Producto> listProducto = new List<Producto>();
                 listProducto = pm.readProducto(i);
-                for (int j = 0; j > listProducto.Count(); j++)
+                for (int j = 0; j < listProducto.Count(); j++)
                 {
-                    Label label = new Label();
-                    label.Content = listProducto[j].nombre +"\n"+ listProducto[j].precio;
-                    label.HorizontalAlignment = HorizontalAlignment.Center;
-                    label.VerticalAlignment = VerticalAlignment.Center;
-                    Grid.SetRow(label, i);
-                    Grid.SetColumn(label, j);
-                    listGrid[i].Children.Add(label);
+                    button = new Button();
+                    button.Content = listProducto[j].nombre + "\n" + listProducto[j].precio +"€";
+                    String name = listProducto[j].nombre.Split(' ')[0];
+                    button.Name = name;
+                    button.Click += btn_Click;
+                    Grid.SetRow(button, 0);
+                    Grid.SetColumn(button, j);
+                    listGrid[i-1].Children.Add(button);
                 }
+                i++;
             }
         }
 
 
         // Control botones panel números.
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(button.Content.ToString());
+
+            //Crear un metodo que me devuelva el contenido de un botón pasándole el botón.
+            //Crear Ticket
+            
+        }
         private void btn7_Click(object sender, RoutedEventArgs e)
         {
             if (textNumber.Text.Contains("0.0"))

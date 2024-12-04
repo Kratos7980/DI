@@ -25,7 +25,7 @@
                 <TextBlock Height="30" Text="0.0"  FontSize="20" TextAlignment="Right" Name="textNumber"/>
             </StackPanel>
             <StackPanel Grid.Row="1">
-                <DataGrid Height="189" AutoGenerateColumns="false">
+                <DataGrid Height="189" AutoGenerateColumns="false" Name="dataFactura">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID_Factura"/> 
                         <DataGridTextColumn Header="Cantidad"/>

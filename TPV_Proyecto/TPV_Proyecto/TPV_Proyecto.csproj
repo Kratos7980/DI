@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="Domain\Categoria.cs" />
     <Compile Include="Domain\Producto.cs" />
+    <Compile Include="Domain\Ticket.cs" />
     <Compile Include="Persistence\DBBroker.cs" />
     <Compile Include="Persistence\Manage\CategoriaManage.cs" />
     <Compile Include="Persistence\Manage\ProductoManage.cs" />
