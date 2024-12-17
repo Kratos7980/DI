@@ -8,8 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="9*"/>
-            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="111*"/>
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="88*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
@@ -255,6 +256,14 @@
                     </TabItem>
                 </TabControl>
             </StackPanel>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
         </Grid>
     </Grid>
 </Window>
