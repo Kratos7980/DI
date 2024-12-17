@@ -99,7 +99,7 @@ namespace DataGridPerson
 
             if(!btnNew.IsEnabled)
             {
-                if (MessageBox.Show("Do you want to add this person?", "Confimation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Do you want to add this person?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     People p = new People(nameText.Text, Int32.Parse(ageText.Text));
                     p.insert();
@@ -110,7 +110,7 @@ namespace DataGridPerson
             }
             else
             {
-                if(MessageBox.Show("Do you want to modigy the person is selected?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                if(MessageBox.Show("Do you want to modify the person is selected?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     List<People> listPeople = (List<People>)dataPerson.ItemsSource;
                     listPeople[dataPerson.SelectedIndex].name = nameText.Text;

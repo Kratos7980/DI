@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="271*"/>
-            <ColumnDefinition Width="529*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="23*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
@@ -25,15 +25,15 @@
                 <TextBlock Height="30" Text="0.0"  FontSize="20" TextAlignment="Right" Name="textNumber"/>
             </StackPanel>
             <StackPanel Grid.Row="1">
-                <DataGrid Height="189" AutoGenerateColumns="false" Name="dataFactura">
+                <DataGrid Height="161" AutoGenerateColumns="false" Name="dataTicket" SelectionChanged="dataTicket_SelectionChanged" Width="224">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID_Factura"/> 
-                        <DataGridTextColumn Header="Cantidad"/>
-                        <DataGridTextColumn Header="Descripcion"/>
-                        <DataGridTextColumn Header="Precio"/>
-                        <DataGridTextColumn Header="TOTAL"/>
+                        <DataGridTextColumn Header="Cantidad" Binding="{Binding cantidad}"/>
+                        <DataGridTextColumn Header="Descripcion" Binding="{Binding descripcion}"/>
+                        <DataGridTextColumn Header="Precio" Binding="{Binding precio}"/>
+                        <DataGridTextColumn Header="TOTAL" Binding="{Binding total}"/>
                     </DataGrid.Columns>
                 </DataGrid>
+                <TextBlock Height="23" Width="227" Text="Total: " FontWeight="Bold" Name="textTotal"/>
             </StackPanel>
             <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
@@ -59,11 +59,11 @@
                 <Button Content="1" Grid.Column="0" Grid.Row="2" Name="btn1" Click="btn1_Click"/>
                 <Button Content="2" Grid.Column="1" Grid.Row="2" Name="btn2" Click="btn2_Click"/>
                 <Button Content="3" Grid.Column="2" Grid.Row="2" Name="btn3" Click="btn3_Click"/>
-                <Button Content="Modificar" Grid.Column="3" Grid.Row="2" Name="btnModificar"/>
+                <Button Content="Modificar" Grid.Column="3" Grid.Row="1" Name="btnModificar" HorizontalAlignment="Left" Margin="0,41,0,41" Grid.RowSpan="3" Width="56" Click="btnModificar_Click"/>
                 <Button Content="0" Grid.Column="0" Grid.Row="3" Name="btn0" Click="btn0_Click"/>
                 <Button Content="." Grid.Column="1" Grid.Row="3" Name="btnComa" Click="btnComa_Click"/>
-                <Button Content="Eliminar" Grid.Column="2" Grid.Row="3" Name="btnEliminar"/>
-                <Button Content="Imprimir" Grid.Column="3" Grid.Row="3" Name="btnImprimir"/>
+                <Button Content="Eliminar" Grid.Column="2" Grid.Row="3" Name="btnEliminar" Click="btnEliminar_Click"/>
+                <Button Content="Imprimir" Grid.Column="3" Grid.Row="3" Name="btnImprimir" Click="btnImprimir_Click"/>
             </Grid>
         </Grid>
         <Grid Grid.Column="1">
@@ -96,9 +96,6 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <!--<Button Content="Mahou" Grid.Column="0" Grid.Row="0" Name="btnMahou"/>
-                                        <Button Content="Amstel" Grid.Column="1" Grid.Row="0" Name="btnAmstel"/>
-                                        <Button Content="Sin Alcohol" Grid.Column="2" Grid.Row="0" Name="btnSin"/>-->
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Vinos" Height="50">
@@ -118,9 +115,6 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <!--<Button Content="Tinto" Grid.Column="0" Grid.Row="0" Name="btnTinto"/>
-                                        <Button Content="Blanco" Grid.Column="1" Grid.Row="0" Name="btnBlanco"/>
-                                        <Button Content="Rosado" Grid.Column="2" Grid.Row="0" Name="btnRosado"/>-->
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Refrescos" Height="50">
@@ -140,9 +134,6 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <!--<Button Content="Coca Cola" Grid.Column="0" Grid.Row="0" Name="btnCola"/>
-                                        <Button Content="Fanta Naranja" Grid.Column="1" Grid.Row="0" Name="btnNaranja"/>
-                                        <Button Content="Nestea" Grid.Column="2" Grid.Row="0" Name="btnNestea"/>-->
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Combinados" Height="50">
@@ -161,10 +152,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions> 
-                                        <!--<Button Content="Wiskie" Grid.Column="0" Grid.Row="0" Name="btnWiskie"/>
-                                        <Button Content="Ginebra" Grid.Column="1" Grid.Row="0" Name="btnGinebra"/>
-                                        <Button Content="Ron" Grid.Column="2" Grid.Row="0" Name="btnRon"/>-->
+                                        </Grid.ColumnDefinitions>
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Licores" Height="50">
@@ -225,8 +213,6 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <!--<Button Content="Menú dia" Grid.Column="0" Grid.Row="0" Name ="btnMenuDia"/>
-                            <Button Content="Menú festivo" Grid.Column="1" Grid.Row="0" Name="btnMenuFest"/>-->
                         </Grid>
                     </TabItem>
                     <TabItem Header="Platos combinados" Height="50">
@@ -246,9 +232,6 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <!--<Button Content="Nº1" Grid.Column="0" Grid.Row="0" Name="btnCombi1"/>
-                            <Button Content="Nº2" Grid.Column="1" Grid.Row="0" Name="btnCombi2"/>
-                            <Button Content="Nº3" Grid.Column="2" Grid.Row="0" Name="btnCombi3"/>-->
                         </Grid>
                     </TabItem>
                     <TabItem Header="Postres" Height="50">
@@ -268,9 +251,6 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <!--<Button Content="Tarta Queso" Grid.Column="0" Grid.Row="0" Name="btnTarta"/>
-                            <Button Content="Flan Casero" Grid.Column="1" Grid.Row="0" Name="btnFlan"/>
-                            <Button Content="Coulant" Grid.Column="2" Grid.Row="0" Name="btnCoulant"/>-->
                         </Grid>
                     </TabItem>
                 </TabControl>

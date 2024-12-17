@@ -51,5 +51,29 @@ namespace TPV_Proyecto.Persistence.Manage
             }
             return listProducto;
         }
+
+        public double readPrecio(String descripcion)
+        {
+            double precio = 0;
+            List<Object> lproducto;
+            lproducto = DBBroker.obtenerAgente().leer("select precio from productos where nombre_productol = '" + descripcion + "'");
+            foreach (List <Object> aux in lproducto)
+            {
+                precio = Double.Parse(aux[0].ToString());
+            }
+            return precio;
+        }
+
+        public int readCodigo(String descripcion)
+        {
+            int codigo = 0;
+            List<Object> lproducto;
+            lproducto = DBBroker.obtenerAgente().leer("select codigo_producto from productos where nombre_productol = '" + descripcion + "'");
+            foreach (List<Object> aux in lproducto)
+            {
+                codigo = Int32.Parse(aux[0].ToString());
+            }
+            return codigo;
+        }
     }
 }

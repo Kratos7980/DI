@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Data_Binding")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b002ee12a44041bfee0780b0a96c38bc0afebe5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4599dbaf446d14d236af0315c216575c52c2f68")]
 [assembly: System.Reflection.AssemblyProductAttribute("Data_Binding")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Data_Binding")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

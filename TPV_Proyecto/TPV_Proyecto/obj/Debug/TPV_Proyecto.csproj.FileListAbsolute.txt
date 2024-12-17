@@ -46,3 +46,5 @@ C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\bin\Debug\System.Numerics.Ve
 C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\TPV_Proy.E01E66BD.Up2Date
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\View\Login.g.cs
+C:\Users\carlo\Desktop\DI\TPV_Proyecto\TPV_Proyecto\obj\Debug\View\Login.baml
