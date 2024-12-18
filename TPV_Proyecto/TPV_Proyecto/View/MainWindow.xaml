@@ -8,25 +8,25 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="111*"/>
-            <ColumnDefinition Width="201*"/>
-            <ColumnDefinition Width="88*"/>
+            <ColumnDefinition Width="222*"/>
+            <ColumnDefinition Width="465*"/>
+            <ColumnDefinition Width="113*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="39*"/>
-                <RowDefinition Height="95*"/>
-                <RowDefinition Height="83*"/>
+                <RowDefinition Height="78*"/>
+                <RowDefinition Height="187*"/>
+                <RowDefinition Height="169*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="113*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0">
-                <TextBlock Height="45" Text="TPV" TextAlignment="Center" Padding="0,9,0,0" FontSize="20" FontWeight="Bold" Background="DarkTurquoise"/>
-                <TextBlock Height="30" Text="0.0"  FontSize="20" TextAlignment="Right" Name="textNumber"/>
+                <TextBlock Height="45" Text="TPV" TextAlignment="Center" Padding="0,9,0,0" FontSize="20" FontWeight="Bold" Background="#81c9fa"/>
+                <TextBlock Height="30" Text="0.0"  FontSize="20" TextAlignment="Right" Name="textNumber" Background="#b9ffff"/>
             </StackPanel>
-            <StackPanel Grid.Row="1">
-                <DataGrid Height="161" AutoGenerateColumns="false" Name="dataTicket" SelectionChanged="dataTicket_SelectionChanged" Width="224">
+            <StackPanel Margin="0,78,0,0" Grid.RowSpan="2" Height="Auto">
+                <DataGrid Height="161" AutoGenerateColumns="false" Name="dataTicket" SelectionChanged="dataTicket_SelectionChanged" Background="#b9ffff">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Cantidad" Binding="{Binding cantidad}"/>
                         <DataGridTextColumn Header="Descripcion" Binding="{Binding descripcion}"/>
@@ -34,7 +34,7 @@
                         <DataGridTextColumn Header="TOTAL" Binding="{Binding total}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <TextBlock Height="23" Width="227" Text="Total: " FontWeight="Bold" Name="textTotal"/>
+                <TextBlock Grid.RowSpan="3" Height="Auto" Text="Total: " FontWeight="Bold" Name="textTotal" Background="#81c9fa"/>
             </StackPanel>
             <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
@@ -49,22 +49,22 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Content="7" Grid.Column="0" Grid.Row="0" Name="btn7" Click="btn7_Click"/>
-                <Button Content="8" Grid.Column="1" Grid.Row="0" Name="btn8" Click="btn8_Click"/>
-                <Button Content="9" Grid.Column="2" Grid.Row="0" Name="btn9" Click="btn9_Click"/>
-                <Button Content="X" Grid.Column="3" Grid.Row="0" Name="btnMulti" Click="btnMulti_Click"/>
-                <Button Content="4" Grid.Column="0" Grid.Row="1" Name="btn4" Click="btn4_Click"/>
-                <Button Content="5" Grid.Column="1" Grid.Row="1" Name="btn5" Click="btn5_Click"/>
-                <Button Content="6" Grid.Column="2" Grid.Row="1" Name="btn6" Click="btn6_Click"/>
-                <Button Content="Borrar" Grid.Column="3" Grid.Row="1" Name="btnBorrar" Click="btnBorrar_Click"/>
-                <Button Content="1" Grid.Column="0" Grid.Row="2" Name="btn1" Click="btn1_Click"/>
-                <Button Content="2" Grid.Column="1" Grid.Row="2" Name="btn2" Click="btn2_Click"/>
-                <Button Content="3" Grid.Column="2" Grid.Row="2" Name="btn3" Click="btn3_Click"/>
-                <Button Content="Modificar" Grid.Column="3" Grid.Row="1" Name="btnModificar" HorizontalAlignment="Left" Margin="0,41,0,41" Grid.RowSpan="3" Width="56" Click="btnModificar_Click"/>
-                <Button Content="0" Grid.Column="0" Grid.Row="3" Name="btn0" Click="btn0_Click"/>
-                <Button Content="." Grid.Column="1" Grid.Row="3" Name="btnComa" Click="btnComa_Click"/>
-                <Button Content="Eliminar" Grid.Column="2" Grid.Row="3" Name="btnEliminar" Click="btnEliminar_Click"/>
-                <Button Content="Imprimir" Grid.Column="3" Grid.Row="3" Name="btnImprimir" Click="btnImprimir_Click"/>
+                <Button Content="7" Grid.Column="0" Grid.Row="0" Name="btn7" Click="btn7_Click" Background="#b9ffff"/>
+                <Button Content="8" Grid.Column="1" Grid.Row="0" Name="btn8" Click="btn8_Click" Background="#b9ffff"/>
+                <Button Content="9" Grid.Column="2" Grid.Row="0" Name="btn9" Click="btn9_Click" Background="#b9ffff"/>
+                <Button Content="X" Grid.Column="3" Grid.Row="0" Name="btnMulti" Click="btnMulti_Click" Background="#b9ffff"/>
+                <Button Content="4" Grid.Column="0" Grid.Row="1" Name="btn4" Click="btn4_Click" Background="#b9ffff"/>
+                <Button Content="5" Grid.Column="1" Grid.Row="1" Name="btn5" Click="btn5_Click" Background="#b9ffff"/>
+                <Button Content="6" Grid.Column="2" Grid.Row="1" Name="btn6" Click="btn6_Click" Background="#b9ffff"/>
+                <Button Content="Borrar" Grid.Column="3" Grid.Row="1" Name="btnBorrar" Click="btnBorrar_Click" Background="#b9ffff"/>
+                <Button Content="1" Grid.Column="0" Grid.Row="2" Name="btn1" Click="btn1_Click" Background="#b9ffff"/>
+                <Button Content="2" Grid.Column="1" Grid.Row="2" Name="btn2" Click="btn2_Click" Background="#b9ffff"/>
+                <Button Content="3" Grid.Column="2" Grid.Row="2" Name="btn3" Click="btn3_Click" Background="#b9ffff"/>
+                <Button Content="Modificar" Grid.Column="3" Grid.Row="2" Name="btnModificar" Click="btnModificar_Click" Background="#b9ffff"/>
+                <Button Content="0" Grid.Column="0" Grid.Row="3" Name="btn0" Click="btn0_Click" Background="#b9ffff"/>
+                <Button Content="." Grid.Column="1" Grid.Row="3" Name="btnComa" Click="btnComa_Click" Background="#b9ffff"/>
+                <Button Content="Eliminar" Grid.Column="2" Grid.Row="3" Name="btnEliminar" Click="btnEliminar_Click" Background="#b9ffff"/>
+                <Button Content="Imprimir" Grid.Column="3" Grid.Row="3" Name="btnImprimir" Click="btnImprimir_Click" Background="#b9ffff"/>
             </Grid>
         </Grid>
         <Grid Grid.Column="1">
@@ -72,15 +72,15 @@
                 <RowDefinition Height="39*"/>
                 <RowDefinition Height="178*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0">
-                <TextBlock Height="76" Text="PRODUCTOS" TextAlignment="Center" FontSize="20" Padding="0,23,0,0" Background="Gainsboro"/>
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <TextBlock Height="76" Text="PRODUCTOS" TextAlignment="Center" FontSize="20" FontWeight="Bold" Padding="0,23,0,0" Background="#b9ffff"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Margin="0,1,0,0">
-                <TabControl  Height="355">
-                    <TabItem Header="Bebidas" Height="50">
+            <StackPanel Grid.Row="1" Margin="0,1,0,0" Background="#81c9fa">
+                <TabControl  Height="355" Background="#81c9fa">
+                    <TabItem Header="Bebidas" Height="50" Background="#b9ffff">
                         <StackPanel>
-                            <TabControl Height="298">
-                                <TabItem Header="Cervezas" Height="50">
+                            <TabControl Height="298" Background="#81c9fa">
+                                <TabItem Header="Cervezas" Height="50" Background="#b9ffff">
                                     <Grid Name="cervezaContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -99,7 +99,7 @@
                                         </Grid.ColumnDefinitions>
                                     </Grid>
                                 </TabItem>
-                                <TabItem Header="Vinos" Height="50">
+                                <TabItem Header="Vinos" Height="50" Background="#b9ffff">
                                     <Grid Name="vinosContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -118,7 +118,7 @@
                                         </Grid.ColumnDefinitions>
                                     </Grid>
                                 </TabItem>
-                                <TabItem Header="Refrescos" Height="50">
+                                <TabItem Header="Refrescos" Height="50" Background="#b9ffff">
                                     <Grid Name="refrescosContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -137,7 +137,7 @@
                                         </Grid.ColumnDefinitions>
                                     </Grid>
                                 </TabItem>
-                                <TabItem Header="Combinados" Height="50">
+                                <TabItem Header="Combinados" Height="50" Background="#b9ffff">
                                     <Grid Name="comboContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -156,7 +156,7 @@
                                         </Grid.ColumnDefinitions>
                                     </Grid>
                                 </TabItem>
-                                <TabItem Header="Licores" Height="50">
+                                <TabItem Header="Licores" Height="50" Background="#b9ffff">
                                     <Grid Name="licoresContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -175,7 +175,7 @@
                                         </Grid.ColumnDefinitions>
                                     </Grid>
                                 </TabItem>
-                                <TabItem Header="Cafés/Infusiones" Height="50">
+                                <TabItem Header="Cafés/Infusiones" Height="50" Background="#b9ffff">
                                     <Grid Name="cafesContenedor">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -197,7 +197,7 @@
                             </TabControl>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Menús" Height="50">
+                    <TabItem Header="Menús" Height="50" Background="#b9ffff">
                         <Grid Name="menusContenedor">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -216,7 +216,7 @@
                             </Grid.ColumnDefinitions>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Platos combinados" Height="50">
+                    <TabItem Header="Platos combinados" Height="50" Background="#b9ffff">
                         <Grid Name="combinadosContenedor">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -235,7 +235,7 @@
                             </Grid.ColumnDefinitions>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Postres" Height="50">
+                    <TabItem Header="Postres" Height="50" Background="#b9ffff">
                         <Grid Name="postresContenedor">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -259,10 +259,10 @@
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="355*"/>
             </Grid.RowDefinitions>
         </Grid>
     </Grid>

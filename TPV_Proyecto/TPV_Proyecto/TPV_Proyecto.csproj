@@ -119,9 +119,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domain\Categoria.cs" />
-    <Compile Include="Domain\Producto.cs" />
-    <Compile Include="Domain\Ticket.cs" />
+    <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\Producto.cs" />
+    <Compile Include="Model\Ticket.cs" />
     <Compile Include="Persistence\DBBroker.cs" />
     <Compile Include="Persistence\Manage\CategoriaManage.cs" />
     <Compile Include="Persistence\Manage\ProductoManage.cs" />

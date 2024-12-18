@@ -72,7 +72,7 @@ namespace TPV_Proyecto
                     Button button = new Button();
                     button.Content = listProducto[j].nombre + "\n" + listProducto[j].precio + " €";
                     String name = listProducto[j].nombre.Split(' ')[0];
-
+                    
                     button.Click += btn_Click;
                     Grid.SetRow(button, 0);
                     Grid.SetColumn(button, j);
@@ -251,10 +251,10 @@ namespace TPV_Proyecto
             precioTotal -= ticket.total;
             dataTicket.Items.Refresh();
             textTotal.Text = "Total: " + precioTotal + " €";
-            if(list.Count() < 1)
+            btnEliminar.IsEnabled = false;
+            btnModificar.IsEnabled = false;
+            if (list.Count() < 1)
             {
-                btnModificar.IsEnabled = false;
-                btnEliminar.IsEnabled = false;
                 btnImprimir.IsEnabled = false;
             } 
         }
