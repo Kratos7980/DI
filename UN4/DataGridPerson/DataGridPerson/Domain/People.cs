@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Transactions;
 
@@ -14,6 +15,7 @@ namespace DataGridPerson.Domain
         public String name { get; set; }   
         public int age { get; set; }
 
+        [JsonIgnore]
         public PeopleManage Pm { get; set; }
         
         public People()
@@ -32,9 +34,9 @@ namespace DataGridPerson.Domain
             Pm = new PeopleManage();
         }
 
-        public void readP()
+        public List<People> readP()
         {
-            Pm.readPeople();
+            return Pm.readPeople();
         }
 
         public List<People> getListPeople()

@@ -22,11 +22,11 @@ namespace DataGridPerson.Persistence.Manage
 
         public PeopleManage()
         {
-            listPeople = new List<People>();
+            //listPeople = new List<People>();
             path = "example.json";
         }
 
-        public void readPeople()
+        public List<People> readPeople()
         {
             //Read the file content
             string jsonContent = File.ReadAllText(path);
@@ -34,9 +34,16 @@ namespace DataGridPerson.Persistence.Manage
             //Deseralize the JSON content
             RootObject rootObject = JsonConvert.DeserializeObject<RootObject>(jsonContent);
 
+            // Validate that the deserialized object is not null.
+            if(rootObject == null || rootObject.personList == null)
+            {
+                MessageBox.Show("");
+            }
+            
             People p = null;
             List<People> lpeople;
-            lpeople = rootObject.listPeople;
+            lpeople = rootObject.personList;
+            
             foreach (People aux in lpeople)
             {
                 p = new People(aux.id);
@@ -44,6 +51,7 @@ namespace DataGridPerson.Persistence.Manage
                 p.age = aux.age;
                 this.listPeople.Add(p);
             }
+            
         }
 
         public void insertPeople(People p)
@@ -51,6 +59,11 @@ namespace DataGridPerson.Persistence.Manage
             //DBBroker dBBroker = DBBroker.obtenerAgente();
             //dBBroker.modificar("Insert into people (name,age) values('" +  p.name +"'," + p.age + ")");
             //MessageBox.Show("Insert into people (name,age) values('" + p.name + "'," + p.age + ")");
+
+            RootObject rootObject = new RootObject { personList = this.listPeople };
+            rootObject.personList.Add(p);
+            string updatedJsonContent = JsonConvert.SerializeObject(rootObject, Formatting.Indented);
+            File.WriteAllText(path, updatedJsonContent);
         }
 
         public void lastId(People p)
@@ -76,6 +89,6 @@ namespace DataGridPerson.Persistence.Manage
     {
         [JsonProperty("people")]
 
-        public List<People> listPeople { get; set; }
+        public List<People> personList { get; set; }
     }
 }

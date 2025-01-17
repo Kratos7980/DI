@@ -109,10 +109,12 @@ namespace DataGridPerson
                 if (MessageBox.Show("Do you want to add this person?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     People p = new People(nameText.Text, Int32.Parse(ageText.Text));
+                    p.readP();
                     p.insert();
                     p.last();
                     ((List<People>)dataPerson.ItemsSource).Add(p);
                     dataPerson.Items.Refresh();
+                    
                 }
             }
             else
