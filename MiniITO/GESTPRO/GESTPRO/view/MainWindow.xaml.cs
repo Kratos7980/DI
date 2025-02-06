@@ -233,13 +233,15 @@ namespace GESTPRO
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void CheckBox_RegisteredUser(object sender, RoutedEventArgs e)
         {
-            btnAñadir.IsEnabled = true;
+            btnAddEmpleado.IsEnabled = true;
 
         }
 
         private void CheckBox_NotRegisteredUser(object sender, RoutedEventArgs e)
         {
-
+            btnAddEmpleado.IsEnabled = false;
+            btnModifyEmpleado.IsEnabled = false;
+            btnDelEmpleado.IsEnabled = false;
         }
     }
 }
