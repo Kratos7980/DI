@@ -115,9 +115,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="model\Empleado.cs" />
     <Compile Include="model\Proyecto.cs" />
+    <Compile Include="model\Usuario.cs" />
     <Compile Include="Persistence\DBBroker.cs" />
+    <Compile Include="Persistence\Manage\EmpleadoManage.cs" />
     <Compile Include="Persistence\Manage\ProyectoManage.cs" />
+    <Compile Include="Persistence\Manage\UsuarioManage.cs" />
     <Compile Include="view\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

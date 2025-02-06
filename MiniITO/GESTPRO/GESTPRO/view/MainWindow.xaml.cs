@@ -26,8 +26,16 @@ namespace GESTPRO
         {
             InitializeComponent();
             Proyecto proyecto = new Proyecto();
+            Usuario usuario = new Usuario();
+            Empleado empleado = new Empleado();
             proyecto.readP();
             dataProjecto.ItemsSource = proyecto.getListPeople();
+            dtgUsuarios.ItemsSource = usuario.getListUsuarios();
+            dtgEmpleados.ItemsSource = empleado.getListEmpleado();
+            cbEmpleados.ItemsSource = empleado.getListEmpleado();
+            cbProyectos.ItemsSource = proyecto.getListPeople();
+            cbUsuarios.ItemsSource = usuario.getListUsuarios();
+
             btnEliminar.IsEnabled = false;
             btnAñadir.IsEnabled = false;
             textCodigo.Text = "";
@@ -59,6 +67,8 @@ namespace GESTPRO
         {
             textCodigo.Text = "";
             textNombre.Text = "";
+            txtUsuario.Text = "";
+            txtPassword.Text = "";
 
             btnEliminar.IsEnabled = false;
             btnAñadir.IsEnabled = false;
@@ -68,38 +78,7 @@ namespace GESTPRO
         private void btnAñadir_Click(object sender, RoutedEventArgs e)
         {
             start();
-            //if (!btnAñadir.Content.Equals("Actualizar")) 
-            //{
-            //    if (list.Where(p => p.id.Equals(textCodigo.Text) && p.name.Equals(textNombre.Text)).ToList().Any() == false)
-            //    {
-
-            //        list.Add(new Proyecto(Int32.Parse(textCodigo.Text)));
-            //        dataProjecto.Items.Refresh();
-            //        textCodigo.Clear();
-            //        textNombre.Clear();
-            //        textFechaI.Clear();
-            //        textFechaF.Clear();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("La persona ya existe en la lista de persona. No se añade de nuevo.");
-            //    }
-            //}else if (btnAñadir.Content.Equals("Actualizar"))
-            //{
-            //    list.Where(p => p.id == Int32.Parse(textCodigo.Text)).ToList().ForEach(p =>
-            //    {
-            //        p.id = Int32.Parse(textCodigo.Text);
-            //        p.name = textNombre.Text;
-            //    });
-            //    dataProjecto.Items.Refresh();
-            //    textCodigo.Clear();
-            //    textNombre.Clear();
-            //    textFechaI.Clear();
-            //    textFechaF.Clear();
-            //    btnModificar.IsEnabled = true;
-            //    btnEliminar.IsEnabled = true;
-            //    btnAñadir.Content = " Añadir";
-            //}
+            
         }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
@@ -169,6 +148,98 @@ namespace GESTPRO
                 start();
             }
             
+        }
+
+        private void btnDarAlta_Click(object sender, RoutedEventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            usuario.Name = txtUsuario.Text;
+            usuario.Password = usuario.cifrar(txtPassword.Text);
+            usuario.insert();
+            dtgUsuarios.Items.Refresh();
+        }
+
+        private void btnDelUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Do you want to remove this user?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Usuario usuario = new Usuario();
+                usuario = (Usuario)dtgUsuarios.SelectedItem;
+                usuario.delete();
+                List<Usuario> lst = (List<Usuario>)dtgUsuarios.ItemsSource;
+                lst.Remove(usuario);
+                dtgUsuarios.Items.Refresh();
+                dtgUsuarios.ItemsSource = lst;
+                start();
+            }
+        }
+
+        private void btnActualizarContraseña_Click(object sender, RoutedEventArgs e)
+        {
+            ////Codigo.
+        }
+
+        private void btnAddEmpleado_Click(object sender, RoutedEventArgs e)
+        {
+            Empleado emp = new Empleado(txtNombreEmpleado.Text, txtApellidoEmpleado.Text, Double.Parse(txtCSR.Text));
+            emp.insertEmpleado();
+            dtgEmpleados.Items.Refresh();
+
+        }
+
+        private void btnModifyEmpleado_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDelEmpleado_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Do you want to remove this empleado?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Empleado empleado = new Empleado();
+                empleado = (Empleado)dtgEmpleados.SelectedItem;
+                empleado.delete();
+                empleado.deleteEmpleado();
+                List<Empleado> lst = (List<Empleado>)dtgEmpleados.ItemsSource;
+                lst.Remove(empleado);
+                dtgEmpleados.Items.Refresh();
+                dtgEmpleados.ItemsSource = lst;
+                start();
+            }
+        }
+
+        private void btnRegistrarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnImputHoras_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnModificarGestion_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEliminarGestion_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>Deshabilita los campos necesarios para crear un nuevo usuario.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void CheckBox_RegisteredUser(object sender, RoutedEventArgs e)
+        {
+            btnAñadir.IsEnabled = true;
+
+        }
+
+        private void CheckBox_NotRegisteredUser(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
