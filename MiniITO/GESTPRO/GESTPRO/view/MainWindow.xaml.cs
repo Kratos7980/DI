@@ -234,7 +234,7 @@ namespace GESTPRO
         private void CheckBox_RegisteredUser(object sender, RoutedEventArgs e)
         {
             btnAddEmpleado.IsEnabled = true;
-
+            btnRegistrarUsuario.IsEnabled = true;
         }
 
         private void CheckBox_NotRegisteredUser(object sender, RoutedEventArgs e)
