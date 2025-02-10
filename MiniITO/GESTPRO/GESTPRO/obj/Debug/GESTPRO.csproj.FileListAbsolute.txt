@@ -110,3 +110,7 @@ C:\Users\b15-01m\Desktop\DI\MiniITO\GESTPRO\GESTPRO\obj\Debug\GESTPRO.csproj.Cor
 C:\Users\b15-01m\Desktop\DI\MiniITO\GESTPRO\GESTPRO\obj\Debug\GESTPRO.csproj.Up2Date
 C:\Users\b15-01m\Desktop\DI\MiniITO\GESTPRO\GESTPRO\obj\Debug\GESTPRO.exe
 C:\Users\b15-01m\Desktop\DI\MiniITO\GESTPRO\GESTPRO\obj\Debug\GESTPRO.pdb
+C:\Users\b15-01m\Desktop\DI\MiniITO\GESTPRO\GESTPRO\bin\Debug\GESTPRO.exe.manifest
+C:\Users\b15-01m\Desktop\DI\MiniITO\GESTPRO\GESTPRO\bin\Debug\GESTPRO.application
+C:\Users\b15-01m\Desktop\DI\MiniITO\GESTPRO\GESTPRO\obj\Debug\GESTPRO.exe.manifest
+C:\Users\b15-01m\Desktop\DI\MiniITO\GESTPRO\GESTPRO\obj\Debug\GESTPRO.application
