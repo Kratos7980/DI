@@ -1,6 +1,8 @@
 ﻿using GESTPRO.model;
+using GESTPRO.view;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,10 @@ namespace GESTPRO
     public partial class MainWindow : Window
     {
         private List<Proyecto> list;
+
+        private DataTable dt;
+
+        private List<Empleado> listEmpleado;
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +35,7 @@ namespace GESTPRO
             Usuario usuario = new Usuario();
             Empleado empleado = new Empleado();
             proyecto.readP();
+            listEmpleado = empleado.getListEmpleado();
             dataProjecto.ItemsSource = proyecto.getListPeople();
             dtgUsuarios.ItemsSource = usuario.getListUsuarios();
             dtgEmpleados.ItemsSource = empleado.getListEmpleado();
@@ -40,6 +47,8 @@ namespace GESTPRO
             btnAñadir.IsEnabled = false;
             textCodigo.Text = "";
             textNombre.Text = "";
+
+            cargarInforme();
         }
 
         private void textBuscar_TextChanged(object sender, TextChangedEventArgs e)
@@ -242,6 +251,40 @@ namespace GESTPRO
             btnAddEmpleado.IsEnabled = false;
             btnModifyEmpleado.IsEnabled = false;
             btnDelEmpleado.IsEnabled = false;
+        }
+
+        private void cargarInforme()
+        {
+           
+            //Inicializar tabla
+            dt = new DataTable("TablaEmple");
+
+            //Crear columnas
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Apellido");
+            dt.Columns.Add("CSR");
+
+            //Meter contenido a la tabla
+
+            foreach (Empleado emple in listEmpleado)
+            {
+                //Creo la fila
+                DataRow row = dt.NewRow();
+                row["Nombre"] = emple.Name;
+                row["Apellido"] = emple.Name;
+                row["CSR"] = emple.Name;
+
+                //Añadir la fila a la tabla.
+
+                dt.Rows.Add(row);
+            }
+
+            CrystalReport1 cr = new CrystalReport1();
+
+            cr.Database.Tables["TablaEmple"].SetDataSource(dt);
+
+            visor.ViewerCore.ReportSource = cr;
+
         }
     }
 }
