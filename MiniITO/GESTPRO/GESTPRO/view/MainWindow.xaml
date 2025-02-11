@@ -192,11 +192,17 @@
             <TabItem Header="ESTADÍSTICAS" Background="LightPink">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="5*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Estadisticas" FontSize="15" FontWeight="Bold"/>
+                    <ComboBox Grid.Row="0" Height="30" Width="150" Margin="95,18,430,10" Name="cbInforme">
+                        <ComboBoxItem Content="Number of profiles"></ComboBoxItem>
+                        <ComboBoxItem Content="Cost by project"></ComboBoxItem>
+                    </ComboBox>
+                    <Button Name="btnMostrarInforme" Click="btnMostrarInforme_Click" Height="30" Width="100" Content="Mostrar Informe"/>
+
                     <Viewer:CrystalReportsViewer Name="visor" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>
+                    <Viewer:CrystalReportsViewer Name="visor2" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>
 
                 </Grid>
             </TabItem>

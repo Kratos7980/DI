@@ -12,6 +12,8 @@ namespace GESTPRO.model
         public String id { get; set; }
         public String name { get; set; }
 
+        public float presupuesto { get; set; }
+
         public ProyectoManage Pm { get; set; }
 
         public Proyecto()
@@ -32,12 +34,27 @@ namespace GESTPRO.model
 
         public void readP()
         {
-            Pm.readPeople();
+            Pm.readProject();
         }
 
-        public List<Proyecto> getListPeople()
+        public List<Proyecto> getListProyectos()
         {
             return Pm.listProyecto;
+        }
+
+        public List<String> getListRoles(int idProyecto)
+        {
+            return Pm.getRolesProyecto(idProyecto);
+        }
+
+        public int totalCost(int idProyecto)
+        {
+            return Pm.totalCost(idProyecto);
+        }
+
+        public string getDate(int idProyecto)
+        {
+            return Pm.getDate(idProyecto);
         }
 
         public void insert()

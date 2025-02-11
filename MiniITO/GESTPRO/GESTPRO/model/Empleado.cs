@@ -17,6 +17,8 @@ namespace GESTPRO.model
 
         public double Csr { get; set; }
 
+        public int idRol {  get; set; }
+
         private EmpleadoManage em;
 
         public Empleado() { }

@@ -16,14 +16,14 @@ namespace GESTPRO.view {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class NumberOfProfiles : ReportClass {
         
-        public CrystalReport1() {
+        public NumberOfProfiles() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "NumberOfProfiles.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace GESTPRO.view {
         
         public override string FullResourceName {
             get {
-                return "GESTPRO.view.CrystalReport1.rpt";
+                return "GESTPRO.view.NumberOfProfiles.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace GESTPRO.view {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedNumberOfProfiles : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedNumberOfProfiles() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace GESTPRO.view {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            NumberOfProfiles rpt = new NumberOfProfiles();
             rpt.Site = this.Site;
             return rpt;
         }

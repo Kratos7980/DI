@@ -1,4 +1,5 @@
-﻿using GESTPRO.model;
+﻿using DataGridPerson.Persistence;
+using GESTPRO.model;
 using GESTPRO.view;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace GESTPRO
         private DataTable dt;
 
         private List<Empleado> listEmpleado;
+        private List<Proyecto> listProjects;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,12 +37,14 @@ namespace GESTPRO
             Usuario usuario = new Usuario();
             Empleado empleado = new Empleado();
             proyecto.readP();
+            
             listEmpleado = empleado.getListEmpleado();
-            dataProjecto.ItemsSource = proyecto.getListPeople();
+            listProjects = proyecto.getListProyectos();
+            dataProjecto.ItemsSource = proyecto.getListProyectos();
             dtgUsuarios.ItemsSource = usuario.getListUsuarios();
             dtgEmpleados.ItemsSource = empleado.getListEmpleado();
             cbEmpleados.ItemsSource = empleado.getListEmpleado();
-            cbProyectos.ItemsSource = proyecto.getListPeople();
+            cbProyectos.ItemsSource = proyecto.getListProyectos();
             cbUsuarios.ItemsSource = usuario.getListUsuarios();
 
             btnEliminar.IsEnabled = false;
@@ -48,9 +52,12 @@ namespace GESTPRO
             textCodigo.Text = "";
             textNombre.Text = "";
 
-            cargarInforme();
+            
         }
 
+        /// <summary>Actuar cuan el texto de textBuscar cambia</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs" /> instance containing the event data.</param>
         private void textBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             list.Where(p => p.name.Contains(textBuscar.Text)).ToList().ForEach(p =>
@@ -60,6 +67,9 @@ namespace GESTPRO
 
         }
 
+        /// <summary>Accion cuando seleccion un item del datagrid</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs" /> instance containing the event data.</param>
         private void dataProyecto_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dataProjecto.SelectedItems.Count > 0)
@@ -72,6 +82,7 @@ namespace GESTPRO
             }
         }
 
+        /// <summary>Inicializar textos  y botones</summary>
         private void start()
         {
             textCodigo.Text = "";
@@ -84,6 +95,9 @@ namespace GESTPRO
             dataProjecto.SelectedItems.Clear();
         }
 
+        /// <summary>Evento boton añadir</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void btnAñadir_Click(object sender, RoutedEventArgs e)
         {
             start();
@@ -257,34 +271,87 @@ namespace GESTPRO
         {
            
             //Inicializar tabla
-            dt = new DataTable("TablaEmple");
+            dt = new DataTable("TablaProyecto");
 
             //Crear columnas
-            dt.Columns.Add("Nombre");
-            dt.Columns.Add("Apellido");
-            dt.Columns.Add("CSR");
+            dt.Columns.Add("Project");
+            dt.Columns.Add("Month/Year");
+            dt.Columns.Add("Total Cost");
 
             //Meter contenido a la tabla
 
-            foreach (Empleado emple in listEmpleado)
+            foreach (Proyecto project in listProjects)
             {
                 //Creo la fila
                 DataRow row = dt.NewRow();
-                row["Nombre"] = emple.Name;
-                row["Apellido"] = "Baldomero";
-                row["CSR"] = 8.50;
+                row["Project"] = project.name;
+                row["Month/Year"] = project.getDate(Int32.Parse(project.id));
+                row["Total Cost"] = project.totalCost(Int32.Parse(project.id));
+
+                //Añadir la fila a la tabla.
+                dt.Rows.Add(row);
+            }
+
+            CostByProject cr = new CostByProject();
+
+            cr.Database.Tables["TablaProyecto"].SetDataSource(dt);
+
+            visor.ViewerCore.ReportSource = cr;
+
+        }
+
+        private void cargarInforme2()
+        {
+            //Inicializar tabla
+            dt = new DataTable("ProjectProfile");
+
+            //Crear columnas
+            dt.Columns.Add("Project");
+            dt.Columns.Add("Month/Year");
+            dt.Columns.Add("Employe Profile");
+            dt.Columns.Add("Number of people");
+
+            //Meter contenido a la tabla
+
+            
+            foreach (Proyecto project in listProjects)
+            {
+                List<String> list = project.getListRoles(Int32.Parse(project.id));
+                //Creo la fila
+                DataRow row = dt.NewRow();
+                foreach (String role in list)
+                {
+                    row["Project"] = project.name;
+                    row["Month/Year"] = project.getDate(Int32.Parse(project.id));
+                    row["Employe Profile"] = role;
+                    row["Number of People"] = 3;
+                }
+                 
 
                 //Añadir la fila a la tabla.
 
                 dt.Rows.Add(row);
             }
 
-            CrystalReport1 cr = new CrystalReport1();
+            NumberOfProfiles cr = new NumberOfProfiles();
 
-            cr.Database.Tables["TablaEmple"].SetDataSource(dt);
+            cr.Database.Tables["ProjectProfile"].SetDataSource(dt);
 
             visor.ViewerCore.ReportSource = cr;
+        }
 
+        private void btnMostrarInforme_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if(cbInforme.SelectedValue.Equals("Cost by project"))
+            {
+                cargarInforme();
+            }
+            else if(cbInforme.SelectedValue.Equals("Number of profiles"))
+            {
+                cargarInforme2();
+            }
+            
         }
     }
 }

@@ -270,14 +270,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GESTPRO.exe" size="126392">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GESTPRO.exe" size="187320">
       <assemblyIdentity name="GESTPRO" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aTUURxk2l8lIOzyJ0vvtln7iucKoexWcIY6ZKO+HJB0=</dsig:DigestValue>
+        <dsig:DigestValue>ARN1bS8MOAhMeEbNzSRy21OZMFqjZ9cIgkK/PqQVJwE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

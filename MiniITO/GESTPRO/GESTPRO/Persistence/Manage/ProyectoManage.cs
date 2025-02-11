@@ -13,15 +13,17 @@ namespace DataGridPerson.Persistence.Manage
 {
     class ProyectoManage
     {
-        public List<Proyecto> listProyecto {  get; set; }   
+        public List<Proyecto> listProyecto {  get; set; }  
+        public List<Empleado> listEmpleado { get; set; }
 
         public ProyectoManage()
         {
             listProyecto = new List<Proyecto>();
+            listEmpleado = new List<Empleado>();
            
         }
 
-        public List<Proyecto> readPeople()
+        public List<Proyecto> readProject()
         {
             /*List<People> list = new List<People>();
             list.Add(new People("Carlos", "Garcia", 20));*/
@@ -40,6 +42,35 @@ namespace DataGridPerson.Persistence.Manage
             return this.listProyecto;
         }
 
+        public List<int> getNumEmple(int idProyecto)
+        {
+         
+        }
+
+        public List<String> getRolesProyecto(int idProyecto)
+        {
+            List<String> listRol = new List<String>();
+            List<Object> fila;
+            fila = DBBroker.obtenerAgente().leer("select r.nombrerol from mydb.rol r inner join mydb.empleado e on r.idrol = e.rol_idrol inner join mydb.proyecto_has_empleado pe on pe.idempleado = e.idempleado where pe.idproyecto = " + idProyecto);
+            foreach(Object aux in fila)
+            {
+                listRol.Add(aux.ToString());
+            }
+            return listRol;
+        }
+        public string getDate(int idProyecto)
+        {
+            Object fila;
+            fila = DBBroker.obtenerAgente().leer("select fecha from mydb.proyecto_has_empleado where idproyecto = " + idProyecto);
+            return (string) fila;
+        }
+
+        public int totalCost(int idProyecto)
+        {
+            Object fila;
+            fila = DBBroker.obtenerAgente().leer("select sum(costes) from mydb.proyecto_has_empleado where idproyecto = " + idProyecto);
+            return (int) fila;
+        }
         public void insertPeople(Proyecto p)
         {
             DBBroker dBBroker = DBBroker.obtenerAgente();

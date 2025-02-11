@@ -170,10 +170,16 @@
     <Compile Include="Persistence\Manage\EmpleadoManage.cs" />
     <Compile Include="Persistence\Manage\ProyectoManage.cs" />
     <Compile Include="Persistence\Manage\UsuarioManage.cs" />
-    <Compile Include="view\CrystalReport1.cs">
+    <Compile Include="view\CostByProject.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>CostByProject.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="view\NumberOfProfiles.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NumberOfProfiles.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="view\MainWindow.xaml.cs">
@@ -199,9 +205,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\CrystalReport1.rpt">
+    <EmbeddedResource Include="view\CostByProject.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>CostByProject.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\NumberOfProfiles.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NumberOfProfiles.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="GESTPRO_TemporaryKey.pfx" />
     <None Include="packages.config" />
