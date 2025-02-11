@@ -32,7 +32,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -216,10 +216,6 @@
     <None Include="Persistence\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="Properties\DataSources\GESTPRO.Persistence.DataSet1+DataTable1DataTable.datasource" />
-    <None Include="Properties\DataSources\GESTPRO.Persistence.DataSet1+DataTable1Row.datasource" />
-    <None Include="Properties\DataSources\GESTPRO.Persistence.DataSet1+DataTable1RowChangeEvent.datasource" />
-    <None Include="Properties\DataSources\GESTPRO.Persistence.DataSet1+DataTable1RowChangeEventHandler.datasource" />
     <None Include="Properties\DataSources\GESTPRO.Persistence.DataSet1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

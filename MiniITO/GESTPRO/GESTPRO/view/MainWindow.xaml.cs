@@ -271,8 +271,8 @@ namespace GESTPRO
                 //Creo la fila
                 DataRow row = dt.NewRow();
                 row["Nombre"] = emple.Name;
-                row["Apellido"] = emple.Name;
-                row["CSR"] = emple.Name;
+                row["Apellido"] = "Baldomero";
+                row["CSR"] = 8.50;
 
                 //Añadir la fila a la tabla.
 
