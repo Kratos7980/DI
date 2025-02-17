@@ -51,10 +51,14 @@ namespace DataGridPerson.Persistence.Manage
         {
             List<String> listRol = new List<String>();
             List<Object> fila;
-            fila = DBBroker.obtenerAgente().leer("select r.nombrerol from mydb.rol r inner join mydb.empleado e on r.idrol = e.rol_idrol inner join mydb.proyecto_has_empleado pe on pe.idempleado = e.idempleado where pe.idproyecto = " + idProyecto);
-            foreach(Object aux in fila)
+            fila = DBBroker.obtenerAgente().leer("select r.nombrerol from mydb.rol r inner join mydb.empleado e on r.idrol = e.rol_idrol inner join mydb.proyecto_has_empleado pe on pe.idempleado = e.idempleado where pe.idproyecto = "
+                                                 + idProyecto + "group by pe.idproyecto)");
+            foreach(List<Object> aux in fila)
             {
-                listRol.Add(aux.ToString());
+                for(int i = 0; i < aux.Count(); i++)
+                {
+                    listRol.Add(aux[i].ToString());
+                }  
             }
             return listRol;
         }

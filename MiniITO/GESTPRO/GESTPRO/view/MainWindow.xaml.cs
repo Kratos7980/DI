@@ -152,7 +152,7 @@ namespace GESTPRO
                         String nombre = listN[random.Next(0, listN.Count)];
                         String codigo = "MTR" + i + nombre + DateTime.Now.Year;
                         Proyecto p = new Proyecto(codigo, nombre);
-                        p.insert();
+                        p.insert();  
                         p.last();
                         ((List<Proyecto>)dataProjecto.ItemsSource).Add(p);
                         dataProjecto.Items.Refresh();
