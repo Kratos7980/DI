@@ -1,6 +1,4 @@
-﻿using DataGridPerson.Persistence;
-using GESTPRO.model;
-using GESTPRO.view;
+﻿using GESTPRO.model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,30 +12,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GESTPRO
+namespace GESTPRO.view
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para MainWindow2.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow2 : Window
     {
-        private List<Proyecto> list;
-
-        private DataTable dt;
-
-        private List<Empleado> listEmpleado;
-        private List<Proyecto> listProjects;
-        public MainWindow()
+        public MainWindow2()
         {
             InitializeComponent();
             Proyecto proyecto = new Proyecto();
             Usuario usuario = new Usuario();
             Empleado empleado = new Empleado();
             proyecto.readP();
-            
+
             listEmpleado = empleado.getListEmpleado();
             listProjects = proyecto.getListProyectos();
             dataProjecto.ItemsSource = proyecto.getListProyectos();
@@ -52,7 +43,7 @@ namespace GESTPRO
             textCodigo.Text = "";
             textNombre.Text = "";
 
-            
+
         }
 
         /// <summary>Actuar cuan el texto de textBuscar cambia</summary>
@@ -101,7 +92,7 @@ namespace GESTPRO
         private void btnAñadir_Click(object sender, RoutedEventArgs e)
         {
             start();
-            
+
         }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
@@ -143,7 +134,7 @@ namespace GESTPRO
 
             for (int i = 1; i <= 20; i++)
             {
-                
+
                 if (!btnAñadir.IsEnabled)
                 {
                     if (MessageBox.Show("Do you want to add this project?", "Confimation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
@@ -152,7 +143,7 @@ namespace GESTPRO
                         String nombre = listN[random.Next(0, listN.Count)];
                         String codigo = "MTR" + i + nombre + DateTime.Now.Year;
                         Proyecto p = new Proyecto(codigo, nombre);
-                        p.insert();  
+                        p.insert();
                         p.last();
                         ((List<Proyecto>)dataProjecto.ItemsSource).Add(p);
                         dataProjecto.Items.Refresh();
@@ -170,7 +161,7 @@ namespace GESTPRO
                 }
                 start();
             }
-            
+
         }
 
         private void btnDarAlta_Click(object sender, RoutedEventArgs e)
@@ -266,17 +257,17 @@ namespace GESTPRO
             btnModifyEmpleado.IsEnabled = false;
             btnDelEmpleado.IsEnabled = false;
         }
-
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void cargarInforme()
         {
-           
+
             //Inicializar tabla
             dt = new DataTable("TablaProyecto");
 
             //Crear columnas
             dt.Columns.Add("Project");
             dt.Columns.Add("Month/Year");
-            dt.Columns.Add("Total Cost");
+            dt.Columns.Add("Total Cost", typeof(Decimal));
 
             //Meter contenido a la tabla
 
@@ -299,7 +290,7 @@ namespace GESTPRO
             visor.ViewerCore.ReportSource = cr;
 
         }
-
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void cargarInforme2()
         {
             //Inicializar tabla
@@ -313,7 +304,7 @@ namespace GESTPRO
 
             //Meter contenido a la tabla
 
-            
+
             foreach (Proyecto project in listProjects)
             {
                 List<String> list = project.getListRoles(Int32.Parse(project.id));
@@ -326,7 +317,7 @@ namespace GESTPRO
                     row["Employe Profile"] = role;
                     row["Number of People"] = 3;
                 }
-                 
+
 
                 //Añadir la fila a la tabla.
 
@@ -342,16 +333,50 @@ namespace GESTPRO
 
         private void btnMostrarInforme_Click(object sender, RoutedEventArgs e)
         {
-            
-            if(cbInforme.SelectedValue.Equals("Cost by project"))
+
+            if (cbInforme.SelectedValue.Equals("Cost by project"))
             {
                 cargarInforme();
             }
-            else if(cbInforme.SelectedValue.Equals("Number of profiles"))
+            else if (cbInforme.SelectedValue.Equals("Number of profiles"))
             {
                 cargarInforme2();
             }
-            
+
         }
+
+        //Ejemplo pablo
+        //private void cargarinforme1()
+        //{
+        //    dataTable1 = new DataTable("DataTable1");
+
+        //    dataTable1.Columns.Add("Proyecto");
+        //    dataTable1.Columns.Add("Mes/Año");
+        //    dataTable1.Columns.Add("Coste Total", typeof(Decimal));
+
+        //    lstInforme1 = informe1.GetInforme1s();
+
+        //    foreach (var item in lstInforme1)
+        //    {
+        //        // Crear una columna de datos en la tabla creada.
+        //        DataRow row = dataTable1.NewRow();
+
+        //        row["Proyecto"] = item.Nombre;
+        //        row["Mes/Año"] = item.Fecha;
+        //        row["Coste Total"] = item.Total;
+        //        dataTable1.Rows.Add(row);
+        //    }
+
+        //    // Crear una instancia de crystalreport
+        //    CrystalReport1 report = new CrystalReport1();
+
+        //    // incluimos el datasource al crystal report
+        //    report.Database.Tables["DataTable1"].SetDataSource((DataTable)dataTable1);
+
+        //    // asignamos el informe para crystalreportview
+        //    vcrInforme1.ViewerCore.ReportSource = report;
+        //}
     }
+
+}
 }
