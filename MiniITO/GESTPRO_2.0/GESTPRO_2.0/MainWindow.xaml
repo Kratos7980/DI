@@ -7,6 +7,230 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <DockPanel Background="Violet">
+            <TextBlock Grid.Row="0" Text="GESTPRO" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Background="Violet" />
+        </DockPanel>
+
+
+        <TabControl TabStripPlacement="Left" Margin="10,20" Grid.Row="1">
+            <TabItem Header="INICIO" Background="LightPink">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <StackPanel Orientation="Vertical" Margin="10, 60,10,0" Grid.Column="0">
+                            <Button Content="PROYECTOS" Background="LightPink"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10,20,10,0">
+                            <Button Content="EMPLEADOS" Background="LightPink"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10, 20,10,0" Grid.Column="0">
+                            <Button Content="G.ECONOMIA" Background="LightPink"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <StackPanel Orientation="Vertical" Margin="10,60,10,0" Grid.Column="1">
+                            <Button Content="ESTADÍSTICAS" Background="LightPink"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10,20,10,0" Grid.Column="1">
+                            <Button Content="USUARIOS" Background="LightPink"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <DockPanel Grid.Column="3">
+                        <!--<Image x:Name="imgHoja" Tag="Hoja" Source="../image/hoja.png" Height="217" Width="171" DockPanel.Dock="Left"/>
+                        <Image x:Name="imgLogo" Tag="Logo" Source="../image/logoMaestre.png" Height="64" Width="203" DockPanel.Dock="Bottom"/>-->
+                        <TextBlock DockPanel.Dock="Top"/>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="PROYECTO" Background="LightPink" x:Name="itemProyecto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.2*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0,0,280,0" Grid.Row="0" Orientation="Vertical">
+                        <TextBox Margin="50,50,50,0" x:Name="textBuscar" TextChanged="textBuscar_TextChanged"/>
+                        <ListBox Margin="50,10,50,0" x:Name="listProyects" BorderBrush="Black"/>
+
+                        <DataGrid Margin="40" AutoGenerateColumns="False" x:Name="dataProjecto" SelectionChanged="dataProyecto_SelectionChanged">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Codigo Proyecto" Binding="{Binding id}"/>
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding name}"/>
+                                <DataGridTextColumn Header="Fecha Inicio" Binding="{Binding FechaI}"/>
+                                <DataGridTextColumn Header="Fecha Fin" Binding="{Binding FechaF}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="410,0,0,0" Grid.Row="0">
+                        <Button Content="CARGAR DATOS" Width="100" Margin="0,0,120,0" Click="btnCargarDatos_Click" x:Name="btnCargarDat"/>
+                        <!--<Image x:Name="imgHoja2" Tag="Hoja" Source="../image/hoja.png" Height="37" Width="61" Margin="200,10,0,0"/>-->
+                        <Label Content="Código Proyecto" Margin="30,0,110,0"/>
+                        <TextBox x:Name="textCodigo" Margin="20,0,20,0" Height="30"/>
+                        <Label Content="Nombre" Margin="30,0,140,0"/>
+                        <TextBox x:Name="textNombre" Margin="20,0,20,0" Height="30"/>
+                        <Label Content="Fecha Inicio" Margin="30,0,140,0"/>
+                        <TextBox x:Name="textFechaI" Margin="20,0,20,0" Height="30"/>
+                        <Label Content="Fecha Final" Margin="30,0,140,0"/>
+                        <TextBox x:Name="textFechaF" Margin="20,0,20,0" Height="30"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                        <!--<Image x:Name="imgLogo1" Tag="Logo" Source="../image/logoMaestre.png" Width="178" Height="49" Margin="0,0,50,0"/>-->
+                        <Button x:Name="btnAñadir" Width="120" Height="20" Content="Añandir" Margin="0,0,20,0" Click="btnAñadir_Click"/>
+                        <Button x:Name="btnModificar" Width="120" Height="20" Content="Modificar" Margin="0,0,20,0" Click="btnModificar_Click"/>
+                        <Button x:Name="btnEliminar" Width="120" Height="20" Content="Eliminar" Click="btnEliminar_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="EMPLEADOS" Background="LightPink">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="282*"/>
+                        <RowDefinition Height="67*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="0,0,342,20" Grid.ColumnSpan="2">
+                        <ListBox Grid.Column="0"/>
+                        <DataGrid AutoGenerateColumns="False" x:Name="dtgEmpleados">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="IdEmpleado" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="CRS" Binding="{Binding Crs}"/>
+                                <!--<DataGridTextColumn Header="Total" Binding="{Binding FechaF}"/>-->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="0,0,0,30" VerticalAlignment="Bottom">
+                        <CheckBox Content="Usuario ya registrado" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0" Checked="CheckBox_RegisteredUser"/>
+                        <CheckBox Content="Usuario no registrado" Width="150" HorizontalAlignment="Left" Margin="20,5,0,0" Checked="CheckBox_NotRegisteredUser"/>
+                        <Button Content="Añadir" Width="90" HorizontalAlignment="Right" Margin="0,0,10,0" Click="btnAddEmpleado_Click" x:Name="btnAddEmpleado"/>
+                    </StackPanel>
+                    <Separator Margin="0,260,0,0" Grid.Column="0" Grid.Row="0"/>
+                    <Separator Margin="0,260,0,0" Grid.Column="1" Grid.Row="0"/>
+
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                        <Label Content="Nombre" HorizontalAlignment="Center" Margin="0,0,40,0"/>
+                        <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtNombreEmpleado"/>
+                        <Label Content="Apellidos" HorizontalAlignment="Center" Margin="0,0,30,0"/>
+                        <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtApellidoEmpleado"/>
+                        <Label Content="ROL" HorizontalAlignment="Center" Margin="0,0,60,0"/>
+                        <ComboBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="cbRoles">
+                            <ComboBoxItem Content="PROGRAMADOR_JUNIOR"/>
+                            <ComboBoxItem Content="PROGRAMADOR"/>
+                            <ComboBoxItem Content="PROGRAMADOR_SENIOR"/>
+                            <ComboBoxItem Content="JEFE_PROYECTO"/>
+                        </ComboBox>
+                        <Label Content="CSR" HorizontalAlignment="Center" Margin="0,0,60,0"/>
+                        <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtCSR"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Margin="0,0,0,30">
+                        <Button Content="Modificar" Width="90" Height="20" HorizontalAlignment="Left" Margin="10,23,0,0" Click="btnModifyEmpleado_Click" x:Name="btnModifyEmpleado"/>
+                        <Button Content="Eliminar" Width="90" Height="20" HorizontalAlignment="Left" Margin="20,23,0,0" Click="btnDelEmpleado_Click" x:Name="btnDelEmpleado"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+                        <ComboBox Width="130" Height="20" HorizontalAlignment="Left" Margin="60,0,0,0" x:Name="cbUsuarios"/>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="60,0,0,0">
+                            <Label Content="Usuario"/>
+                            <TextBox Width="100" x:Name="txtRegUsuario"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="60,0,0,0">
+                            <Label Content="Password"/>
+                            <TextBox Width="100" x:Name="txtRegPassword"/>
+                        </StackPanel>
+                        <Button Content="Registrar y recargar" Height="25" HorizontalAlignment="Right" Margin="50,0,0,0" Click="btnRegistrarUsuario_Click" x:Name="btnRegistrarUsuario"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="G.ECONOMIA" Background="LightPink">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="0">
+                        <DataGrid AutoGenerateColumns="False" x:Name="dtgGestion">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="NombreEmpleado"/>
+                                <DataGridTextColumn Header="NombreProyecto"/>
+                                <DataGridTextColumn Header="Hours"/>
+                                <DataGridTextColumn Header="Date"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,0,0,20">
+                        <Button Content="Imputar horas" VerticalAlignment="Bottom" Width="90" Margin="250,0,0,0" Click="btnImputHoras_Click" x:Name="btnImputHoras" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                        <Label Content="Proyecto" HorizontalAlignment="Center" Margin="0,0,40,0"/>
+                        <ComboBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="cbProyectos"/>
+                        <Label Content="Empleado" HorizontalAlignment="Center" Margin="0,0,30,0"/>
+                        <ComboBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="cbEmpleados"/>
+                        <Label Content="Fecha" HorizontalAlignment="Center" Margin="0,0,60,0"/>
+                        <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtFecha"/>
+                        <Label Content="Horas" HorizontalAlignment="Center" Margin="0,0,60,0"/>
+                        <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtHoras"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,0,0,20" Grid.Column="1">
+                        <Button Content="Modificar" HorizontalAlignment="Left" Width="90" Margin="10,0,0,0" Click="btnModificarGestion_Click" x:Name="btnModificarGestion" />
+                        <Button Content="Eliminar"  Width="90" Margin="15,0,0,0" Click="btnEliminarGestion_Click" x:Name="btnEliminarGestion"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="ESTADÍSTICAS" Background="LightPink">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <ComboBox Grid.Row="0" Height="30" Width="150" Margin="95,18,430,10" Name="cbInforme">
+                        <ComboBoxItem Content="Number of profiles"></ComboBoxItem>
+                        <ComboBoxItem Content="Cost by project"></ComboBoxItem>
+                    </ComboBox>
+                    <Button Name="btnMostrarInforme" Click="btnMostrarInforme_Click" Height="30" Width="100" Content="Mostrar Informe"/>
+                    <!--<Viewer:CrystalReportsViewer Name="visor" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>
+                    <Viewer:CrystalReportsViewer Name="visor2" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>-->
+                </Grid>
+            </TabItem>
+            <TabItem Header="USUARIOS" Background="LightPink">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,342,82">
+                        <DataGrid AutoGenerateColumns="False" Margin="0,60,0,0" x:Name="dtgUsuarios">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="IdUsuario" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding Name}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,220,0,0" Grid.ColumnSpan="2">
+                        <Button Content="Dar de Alta" Width="120" Height="20" Click="btnDarAlta_Click" x:Name="btnDarAlta"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                        <Label Content="Usuario" Width="61" Height="27" Margin="10,100,0,0"/>
+                        <TextBox Width="200" Margin="100,0,0,0" x:Name="txtUsuario"/>
+                        <Label Content="Password" Width="61" Height="27" Margin="10,10,0,0"/>
+                        <TextBox Width="200" Margin="100,0,0,0" x:Name="txtPassword"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                            <Button Content="Eliminar" Width="100" Margin="0,45,10,0" Click="btnDelUsuario_Click" x:Name="btnDelUsuario"/>
+                            <Button Content="Actualizar Contraseña" Width="120" Margin="10,45,160,0" Click="btnActualizarContraseña_Click" x:Name="btnActualizarContraseña"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
