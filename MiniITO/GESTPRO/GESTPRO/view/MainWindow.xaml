@@ -1,11 +1,11 @@
-﻿<Window x:Class="GESTPRO.view.MainWindow2"
+﻿<Window x:Class="GESTPRO.view.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GESTPRO.view"
         mc:Ignorable="d"
-        Title="MainWindow2" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
@@ -158,7 +158,6 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-
                     <StackPanel Orientation="Vertical" Grid.Column="0">
                         <DataGrid AutoGenerateColumns="False" x:Name="dtgGestion">
                             <DataGrid.Columns>
@@ -199,10 +198,8 @@
                         <ComboBoxItem Content="Cost by project"></ComboBoxItem>
                     </ComboBox>
                     <Button Name="btnMostrarInforme" Click="btnMostrarInforme_Click" Height="30" Width="100" Content="Mostrar Informe"/>
-
                     <!--<Viewer:CrystalReportsViewer Name="visor" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>
                     <Viewer:CrystalReportsViewer Name="visor2" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>-->
-
                 </Grid>
             </TabItem>
             <TabItem Header="USUARIOS" Background="LightPink">
@@ -234,7 +231,6 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-
         </TabControl>
     </Grid>
 </Window>
