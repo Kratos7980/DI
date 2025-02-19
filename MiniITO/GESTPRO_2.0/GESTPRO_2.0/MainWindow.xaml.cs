@@ -29,12 +29,12 @@ namespace GESTPRO_2._0
 
             //listEmpleado = empleado.getListEmpleado();
             //listProjects = proyecto.getListProyectos();
-            dataProjecto.ItemsSource = proyecto.getListProyectos();
-            dtgUsuarios.ItemsSource = usuario.getListUsuarios();
-            dtgEmpleados.ItemsSource = empleado.getListEmpleado();
-            cbEmpleados.ItemsSource = empleado.getListEmpleado();
-            cbProyectos.ItemsSource = proyecto.getListProyectos();
-            cbUsuarios.ItemsSource = usuario.getListUsuarios();
+            //dataProjecto.ItemsSource = proyecto.getListProyectos();
+            //dtgUsuarios.ItemsSource = usuario.getListUsuarios();
+            //dtgEmpleados.ItemsSource = empleado.getListEmpleado();
+            //cbEmpleados.ItemsSource = empleado.getListEmpleado();
+            //cbProyectos.ItemsSource = proyecto.getListProyectos();
+            //cbUsuarios.ItemsSource = usuario.getListUsuarios();
 
             btnEliminar.IsEnabled = false;
             btnAñadir.IsEnabled = false;
