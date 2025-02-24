@@ -397,7 +397,7 @@ namespace FormularioExamen {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GESTPRO;component/view/pantallaprincipal.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GESTPRO;V1.0.0.0;component/view/pantallaprincipal.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\view\PantallaPrincipal.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

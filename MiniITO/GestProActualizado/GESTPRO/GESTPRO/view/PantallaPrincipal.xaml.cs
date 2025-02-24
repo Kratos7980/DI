@@ -366,5 +366,14 @@ namespace FormularioExamen
             //MessageBox.Show("Contraseña actualizada correctamente");
         }
 
+        private void dtgEmpleados_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void dtgUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

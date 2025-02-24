@@ -160,7 +160,7 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="0,0,342,20" Grid.ColumnSpan="2" Grid.RowSpan="2">
                         <ListBox Grid.Column="0" Margin="9"></ListBox>
-                        <DataGrid AutoGenerateColumns="False" x:Name="dtgEmpleados" Margin="9">
+                        <DataGrid AutoGenerateColumns="False" x:Name="dtgEmpleados" Margin="9" SelectionChanged="dtgEmpleados_SelectionChanged">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="IdEmpleado" Binding="{Binding Id}"/>
                                 <DataGridTextColumn Header="Nombre" Binding="{Binding Name}"/>
@@ -405,10 +405,10 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Column="0">
-                        <DataGrid AutoGenerateColumns="False" x:Name="dtgUsuarios" Background="AliceBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30">
+                        <DataGrid AutoGenerateColumns="False" x:Name="dtgUsuarios" Background="AliceBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30" SelectionChanged="dtgUsuarios_SelectionChanged">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="IdUsuario" Binding="{Binding Id}"/>
-                                <DataGridTextColumn Header="Nombre" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="IdUsuario" Binding="{Binding idusuario}"/>
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding nombreusuario}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
