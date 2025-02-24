@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KRATOS\\Desktop\\GESTPRO\\GESTPRO\\GESTPRO.csproj": {}
+    "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GestProActualizado\\GESTPRO\\GESTPRO\\GESTPRO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KRATOS\\Desktop\\GESTPRO\\GESTPRO\\GESTPRO.csproj": {
+    "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GestProActualizado\\GESTPRO\\GESTPRO\\GESTPRO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KRATOS\\Desktop\\GESTPRO\\GESTPRO\\GESTPRO.csproj",
+        "projectUniqueName": "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GestProActualizado\\GESTPRO\\GESTPRO\\GESTPRO.csproj",
         "projectName": "GESTPRO",
-        "projectPath": "C:\\Users\\KRATOS\\Desktop\\GESTPRO\\GESTPRO\\GESTPRO.csproj",
-        "packagesPath": "C:\\Users\\KRATOS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KRATOS\\Desktop\\GESTPRO\\GESTPRO\\obj\\",
+        "projectPath": "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GestProActualizado\\GESTPRO\\GESTPRO\\GESTPRO.csproj",
+        "packagesPath": "C:\\Users\\dam2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GestProActualizado\\GESTPRO\\GESTPRO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KRATOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dam2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

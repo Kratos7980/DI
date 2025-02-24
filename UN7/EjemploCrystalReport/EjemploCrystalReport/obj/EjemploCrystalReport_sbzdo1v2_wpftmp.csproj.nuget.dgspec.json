@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GESTPRO_2.0\\GESTPRO_2.0\\GESTPRO_2.0.csproj": {}
+    "C:\\Users\\dam2\\Documents\\GitHub\\DI\\UN7\\EjemploCrystalReport\\EjemploCrystalReport\\EjemploCrystalReport.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GESTPRO_2.0\\GESTPRO_2.0\\GESTPRO_2.0.csproj": {
+    "C:\\Users\\dam2\\Documents\\GitHub\\DI\\UN7\\EjemploCrystalReport\\EjemploCrystalReport\\EjemploCrystalReport.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GESTPRO_2.0\\GESTPRO_2.0\\GESTPRO_2.0.csproj",
-        "projectName": "GESTPRO_2.0",
-        "projectPath": "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GESTPRO_2.0\\GESTPRO_2.0\\GESTPRO_2.0.csproj",
+        "projectUniqueName": "C:\\Users\\dam2\\Documents\\GitHub\\DI\\UN7\\EjemploCrystalReport\\EjemploCrystalReport\\EjemploCrystalReport.csproj",
+        "projectName": "EjemploCrystalReport",
+        "projectPath": "C:\\Users\\dam2\\Documents\\GitHub\\DI\\UN7\\EjemploCrystalReport\\EjemploCrystalReport\\EjemploCrystalReport.csproj",
         "packagesPath": "C:\\Users\\dam2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dam2\\Documents\\GitHub\\DI\\MiniITO\\GESTPRO_2.0\\GESTPRO_2.0\\obj\\",
+        "outputPath": "C:\\Users\\dam2\\Documents\\GitHub\\DI\\UN7\\EjemploCrystalReport\\EjemploCrystalReport\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dam2\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,16 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "CrystalReports.Engine": {
+              "target": "Package",
+              "version": "[13.0.4003, )"
+            },
+            "CrystalReports.Shared": {
+              "target": "Package",
+              "version": "[13.0.4003, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

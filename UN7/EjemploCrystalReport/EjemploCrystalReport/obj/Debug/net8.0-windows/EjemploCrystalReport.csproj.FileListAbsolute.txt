@@ -1,0 +1,5 @@
+C:\Users\dam2\Documents\GitHub\DI\UN7\EjemploCrystalReport\EjemploCrystalReport\obj\Debug\net8.0-windows\EjemploCrystalReport.csproj.AssemblyReference.cache
+C:\Users\dam2\Documents\GitHub\DI\UN7\EjemploCrystalReport\EjemploCrystalReport\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+C:\Users\dam2\Documents\GitHub\DI\UN7\EjemploCrystalReport\EjemploCrystalReport\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\dam2\Documents\GitHub\DI\UN7\EjemploCrystalReport\EjemploCrystalReport\obj\Debug\net8.0-windows\EjemploCrystalReport_MarkupCompile.cache
+C:\Users\dam2\Documents\GitHub\DI\UN7\EjemploCrystalReport\EjemploCrystalReport\obj\Debug\net8.0-windows\EjemploCrystalReport_MarkupCompile.lref

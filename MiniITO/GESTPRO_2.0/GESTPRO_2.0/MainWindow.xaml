@@ -198,8 +198,8 @@
                         <ComboBoxItem Content="Cost by project"></ComboBoxItem>
                     </ComboBox>
                     <Button Name="btnMostrarInforme" Click="btnMostrarInforme_Click" Height="30" Width="100" Content="Mostrar Informe"/>
-                    <!--<Viewer:CrystalReportsViewer Name="visor" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>
-                    <Viewer:CrystalReportsViewer Name="visor2" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>-->
+                    <Viewer:CrystalReportsViewer Name="visor" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>
+                    <Viewer:CrystalReportsViewer Name="visor2" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Height="312" Width="685"/>
                 </Grid>
             </TabItem>
             <TabItem Header="USUARIOS" Background="LightPink">
