@@ -1,0 +1,172 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamenJesusVelasco"
+        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" x:Class="ExamenJesusVelasco.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl x:Name="tabControl">
+            <TabItem Header="Socios">
+                <Grid Background="MediumPurple">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label Content="Nombre:" Margin="20,1,0,0"/>
+                        <TextBox x:Name="txtNombre" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+
+                        <Label Content="Fecha de Nacimiento" Margin="20,10,0,0"/>
+                        <DatePicker x:Name="datePicker" Margin="20,0,0,0" />
+
+                        <Label Content="Email" Margin="20,10,0,0"/>
+                        <TextBox x:Name="txtEmail" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+
+                        <Label Content="Telefono" Margin="20,10,0,0"/>
+                        <TextBox x:Name="txtTelf" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+
+                        <Button x:Name="btnAgregarSocio" Background="Purple" Foreground="White" Content="Agregar" Margin="15,40,15,0" Click="btnAgregarSocio_Click" FontWeight="Bold"/>
+                        <StackPanel Height="100"/>
+                    </StackPanel>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <Button x:Name="btnModificarSocio" Background="Purple" Foreground="White" Content="Modificar" Width="80" Height="25" Click="btnModificarSocio_Click" Margin="30,0,0,0" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,30,0">
+                            <Button x:Name="btnEliminarSocio" Background="Purple" Foreground="White" Content="Eliminar" Width="80" Height="25" VerticalAlignment="Center" HorizontalAlignment="Right" Click="btnEliminarSocio_Click" FontWeight="Bold"/>
+                        </StackPanel>
+                        <DataGrid x:Name="dataGridSocio" Grid.Row="0" AutoGenerateColumns="False"  CanUserAddRows="False" SelectionChanged="dataGridPersonas_SelectionChanged" Background="#FFE8D9F3" BorderBrush="#FF688CAF">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                                <DataGridTextColumn Header="Fecha" Binding="{Binding FechaNacimiento}"/>
+                                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                                <DataGridTextColumn Header="Telefono" Binding="{Binding Telefono}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Libros">
+                <Grid Background="MediumPurple">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label Content="Titulo:" Margin="20,1,0,0"/>
+                        <TextBox x:Name="txtNombreLibro" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+
+                        <Label Content="Autor:" Margin="20,10,0,0"/>
+                        <TextBox x:Name="txtAutor" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0" />
+
+                        <Label Content="Genero:" Margin="20,10,0,0"/>
+                        <ComboBox x:Name="cbGenero" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+
+                        <Label Content="Año" Margin="20,10,0,0"/>
+                        <TextBox x:Name="txtAñoLibro" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+
+                        <Button x:Name="btnAgregarLibro" Background="Purple" Foreground="White" Content="Agregar" Margin="15,40,15,0" Click="btnAgregarLibro_Click" FontWeight="Bold"/>
+                        <StackPanel Height="100"/>
+                    </StackPanel>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <Button x:Name="btnModificarLibro" Background="Purple" Foreground="White" Content="Modificar" Width="80" Height="25" Click="btnModificarLibro_Click" Margin="30,0,0,0" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,30,0">
+                            <Button x:Name="btnEliminarLibro" Background="Purple" Foreground="White" Content="Eliminar" Width="80" Height="25" VerticalAlignment="Center" HorizontalAlignment="Right" Click="btnEliminarLibro_Click" FontWeight="Bold"/>
+                        </StackPanel>
+                        <DataGrid x:Name="dataGridLibro" Grid.Row="0" AutoGenerateColumns="False"  CanUserAddRows="False" SelectionChanged="dataGridLibro_SelectionChanged" Background="#FFE8D9F3" BorderBrush="#FF688CAF">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Titulo" Binding="{Binding Titulo}"/>
+                                <DataGridTextColumn Header="Autor" Binding="{Binding Autor}"/>
+                                <DataGridTextColumn Header="Año" Binding="{Binding Año}"/>
+                                <DataGridTextColumn Header="IDGenero" Binding="{Binding Genero}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Prestamos">
+                <Grid Background="MediumPurple">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label Content="Socio:" Margin="20,1,0,0"/>
+                        <ComboBox x:Name="cbSocioP" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+
+                        <Label Content="Libro:" Margin="20,10,0,0"/>
+                        <ComboBox x:Name="cbLibroP" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0" />
+
+                        <Label Content="Fecha Prestamo:" Margin="20,10,0,0"/>
+                        <DatePicker x:Name="dateFechaP" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+
+                        <Label Content="Fecha Devolucion:" Margin="20,10,0,0"/>
+                        <DatePicker x:Name="dateFechaD" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+
+                        <Button x:Name="btnAgregarPrestamo" Background="Purple" Foreground="White" Content="Agregar" Margin="15,40,15,0" Click="btnAgregarPrestamo_Click" FontWeight="Bold"/>
+                        <StackPanel Height="100"/>
+                    </StackPanel>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="33*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                            <Button x:Name="btnModificarPrest" Background="Purple" Foreground="White" Content="Modificar" Width="80" Height="25" Click="btnModificarPrest_Click" Margin="30,0,0,0" FontWeight="Bold"/>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="452,0,0,0" Grid.Column="1">
+                            <Button x:Name="btnEliminarPrest" Background="Purple" Foreground="White" Content="Eliminar" Width="80" Height="25" VerticalAlignment="Center" HorizontalAlignment="Right" Click="btnEliminarPrest_Click" FontWeight="Bold"/>
+                        </StackPanel>
+                        <DataGrid x:Name="dataGridPrestamos" Grid.Row="0" AutoGenerateColumns="True"  CanUserAddRows="False" SelectionChanged="dataGridLibro_SelectionChanged" Background="#FFE8D9F3" BorderBrush="#FF688CAF" Grid.ColumnSpan="2" Margin="0,0,0,45" Grid.RowSpan="2"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabEstadisticas" Header="ESTADÍSTICAS">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="btnGenerar" Content="Generar Informe Libros/Genero" Width="180" Height="40" Margin="20,0,20,0" Click="btnGenerar_Click"/>
+                        
+                        <StackPanel Margin="3" Orientation="Vertical">
+                            <Label Content="Mes:"></Label>
+                            <TextBox x:Name="txtMes"></TextBox>
+                        </StackPanel>
+                        <StackPanel Margin="3" Orientation="Vertical">
+                            <Label Content="Año:"></Label>
+                            <TextBox x:Name="txtAnio"></TextBox>
+                        </StackPanel>
+                        <Button x:Name="btnGenerar2" Content="Generar Informe Mensual" Width="140" Height="40" Margin="20,0,0,0" Click="btnGenerar2_Click"/>
+
+
+                    </StackPanel>
+
+                    <Viewer:CrystalReportsViewer x:Name="crViewer" Grid.Row="1"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
