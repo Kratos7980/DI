@@ -263,7 +263,6 @@ namespace GUESTPRO
             empleado.modificar();
 
             int index = ((List<Empleado>)dtgEmpleados.ItemsSource).FindIndex(emp => emp.idempleado == empleado.idempleado);
-            int index2 = ((List<Empleado>)cbEmpleados.ItemsSource).FindIndex(emp => emp.idempleado == empleado.idempleado);
 
             ((List<Empleado>)dtgEmpleados.ItemsSource)[index] = empleado;
             dtgEmpleados.Items.Refresh();
