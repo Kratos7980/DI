@@ -23,13 +23,32 @@ namespace TPV_Proyecto.View
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Permite mover la ventana por cualquier parte de la pantalla mientra presionamos el click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.Left = 10;
-            main.Show();
-            
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

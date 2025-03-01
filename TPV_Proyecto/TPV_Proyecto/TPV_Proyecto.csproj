@@ -162,5 +162,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="img\key-icon.png" />
+    <Resource Include="img\user-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\back_image.png" />
+    <Resource Include="img\logo_tpv.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
