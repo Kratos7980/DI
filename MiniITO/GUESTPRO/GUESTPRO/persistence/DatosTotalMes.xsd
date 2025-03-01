@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosTotalMes" targetNamespace="http://tempuri.org/DatosTotalMes.xsd" xmlns:mstns="http://tempuri.org/DatosTotalMes.xsd" xmlns="http://tempuri.org/DatosTotalMes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosTotalMes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DatosTotalMes" msprop:Generator_DataSetName="DatosTotalMes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TOTAL_COSTES_POR_MES" msprop:Generator_RowEvHandlerName="TOTAL_COSTES_POR_MESRowChangeEventHandler" msprop:Generator_RowDeletedName="TOTAL_COSTES_POR_MESRowDeleted" msprop:Generator_RowDeletingName="TOTAL_COSTES_POR_MESRowDeleting" msprop:Generator_RowEvArgName="TOTAL_COSTES_POR_MESRowChangeEvent" msprop:Generator_TablePropName="TOTAL_COSTES_POR_MES" msprop:Generator_RowChangedName="TOTAL_COSTES_POR_MESRowChanged" msprop:Generator_RowChangingName="TOTAL_COSTES_POR_MESRowChanging" msprop:Generator_TableClassName="TOTAL_COSTES_POR_MESDataTable" msprop:Generator_RowClassName="TOTAL_COSTES_POR_MESRow" msprop:Generator_TableVarName="tableTOTAL_COSTES_POR_MES" msprop:Generator_UserTableName="TOTAL_COSTES_POR_MES">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nombre_x0020_proyecto" msprop:Generator_ColumnPropNameInRow="Nombre_proyecto" msprop:Generator_ColumnPropNameInTable="Nombre_proyectoColumn" msprop:Generator_ColumnVarNameInTable="columnNombre_proyecto" msprop:Generator_UserColumnName="Nombre proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="Mes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_UserColumnName="Mes" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

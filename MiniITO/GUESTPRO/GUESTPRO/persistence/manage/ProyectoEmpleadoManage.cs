@@ -30,11 +30,11 @@ namespace GUESTPRO.manage
             return ok;
         }
 
-        public bool cambiarHoras(ProyectoEmpleado pe)
+        public bool modificarProyectosEmpleados(ProyectoEmpleado pe)
         {
             bool ok = false;
 
-            int resultado = DBBroker.getInstancia().update("update mydb.proyecto_has_empleado set horas = " + pe.horas);
+            int resultado = DBBroker.getInstancia().update("update mydb.proyecto_has_empleado set fecha = '" + pe.fecha.ToString("yyyyMMdd") + "', costes = " + pe.costes + ", horas = " + pe.horas + " where idproyecto = " + pe.idproyecto + " and idempleado = " + pe.idempleado);
 
             if (resultado != 0)
             {

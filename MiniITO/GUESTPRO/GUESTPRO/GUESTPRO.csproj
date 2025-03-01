@@ -129,30 +129,47 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="manage\ApiManage.cs" />
-    <Compile Include="manage\EmpleadoManage.cs" />
-    <Compile Include="manage\FacturaManage.cs" />
-    <Compile Include="manage\ProyectoEmpleadoManage.cs" />
-    <Compile Include="manage\ProyectoManage.cs" />
-    <Compile Include="manage\RolManage.cs" />
-    <Compile Include="manage\UsuarioManage.cs" />
+    <Compile Include="persistence\manage\ApiManage.cs" />
+    <Compile Include="persistence\manage\EmpleadoManage.cs" />
+    <Compile Include="persistence\manage\FacturaManage.cs" />
+    <Compile Include="persistence\manage\ProyectoEmpleadoManage.cs" />
+    <Compile Include="persistence\manage\ProyectoManage.cs" />
+    <Compile Include="persistence\manage\RolManage.cs" />
+    <Compile Include="persistence\manage\UsuarioManage.cs" />
     <Compile Include="model\ApiObject.cs" />
+    <Compile Include="model\Country.cs" />
+    <Compile Include="model\Date.cs" />
+    <Compile Include="model\DateTimeDetails.cs" />
     <Compile Include="model\Empleado.cs" />
     <Compile Include="model\Factura.cs" />
+    <Compile Include="model\Holiday.cs" />
+    <Compile Include="model\Meta.cs" />
     <Compile Include="model\Proyecto.cs" />
     <Compile Include="model\ProyectoEmpleado.cs" />
+    <Compile Include="model\Response.cs" />
     <Compile Include="model\Rol.cs" />
     <Compile Include="model\Usuario.cs" />
-    <Compile Include="persistence\DataSet1.Designer.cs">
+    <Compile Include="persistence\DatosProyectos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>DatosProyectos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="persistence\DatosTotalMes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosTotalMes.xsd</DependentUpon>
     </Compile>
     <Compile Include="persistence\DBBroker.cs" />
-    <Compile Include="view\Informe1.cs">
+    <Compile Include="view\InfoProyectos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Informe1.rpt</DependentUpon>
+      <DependentUpon>InfoProyectos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="view\TotalMeses.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotalMeses.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="view\MainWindow.xaml.cs">
@@ -178,27 +195,47 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Informe1.rpt">
+    <EmbeddedResource Include="view\InfoProyectos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Informe1.cs</LastGenOutput>
+      <LastGenOutput>InfoProyectos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\TotalMeses.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TotalMeses.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="persistence\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="persistence\DatosProyectos.xsc">
+      <DependentUpon>DatosProyectos.xsd</DependentUpon>
     </None>
-    <None Include="persistence\DataSet1.xsd">
+    <None Include="persistence\DatosProyectos.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatosProyectos.Designer.cs</LastGenOutput>
     </None>
-    <None Include="persistence\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="persistence\DatosProyectos.xss">
+      <DependentUpon>DatosProyectos.xsd</DependentUpon>
     </None>
-    <None Include="Properties\DataSources\GUESTPRO.persistence.DataSet1+DataTable1DataTable.datasource" />
-    <None Include="Properties\DataSources\GUESTPRO.persistence.DataSet1+DataTable1Row.datasource" />
-    <None Include="Properties\DataSources\GUESTPRO.persistence.DataSet1+DataTable1RowChangeEvent.datasource" />
-    <None Include="Properties\DataSources\GUESTPRO.persistence.DataSet1+DataTable1RowChangeEventHandler.datasource" />
-    <None Include="Properties\DataSources\GUESTPRO.persistence.DataSet1.datasource" />
+    <None Include="persistence\DatosTotalMes.xsc">
+      <DependentUpon>DatosTotalMes.xsd</DependentUpon>
+    </None>
+    <None Include="persistence\DatosTotalMes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosTotalMes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="persistence\DatosTotalMes.xss">
+      <DependentUpon>DatosTotalMes.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosProyectos+DATOS_PROYECTOSDataTable.datasource" />
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosProyectos+DATOS_PROYECTOSRow.datasource" />
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosProyectos+DATOS_PROYECTOSRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosProyectos+DATOS_PROYECTOSRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosProyectos.datasource" />
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosTotalMes+TOTAL_COSTES_POR_MESDataTable.datasource" />
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosTotalMes+TOTAL_COSTES_POR_MESRow.datasource" />
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosTotalMes+TOTAL_COSTES_POR_MESRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosTotalMes+TOTAL_COSTES_POR_MESRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\GUESTPRO.persistence.DatosTotalMes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

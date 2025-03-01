@@ -44,49 +44,6 @@ namespace GUESTPRO.manage
             return ok;
         }
 
-        //public bool cambiarNombreApellidos(Empleado e)
-        //{
-        //    bool ok = false;
-
-        //    int resultado = DBBroker.getInstancia().update("update mydb.empleado set nombreemp = '" + e.nombreemp + "', apellidos = '" + e.apellidos
-        //                                                   + "' where idempleado = " + e.idempleado);
-
-        //    if (resultado != 0)
-        //    {
-        //        ok = true;
-        //    }
-
-        //    return ok;
-        //}
-
-        //public bool cambiarCsr(Empleado e)
-        //{
-        //    bool ok = false;
-
-        //    int resultado = DBBroker.getInstancia().update("update mydb.empleado set csr = " + e.csr + " where idempleado = " + e.idempleado);
-
-        //    if (resultado != 0)
-        //    {
-        //        ok = true;
-        //    }
-
-        //    return ok;
-        //}
-
-        //public bool cambiarRol(Empleado e)
-        //{
-        //    bool ok = false;
-
-        //    int resultado = DBBroker.getInstancia().update("update mydb.empleado set idrol = " + e.idrol + " where idempleado = " + e.idempleado);
-
-        //    if (resultado != 0)
-        //    {
-        //        ok = true;
-        //    }
-
-        //    return ok;
-        //}
-
         public bool eliminarEmpleado(Empleado e)
         {
             bool ok = false;

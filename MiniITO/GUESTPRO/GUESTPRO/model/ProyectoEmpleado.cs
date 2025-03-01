@@ -47,6 +47,16 @@ namespace GUESTPRO.model
             return pem.insertarProyectosEmpleados(this);
         }
 
+        public bool modificar()
+        {
+            return pem.modificarProyectosEmpleados(this);
+        }
+
+        public bool eliminar()
+        {
+            return pem.eliminarProyectosEmpleados(this);
+        }
+
         public List<ProyectoEmpleado> getAllProyEmp()
         {
             return pem.getProyectosEmpleados();

@@ -16,14 +16,14 @@ namespace GUESTPRO.view {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Informe1 : ReportClass {
+    public class InfoProyectos : ReportClass {
         
-        public Informe1() {
+        public InfoProyectos() {
         }
         
         public override string ResourceName {
             get {
-                return "Informe1.rpt";
+                return "InfoProyectos.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace GUESTPRO.view {
         
         public override string FullResourceName {
             get {
-                return "GUESTPRO.view.Informe1.rpt";
+                return "GUESTPRO.view.InfoProyectos.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace GUESTPRO.view {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedInforme1 : Component, ICachedReport {
+    public class CachedInfoProyectos : Component, ICachedReport {
         
-        public CachedInforme1() {
+        public CachedInfoProyectos() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace GUESTPRO.view {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Informe1 rpt = new Informe1();
+            InfoProyectos rpt = new InfoProyectos();
             rpt.Site = this.Site;
             return rpt;
         }

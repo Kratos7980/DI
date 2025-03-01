@@ -29,39 +29,11 @@ namespace GUESTPRO.manage
             return ok;
         }
 
-        //public bool cambianNombreProyecto(Proyecto p)
-        //{
-        //    bool ok = false;
-
-        //    int resultado = DBBroker.getInstancia().update("update mydb.proyecto set nombreproy = '" + p.nombreproy + "' where codigoproy = '" + p.codigoproy + "')");
-
-        //    if (resultado != 0)
-        //    {
-        //        ok = true;
-        //    }
-
-        //    return ok;
-        //}
-
-        //public bool asociarAFactura(Proyecto p)
-        //{
-        //    bool ok = false;
-
-        //    int resultado = DBBroker.getInstancia().update("update mydb.proyecto set idfactura = " + p.idfactura + " where codigoproy = '" + p.codigoproy + "')");
-
-        //    if (resultado != 0)
-        //    {
-        //        ok = true;
-        //    }
-
-        //    return ok;
-        //}
-
         public bool modificarProyecto(Proyecto p)
         {
             bool ok = false;
 
-            int resultado = DBBroker.getInstancia().update("update mydb.proyecto set codigoproy = '" + p.codigoproy + "', p.nombreproy = '" + p.nombreproy +"', descproy = '" + p.descproy + "', presupuesto = " + p.presupuesto +" where idproyecto = " + p.idproyecto);
+            int resultado = DBBroker.getInstancia().update("update mydb.proyecto set codigoproy = '" + p.codigoproy + "', nombreproy = '" + p.nombreproy +"', descproy = '" + p.descproy + "', presupuesto = " + p.presupuesto +" where idproyecto = " + p.idproyecto);
 
             if(resultado != 0)
             {
@@ -74,7 +46,7 @@ namespace GUESTPRO.manage
         {
             bool ok = false;
 
-            int resultado = DBBroker.getInstancia().update("delete from mydb.proyecto where idproyecto = " + p.idproyecto + ")");
+            int resultado = DBBroker.getInstancia().update("delete from mydb.proyecto where idproyecto = " + p.idproyecto);
 
             if (resultado != 0)
             {
@@ -94,12 +66,13 @@ namespace GUESTPRO.manage
             }
             return project;
         }
+
         public Proyecto getProyecto(int idproyecto)
         {
             List<Object> fila;
             Proyecto project = null;
 
-            fila = DBBroker.getInstancia().select("select * from mydb.proyecto where idproyecto = '" + idproyecto + "')");
+            fila = DBBroker.getInstancia().select("select * from mydb.proyecto where idproyecto = " + idproyecto);
 
             foreach (List<Object> aux in fila)
             {

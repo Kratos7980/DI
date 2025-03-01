@@ -16,7 +16,7 @@
         <DockPanel Background="Violet" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <TextBlock Grid.Row="0" Text="GESTPRO" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Background="Violet" />
         </DockPanel>
-        <TabControl TabStripPlacement="Left" Margin="10,20" Grid.Row="1" Background="Bisque">
+        <TabControl TabStripPlacement="Left" Margin="10,20" Grid.Row="1" x:Name="tabControl" Background="Bisque">
             <TabControl.Resources>
                 <Style TargetType="{x:Type TabItem}">
                     <Setter Property="Template">
@@ -38,39 +38,37 @@
                 </Style>
             </TabControl.Resources>
             <TabItem Header="INICIO" Background="Violet">
-                <Grid>
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.4*"/>
-                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.6*"/>
+                        <ColumnDefinition Width="0.6*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0">
-                        <StackPanel Orientation="Vertical" Margin="10, 60,10,0" Grid.Column="0">
-                            <Button Content="PROYECTOS" Background="Violet"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="10,20,10,0">
-                            <Button Content="EMPLEADOS" Background="Violet"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="10, 20,10,0" Grid.Column="0">
-                            <Button Content="G.ECONOMIA" Background="Violet"/>
-                        </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Button Content="PROYECTOS" x:Name="btnProyecto" Margin="0,90,0,0" Width="160" Background="Violet" Click="btnProyecto_Click"/>
+                        <Button Content="EMPLEADOS" x:Name="btnEmpleado" Margin="0,15,0,0" Width="160" Background="Violet" Click="btnEmpleado_Click"/>
+                        <Button Content="G.ECONOMIA" x:Name="btnGestion" Margin ="0,15,0,0" Width="160" Background="Violet" Click="btnGestion_Click"/>
                     </StackPanel>
-                    <StackPanel Grid.Column="1">
-                        <StackPanel Orientation="Vertical" Margin="10,60,10,0" Grid.Column="1">
-                            <Button Content="ESTADÍSTICAS" Background="Violet"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="10,20,10,0" Grid.Column="1">
-                            <Button Content="USUARIOS" Background="Violet"/>
-                        </StackPanel>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Button Content="ESTADÍSTICAS" x:Name="btnEstadisticas" Margin="0,90,0,0" Width="160" Background="Violet" Click="btnEstadisticas_Click"/>
+                        <Button Content="USUARIOS" x:Name="btnUsuarios" Margin="0,15,0,0" Width="160" Background="Violet" Click="btnUsuarios_Click"/>
                     </StackPanel>
-                    <DockPanel Grid.Column="3">
-                        <Image x:Name="imgHoja" Tag="Hoja" Source="../img/hoja.png" Height="217" Width="171" DockPanel.Dock="Left"/>
-                        <Image x:Name="imgLogo" Tag="Logo" Source="../img/logoMaestre.png" Height="64" Width="203" DockPanel.Dock="Bottom"/>
-                        <TextBlock DockPanel.Dock="Top"/>
-                    </DockPanel>
+                    <Grid Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0.3*"/>
+                        </Grid.RowDefinitions>
+                        <DockPanel Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Tag="Hoja" Source="../img/hoja.png" Width="160" Margin="5,0,0,0" DockPanel.Dock="Left"/>
+                            <Separator Visibility="Hidden"/>
+                        </DockPanel>
+                        <DockPanel Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Tag="Logo" Source="../img/logoMaestre.png" Width="250" DockPanel.Dock="Right"/>
+                            <Separator Visibility="Hidden"/>
+                        </DockPanel>
+                    </Grid>
                 </Grid>
             </TabItem>
-
             <TabItem Header="PROYECTO" Background="Violet" x:Name="itemProyecto">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
@@ -96,7 +94,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Button Content="CARGAR DATOS" Width="100" Margin="0,10,0,0" Click="btnCargarDatos_Click" x:Name="btnCargarDat" Background="Violet" DockPanel.Dock="Left"/>
+                            <Button Content="CARGAR DATOS" Width="100" Margin="20,10,0,0" Click="btnCargarDatos_Click" x:Name="btnCargarDat" Background="Violet" DockPanel.Dock="Left"/>
                             <Separator Visibility="Hidden"/>
                         </DockPanel>
                         <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
@@ -149,113 +147,112 @@
             <TabItem Header="EMPLEADOS" Background="Violet">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="27*"/>
-                        <RowDefinition Height="255*"/>
-                        <RowDefinition Height="67*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="0,0,342,20" Grid.ColumnSpan="2" Grid.RowSpan="2">
-                        <ListBox Grid.Column="0" Margin="9"/>
-                        <DataGrid AutoGenerateColumns="False" x:Name="dtgEmpleados" Margin="9" SelectionChanged="dtgEmpleados_SelectionChanged">
+                    <Grid Grid.Column="0"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <ListBox Grid.Row="0" Margin="9"/>
+                        <DataGrid Grid.Row="0" AutoGenerateColumns="False" x:Name="dtgEmpleados" Margin="9" SelectionChanged="dtgEmpleados_SelectionChanged">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="IdEmpleado" Binding="{Binding idempleado}"/>
                                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombreemp}"/>
                                 <DataGridTextColumn Header="Apellidos" Binding="{Binding apellidos}"/>
                                 <DataGridTextColumn Header="CSR" Binding="{Binding csr}"/>
+                                <DataGridTextColumn Header="Rol" Binding="{Binding nombrerolemple}"/>
                             </DataGrid.Columns>
                         </DataGrid>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Margin="0,170,342,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
-                        <CheckBox Content="Usuario ya registrado" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="chkUser"/>
-                        <CheckBox Content="Usuario no registrado" Width="150" HorizontalAlignment="Left" Margin="20,5,0,0"/>
-                        <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Button Content="AÑADIR" Width="90" Height="20" DockPanel.Dock="Right" Margin="0,0,9,0" Click="btnAddEmpleado_Click" x:Name="btnAddEmpleado" Background="Violet"/>
-                            <Separator Visibility="Hidden"/>
-                        </DockPanel>
-                    </StackPanel>
-                    <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <CheckBox Content="Usuario no registrado" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="chkUser" Checked="chkUser_Checked" Unchecked="chkUser_Unchecked"/>
+                            <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Button Content="AÑADIR" Width="90" Height="20" DockPanel.Dock="Right" Margin="0,0,9,0" Click="btnAddEmpleado_Click" x:Name="btnAddEmpleado" Background="Violet"/>
+                                <Separator Visibility="Hidden"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="0.3*"/>
                         </Grid.RowDefinitions>
                         <StackPanel Orientation="Vertical" Grid.Row="0">
-                            <Label Content="Nombre" HorizontalAlignment="Center" Margin="0,0,40,0"/>
-                            <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtNombreEmple"/>
-                            <Label Content="Apellidos" HorizontalAlignment="Center" Margin="0,0,30,0"/>
-                            <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtApellidoEmple"/>
-                            <Label Content="ROL" HorizontalAlignment="Center" Margin="0,0,60,0"/>
-                            <ComboBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="cbRoles">
-                                <ComboBoxItem Content="PROGRAMADOR_JUNIOR"/>
-                                <ComboBoxItem Content="PROGRAMADOR"/>
-                                <ComboBoxItem Content="PROGRAMADOR_SENIOR"/>
-                                <ComboBoxItem Content="JEFE_PROYECTO"/>
-                            </ComboBox>
-                            <Label Content="CSR" HorizontalAlignment="Center" Margin="0,0,60,0"/>
-                            <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtCsr"/>
+                            <Label Content="Nombre"/>
+                            <TextBox Width="200" x:Name="txtNombreEmple"/>
+                            <Label Content="Apellidos"/>
+                            <TextBox Width="200" x:Name="txtApellidoEmple"/>
+                            <Label Content="ROL"/>
+                            <ComboBox Width="200" x:Name="cbRoles"/>
+                            <Label Content="CSR"/>
+                            <TextBox Width="200" x:Name="txtCsr"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                             <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                                <Button Content="MODIFICAR" Width="90" Height="20" DockPanel.Dock="Top" Margin="0,9,0,0" Click="btnModifyEmpleado_Click" x:Name="btnModifyEmpleado" Background="Violet"/>
+                                <Button Content="MODIFICAR" Width="90" Height="20" DockPanel.Dock="Top" Margin="0,24,0,0" Click="btnModifyEmpleado_Click" x:Name="btnModifyEmpleado" Background="Violet"/>
                                 <Separator Visibility="Hidden"/>
                             </DockPanel>
                             <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                                <Button Content="ELIMINAR" Width="90" Height="20" DockPanel.Dock="Top" Margin="9,9,0,0" Click="btnDelEmpleado_Click" x:Name="btnDelEmpleado" Background="Violet"/>
+                                <Button Content="ELIMINAR" Width="90" Height="20" DockPanel.Dock="Top" Margin="9,24,0,0" Click="btnDelEmpleado_Click" x:Name="btnDelEmpleado" Background="Violet"/>
                                 <Separator Visibility="Hidden"/>
                             </DockPanel>
                         </StackPanel>
                     </Grid>
                     <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
-                        <ComboBox Width="130" Height="20" HorizontalAlignment="Left" Margin="60,0,0,0" x:Name="cbUsuarios"/>
+                        <ComboBox Width="130" Height="20" HorizontalAlignment="Left" Margin="60,10,0,0" x:Name="cbUsuarios"/>
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="60,0,0,0">
-                            <Label Content="Usuario"/>
+                            <Label Content="Usuario" x:Name="lbUsuario"/>
                             <TextBox Width="100" x:Name="txtRegUsuario"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="60,0,0,0">
-                            <Label Content="Password"/>
+                            <Label Content="Password" x:Name="lbPassword"/>
                             <TextBox Width="100" x:Name="txtRegPassword"/>
                         </StackPanel>
-                        <Button Content="Registrar y recargar" Height="25" HorizontalAlignment="Right" Margin="50,0,0,0" Click="btnRegistrarUsuario_Click" x:Name="btnRegistrarUsuario" Background="Violet"/>
+                        <Button Content="Registrar y recargar" Height="25" HorizontalAlignment="Right" Margin="50,7,0,0" Click="btnRegistrarUsuario_Click" x:Name="btnRegistrarUsuario" Background="Violet"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
 
             <TabItem Header="G.ECONOMIA" Background="Violet">
-                <Grid>
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1.2*"/>
+                        <ColumnDefinition Width="2.2*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Vertical" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.6*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <DataGrid AutoGenerateColumns="False" x:Name="dtgGestion" Margin="0,10,0,0" SelectionChanged="dtgGestion_SelectionChanged">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="NombreProyecto" Binding="{Binding nombreproygestion}"/>
                                 <DataGridTextColumn Header="NombreEmpleado" Binding="{Binding nombreempgestion}"/>
                                 <DataGridTextColumn Header="Fecha" Binding="{Binding fecha}"/>
+                                <DataGridTextColumn Header="Costes" Binding="{Binding costes}"/>
                                 <DataGridTextColumn Header="Horas" Binding="{Binding horas}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,0,0,20">
-                        <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Button Content="Imputar horas" VerticalAlignment="Bottom" Width="90" Margin="250,0,0,0" Click="btnImputHoras_Click" x:Name="btnImputHoras" Background="Violet"/>
-                        </DockPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,10">
+                        <Button Content="Imputar horas" Width="120" Height="20" Margin ="80,0,0,0" Click="btnImputHoras_Click" x:Name="btnImputHoras" Background="Violet"/>
+                        <Button Content="Modificar"  Width="120" Height="20" Margin="10,0,0,0" Click="btnModificarGestion_Click" x:Name="btnModificarGestion" Background="Violet"/>
+                        <Button Content="Eliminar" Width="120" Height="20" Margin="10,0,0,0" Click="btnEliminarGestion_Click" x:Name="btnEliminarGestion" Background="Violet"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Grid.Column="1">
-                        <Label Content="Proyecto" HorizontalAlignment="Center" Margin="0,0,40,0"/>
-                        <ComboBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="cbProyectos"/>
-                        <Label Content="Empleado" HorizontalAlignment="Center" Margin="0,0,30,0"/>
-                        <ComboBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="cbEmpleados"/>
-                        <Label Content="Fecha" HorizontalAlignment="Center" Margin="0,0,60,0"/>
-                        <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtFecha"/>
-                        <Label Content="Horas" HorizontalAlignment="Center" Margin="0,0,60,0"/>
-                        <TextBox Width="200" HorizontalAlignment="Center" Margin="60,0,0,0" x:Name="txtHoras"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,0,0,20" Grid.Column="1">
-                        <Button Content="Modificar" HorizontalAlignment="Left" Width="90" Margin="10,0,0,0" Click="btnModificarGestion_Click" x:Name="btnModificarGestion" Background="Violet"/>
-                        <Button Content="Eliminar"  Width="90" Margin="15,0,0,0" Click="btnEliminarGestion_Click" x:Name="btnEliminarGestion" Background="Violet"/>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Label Content="Proyecto"/>
+                        <ComboBox Width="200" x:Name="cbProyectos"/>
+                        <Label Content="Empleado"/>
+                        <ComboBox Width="200" x:Name="cbEmpleados"/>
+                        <Label Content="Fecha"/>
+                        <TextBox Width="200" x:Name="txtFecha"/>
+                        <Label Content="Horas"/>
+                        <TextBox Width="200" x:Name="txtHoras"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -267,7 +264,10 @@
                         <RowDefinition Height="6*"/>
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal"  Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                        <ComboBox x:Name="cbInformes" Width="150" Height="30" Margin="90,0,0,0"/>
+                        <ComboBox x:Name="cbInformes" Width="150" Height="20" Margin="90,0,0,0">
+                            <ComboBoxItem>TOTAL POR MES</ComboBoxItem>
+                            <ComboBoxItem>INFORMACION PROYECTO</ComboBoxItem>
+                        </ComboBox>
                         <Button x:Name="btnCargarInforme" Width="120" Height="20" Content="CARGAR INFORME" Margin="20,0,0,0" Click="btnCargarInforme_Click"/>
                     </StackPanel>
                     <Viewer:CrystalReportsViewer Grid.Row="1" x:Name="visor" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>

@@ -1,6 +1,8 @@
 ﻿using GUESTPRO.model;
 using GUESTPRO.persistence;
 using GUESTPRO.view;
+using MySql.Data.MySqlClient;
+using Mysqlx.Cursor;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -29,19 +31,49 @@ namespace GUESTPRO
         private List<Proyecto> listProyectos;
         private List<Empleado> listEmpleados;
         private List<Usuario> listUsuarios;
+        private List<Rol> listRoles;
         private List<ProyectoEmpleado> listProyEmp;
-        private int numFactura;
+        private int numFactura = 0;
         private DataTable dt;
         public MainWindow()
         {
             InitializeComponent();
 
             inicializarProyecto();
+            inicializarRol();
             inicializarEmpleado();
             inicializarUsuario();
             inicializarGestion();
+            inicializarEstadisticas();
         }
 
+        // TABCONTROL BUTTONS
+        private void btnProyecto_Click(object sender, RoutedEventArgs e)
+        {
+            tabControl.SelectedIndex = 1;
+        }
+
+        private void btnEmpleado_Click(object sender, RoutedEventArgs e)
+        {
+            tabControl.SelectedIndex = 2;
+        }
+
+        private void btnGestion_Click(object sender, RoutedEventArgs e)
+        {
+            tabControl.SelectedIndex = 3;
+        }
+
+        private void btnEstadisticas_Click(object sender, RoutedEventArgs e)
+        {
+            tabControl.SelectedIndex = 4;
+        }
+
+        private void btnUsuarios_Click(object sender, RoutedEventArgs e)
+        {
+            tabControl.SelectedIndex = 5;
+        }
+
+        // INICIALIZAR TABITEMS
         private void inicializarProyecto()
         {
             Proyecto proyecto = new Proyecto();
@@ -57,15 +89,36 @@ namespace GUESTPRO
             Empleado empleado = new Empleado();
 
             listEmpleados = empleado.getAllEmpleados();
+
+            foreach(Empleado emple in listEmpleados)
+            {
+                int index = listRoles.FindIndex(r => r.idrol == emple.idrol);
+                emple.nombrerolemple = listRoles[index].nombrerol;
+            }
+
             dtgEmpleados.ItemsSource = listEmpleados;
             cbEmpleados.ItemsSource = listEmpleados;
             cbEmpleados.DisplayMemberPath = "nombreemp";
+            lbUsuario.IsEnabled = false;
+            txtUsuario.IsEnabled = false;
+            txtPassword.IsEnabled = false;
+            lbPassword.IsEnabled = false;
+            btnRegistrarUsuario.IsEnabled = false;
+        }
+
+        private void inicializarRol()
+        {
+            Rol rol = new Rol();
+            listRoles = rol.getAllRoles();
+            cbRoles.ItemsSource = listRoles;
+            cbRoles.DisplayMemberPath = "nombrerol";
         }
 
         private void inicializarUsuario()
         {
             Usuario usuario = new Usuario();
             listUsuarios = usuario.getAllUsuarios();
+            dtgUsuarios.ItemsSource = listUsuarios;
             cbUsuarios.ItemsSource = listUsuarios;
             cbUsuarios.DisplayMemberPath = "nombreusuario";
         }
@@ -87,6 +140,11 @@ namespace GUESTPRO
             }
 
             dtgGestion.ItemsSource = listProyEmp;
+        }
+
+        private void inicializarEstadisticas()
+        {
+            cbInformes.SelectedIndex = 0;
         }
 
 
@@ -112,15 +170,19 @@ namespace GUESTPRO
 
         private void dataProyecto_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (dataProyecto.SelectedItems.Count > 0)
+            Proyecto proyecto = (Proyecto)dataProyecto.SelectedItem;
+            if (proyecto != null)
             {
                 btnAñadir.IsEnabled = true;
                 btnEliminar.IsEnabled = true;
-                Proyecto proyecto = (Proyecto)dataProyecto.SelectedItems[0];
                 txtCodigoProy.Text = proyecto.codigoproy;
                 txtNombreProy.Text = proyecto.nombreproy;
                 txtDescProy.Text = proyecto.descproy;
                 txtPresupuestoProy.Text = proyecto.presupuesto.ToString();
+            }
+            else
+            {
+                startProyecto();
             }
         }
 
@@ -208,30 +270,70 @@ namespace GUESTPRO
         {
             txtNombreEmple.Clear();
             txtApellidoEmple.Clear();
+            txtCsr.Clear();
             txtRegUsuario.Clear();
             txtRegPassword.Clear();
-            cbRoles.Items.Clear();
+            cbRoles.SelectedItem = null;
+            cbUsuarios.SelectedItem = null;
+            lbUsuario.IsEnabled = false;
+            txtUsuario.IsEnabled = false;
+            lbPassword.IsEnabled = false;
+            txtPassword.IsEnabled = false;
+            btnRegistrarUsuario.IsEnabled = false;
         }
 
         private void dtgEmpleados_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Empleado empleado = (Empleado) dtgEmpleados.SelectedItem;
 
-            txtNombreEmple.Text = empleado.nombreemp;
-            txtApellidoEmple.Text = empleado.apellidos;
-            txtCsr.Text = empleado.csr.ToString();
+            if(empleado != null)
+            {
+                Usuario usuario = listUsuarios.FirstOrDefault(u => u.idusuario == empleado.idusuario);
+                Rol rol = listRoles.FirstOrDefault(r => r.idrol == empleado.idrol);
+
+                txtNombreEmple.Text = empleado.nombreemp;
+                txtApellidoEmple.Text = empleado.apellidos;
+                txtCsr.Text = empleado.csr.ToString();
+                cbUsuarios.SelectedItem = usuario;
+                cbRoles.SelectedItem = rol;
+            }
+            else
+            {
+                startEmpleado();
+            }
+        }
+
+        private void chkUser_Checked(object sender, RoutedEventArgs e)
+        {
+           
+            lbUsuario.IsEnabled = true;
+            txtUsuario.IsEnabled = true;
+            lbPassword.IsEnabled = true;
+            txtPassword.IsEnabled = true;
+            btnRegistrarUsuario.IsEnabled = true;           
+        }
+
+        private void chkUser_Unchecked(object sender, RoutedEventArgs e)
+        {
+            lbUsuario.IsEnabled = false;
+            txtUsuario.IsEnabled = false;
+            lbPassword.IsEnabled = false;
+            txtPassword.IsEnabled = false;
+            btnRegistrarUsuario.IsEnabled = false;
         }
 
         private void btnAddEmpleado_Click(object sender, RoutedEventArgs e)
         {
             Usuario usuario = (Usuario) cbUsuarios.SelectedItem;
-            //Rol rol = (Rol) cbRoles.SelectedItem;
+            Rol rol = (Rol) cbRoles.SelectedItem;
 
-            Empleado empleado = new Empleado(txtNombreEmple.Text, txtApellidoEmple.Text, float.Parse(txtCsr.Text), usuario.idusuario, 1);
+            Empleado empleado = new Empleado(txtNombreEmple.Text, txtApellidoEmple.Text, float.Parse(txtCsr.Text), usuario.idusuario, rol.idrol);
             try
             {
+
                 empleado.insertar();
                 empleado.idempleado = empleado.last().idempleado;
+                empleado.nombrerolemple = rol.nombrerol;
                 ((List<Empleado>)dtgEmpleados.ItemsSource).Add(empleado);
                 cbEmpleados.Items.Refresh();
                 dtgEmpleados.Items.Refresh();
@@ -253,13 +355,14 @@ namespace GUESTPRO
         private void btnModifyEmpleado_Click(object sender, RoutedEventArgs e)
         {
             Empleado empleado = (Empleado)dtgEmpleados.SelectedItem;
-            Rol rol = (Rol)cbEmpleados.SelectedItem;
+            Rol rol = (Rol)cbRoles.SelectedItem;
 
             empleado.nombreemp = txtNombreEmple.Text;
             empleado.apellidos = txtApellidoEmple.Text;
             empleado.csr = float.Parse(txtCsr.Text);
             empleado.idrol = rol.idrol;
-            
+            empleado.nombrerolemple = rol.nombrerol;
+
             empleado.modificar();
 
             int index = ((List<Empleado>)dtgEmpleados.ItemsSource).FindIndex(emp => emp.idempleado == empleado.idempleado);
@@ -280,7 +383,6 @@ namespace GUESTPRO
                 ((List<Empleado>)dtgEmpleados.ItemsSource).Remove(empleado);
                 dtgEmpleados.Items.Refresh();
                 cbEmpleados.Items.Refresh();
-
                 startEmpleado();
             }
         }
@@ -291,11 +393,12 @@ namespace GUESTPRO
             try
             {
                 usuario.insertar();
+                MessageBox.Show("Registrado correctamente");
                 usuario.idusuario = usuario.last().idusuario;
                 ((List<Usuario>)dtgUsuarios.ItemsSource).Add(usuario);
                 dtgUsuarios.Items.Refresh();
                 cbUsuarios.Items.Refresh();
-
+                startEmpleado();
             }
             catch (SqlException ex)
             {
@@ -314,116 +417,231 @@ namespace GUESTPRO
         //TABITEM G.ECONOMICA
         private void startGestion()
         {
-            cbProyectos.SelectedValue = 0;
-            cbEmpleados.SelectedValue = 0;
+            cbProyectos.SelectedItem = null;
+            cbEmpleados.SelectedItem = null;
             txtFecha.Clear();
             txtHoras.Clear();
         }
 
         private void dtgGestion_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             ProyectoEmpleado pe = (ProyectoEmpleado)dtgGestion.SelectedItem;
-            txtFecha.Text = pe.fecha.ToString();
-            txtHoras.Text = pe.horas.ToString();
+            if (pe != null)
+            {
+                Proyecto proy = listProyectos.FirstOrDefault(p => p.idproyecto == pe.idproyecto);
+                Empleado emp = listEmpleados.FirstOrDefault(em => em.idempleado == pe.idempleado);
+                cbProyectos.SelectedItem = proy;
+                cbEmpleados.SelectedItem = emp;
+                txtFecha.Text = pe.fecha.ToString();
+                txtHoras.Text = pe.horas.ToString();
+            }
+            else
+            {
+                startGestion();
+            }
+            
         }
 
         private async void btnImputHoras_Click(object sender, RoutedEventArgs e)
         {
-            //ApiObject obj = new ApiObject();
-            //string textFecha = txtFecha.Text;
-            //DateTime fecha = DateTime.Parse(textFecha);
-            //Proyecto
+            ApiObject obj = new ApiObject();
+            string textFecha = txtFecha.Text;
+            DateTime fecha = DateTime.Parse(textFecha);
 
-            //var objects = await obj.getFestivos();
+            List<DateTime> listFestivos = await obj.getFestivos();
+            bool festivo = false;
+            foreach (DateTime objeto in listFestivos)
+            {
+                if (fecha.ToString("yyyyMMdd") == objeto.ToString("yyyyMMdd"))
+                {
+                    festivo = true;
+                }
+            }
 
-            //foreach (var objeto in objects)
-            //{
-            //    if (fecha == DateTime.Parse(objeto.date))
-            //    {
-            //        MessageBox.Show("Es festivo no puedes añadir horas de trabajo.");
-            //    }
-            //    else
-            //    {
+            if (festivo)
+            {
+                MessageBox.Show("Es festivo no puedes añadir horas de trabajo.");
+            }
+            else
+            {
+                Proyecto proyecto = (Proyecto)cbProyectos.SelectedItem;
+                Empleado empleado = (Empleado)cbEmpleados.SelectedItem;
 
-            //    }
-            //}
-            Proyecto proyecto = (Proyecto) cbProyectos.SelectedItem;
-            Empleado empleado = (Empleado) cbEmpleados.SelectedItem;
+                ProyectoEmpleado pe = new ProyectoEmpleado();
+                pe.idproyecto = proyecto.idproyecto;
+                pe.nombreproygestion = proyecto.nombreproy;
+                pe.idempleado = empleado.idempleado;
+                pe.nombreempgestion = empleado.nombreemp;
+                pe.fecha = fecha;
+                pe.horas = Int32.Parse(txtHoras.Text);
+                pe.costes = pe.horas * empleado.csr;
+                try
+                {
+                    pe.insertar();
 
-            ProyectoEmpleado pe = new ProyectoEmpleado();
-            pe.idproyecto = proyecto.idproyecto;
-            pe.nombreproygestion = proyecto.nombreproy;
-            pe.idempleado = empleado.idempleado;
-            pe.nombreempgestion = empleado.nombreemp;
-            pe.fecha = DateTime.Parse(txtFecha.Text);
-            pe.costes = 0.00F;
-            pe.horas = Int32.Parse(txtHoras.Text);
-
-            pe.insertar();
-
-            ((List<ProyectoEmpleado>)dtgGestion.ItemsSource).Add(pe);
-            dtgGestion.Items.Refresh();
-
+                    ((List<ProyectoEmpleado>)dtgGestion.ItemsSource).Add(pe);
+                    dtgGestion.Items.Refresh();
+                    startGestion();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Fecha ya registrada");
+                }
+            }
         }
 
-        private void btnModificarGestion_Click(object sender, RoutedEventArgs e)
+        private async void btnModificarGestion_Click(object sender, RoutedEventArgs e)
         {
+            ApiObject obj = new ApiObject();
+            string textFecha = txtFecha.Text;
+            DateTime fecha = DateTime.Parse(textFecha);
 
+            List<DateTime> listFestivos = await obj.getFestivos();
+            bool festivo = false;
+            foreach (DateTime objeto in listFestivos)
+            {
+                if (fecha.ToString("yyyyMMdd") == objeto.ToString("yyyyMMdd"))
+                {
+                    festivo = true;
+                }
+            }
+
+            if (festivo)
+            {
+                MessageBox.Show("Es festivo no puedes añadir horas de trabajo.");
+            }
+            else
+            {
+                Proyecto proyecto = (Proyecto)cbProyectos.SelectedItem;
+                Empleado empleado = (Empleado)cbEmpleados.SelectedItem;
+
+                ProyectoEmpleado pe = new ProyectoEmpleado();
+                pe.idproyecto = proyecto.idproyecto;
+                pe.nombreproygestion = proyecto.nombreproy;
+                pe.idempleado = empleado.idempleado;
+                pe.nombreempgestion = empleado.nombreemp;
+                pe.fecha = fecha;
+                pe.horas = Int32.Parse(txtHoras.Text);
+                pe.costes = pe.horas * empleado.csr;
+
+                pe.modificar();
+
+                int index = ((List<ProyectoEmpleado>)dtgGestion.ItemsSource).FindIndex(proyemp => (proyemp.idproyecto == pe.idproyecto) && (proyemp.idempleado == pe.idempleado));
+                ((List<ProyectoEmpleado>)dtgGestion.ItemsSource)[index] = pe;
+                dtgGestion.Items.Refresh();
+                startGestion();
+            }
         }
-
         private void btnEliminarGestion_Click(object sender, RoutedEventArgs e)
         {
+            if(MessageBox.Show("Do you want to remove this gestion?","Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                ProyectoEmpleado pe = (ProyectoEmpleado)dtgGestion.SelectedItem;
+                pe.eliminar();
 
+                ((List<ProyectoEmpleado>)dtgGestion.ItemsSource).Remove(pe);
+                dtgGestion.Items.Refresh();
+            }
+            
         }
 
 
         //TABITEM ESTADÍSTICAS
         private void btnCargarInforme_Click(object sender, RoutedEventArgs e)
         {
-            cargarInforme1();
+            String valor = cbInformes.SelectedItem.ToString();
+            if(valor.Contains("TOTAL POR MES"))
+            {
+                cargarTotalPorMes();
+            }
+            else if(valor.Contains("INFORMACION PROYECTO"))
+            {
+                cargarInfoProyectos();
+            }
         }
 
-        private void cargarInforme1()
+        private void cargarTotalPorMes()
         {
-            dt = new DataTable("DataTable1");
+            dt = new DataTable("TOTAL_COSTES_POR_MES");
 
-            dt.Columns.Add("nombreproyecto");
-            dt.Columns.Add("nombreempleado");
-            dt.Columns.Add("fecha");
-            dt.Columns.Add("costes");
-            dt.Columns.Add("horas");
-
-            foreach(ProyectoEmpleado pe in listProyEmp)
+            dt.Columns.Add("Nombre proyecto");
+            dt.Columns.Add("Mes");
+            dt.Columns.Add("Total");
+            
+            List<String> meses = getMeses();
+            foreach(Proyecto proy in listProyectos)
             {
-                String nombreproyecto = null;
-                List<Object> fila;
-                fila = DBBroker.getInstancia().select("select nombreproy from mydb.proyecto where idproyecto = " + pe.idproyecto);
-                foreach(List<Object> aux in fila)
-                {
-                    nombreproyecto = aux[0].ToString();
-                }
-                String nombreempleado = null;
-                fila = DBBroker.getInstancia().select("select nombreemp from mydb.empleado where idempleado = " + pe.idempleado);
-                foreach (List<Object> aux in fila)
-                {
-                    nombreempleado = aux[0].ToString();
-                }
 
-                DataRow row = dt.NewRow();
-                row["nombreproyecto"] = nombreproyecto;
-                row["nombreempleado"] = nombreempleado;
-                row["fecha"] = pe.fecha;
-                row["costes"] = pe.costes;
-                row["horas"] = pe.horas;
+                int val = 0;
+                String total = null;
+                meses.ForEach(mes =>
+                {
+                    List<Object> filas;
+                    List<Object> resultado;
+                    filas = DBBroker.getInstancia().select("select sum(costes) from mydb.proyecto_has_empleado where idproyecto = " + proy.idproyecto + " and month(fecha) = " + (val + 1));
+                    resultado = (List<Object>) filas[0];
 
-                dt.Rows.Add(row);
+                    total = (String)resultado[0];
+
+                    DataRow row = dt.NewRow();
+                    row["Nombre proyecto"] = proy.nombreproy;
+                    row["Mes"] = mes;
+                    row["Total"] = total;
+
+                    dt.Rows.Add(row);
+                    val++;
+                }); 
             }
 
-            Informe1 cr = new Informe1();
+            TotalMeses cr = new TotalMeses();
 
-            cr.Database.Tables["DataTable1"].SetDataSource(dt);
+            cr.Database.Tables["TOTAL_COSTES_POR_MES"].SetDataSource(dt);
 
             visor.ViewerCore.ReportSource = cr;
+        }
+
+        private void cargarInfoProyectos()
+        {
+            dt = new DataTable("DATOS_PROYECTOS");
+
+            dt.Columns.Add("Proyecto");
+            dt.Columns.Add("Rol");
+            dt.Columns.Add("Numero empleados");
+
+            foreach(Proyecto proy in listProyectos)
+            {
+                listRoles.ForEach(rol =>
+                {
+                    List<Object> filas;
+                    filas = DBBroker.getInstancia().select(
+                        "select count(e.idempleado) " +
+                        "from mydb.proyecto_has_empleado pe " +
+                        "inner join mydb.empleado e on e.idempleado = pe.idempleado " +
+                        "inner join mydb.rol r on e.idrol = r.idrol " +
+                        "where pe.idproyecto = " + proy.idproyecto + " and r.nombrerol = '" + rol.nombrerol + "' " + 
+                        "group by pe.idproyecto, r.nombrerol");
+                    if(filas.Count > 0)
+                    {
+                        List<Object> resultado = (List<Object>)filas[0];
+
+                        DataRow row = dt.NewRow();
+                        row["Proyecto"] = proy.nombreproy;
+                        row["Rol"] = rol.nombrerol;
+                        row["Numero empleados"] = resultado[0].ToString();
+
+                        dt.Rows.Add(row);
+                    }
+                    
+                });
+            }
+
+            InfoProyectos cr = new InfoProyectos();
+
+            cr.Database.Tables["DATOS_PROYECTOS"].SetDataSource(dt);
+
+            visor.ViewerCore.ReportSource = cr;
+
         }
 
         //TABITEM USUARIOS
@@ -437,7 +655,15 @@ namespace GUESTPRO
         private void dtgUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Usuario usuario = (Usuario)dtgUsuarios.SelectedItem;
-            txtUsuario.Text = usuario.nombreusuario;
+            if(usuario != null)
+            {
+                txtUsuario.Text = usuario.nombreusuario;
+            }
+            else
+            {
+                startUsuario();
+            }
+            
         }
 
         private void btnDarAlta_Click(object sender, RoutedEventArgs e)
@@ -450,7 +676,6 @@ namespace GUESTPRO
                 usuario.insertar();
                 usuario.idusuario = usuario.last().idusuario;
                 ((List<Usuario>)dtgUsuarios.ItemsSource).Add(usuario);
-                ((List<Usuario>)cbUsuarios.ItemsSource).Add(usuario);
                 dtgUsuarios.Items.Refresh();
                 cbUsuarios.Items.Refresh();
 
@@ -513,13 +738,31 @@ namespace GUESTPRO
 
         private String generarNumFactura()
         {
-            numFactura = 0;
             StringBuilder sb = new StringBuilder();
             numFactura++;
             sb.Append("FACT_").Append(numFactura);
             return sb.ToString();
         }
 
-        
+        private List<String> getMeses()
+        {
+            List<String> list = new List<String>();
+
+            list.Add("Enero");
+            list.Add("Febrero");
+            list.Add("Marzo");
+            list.Add("Abril");
+            list.Add("Mayo");
+            list.Add("Junio");
+            list.Add("Julio");
+            list.Add("Agosto");
+            list.Add("Septiembre");
+            list.Add("Octubre");
+            list.Add("Noviembre");
+            list.Add("Diciembre");
+
+            return list;
+        }
+
     }
 }

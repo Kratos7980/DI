@@ -10,18 +10,15 @@ namespace GUESTPRO.model
     internal class ApiObject
     {
         private ApiManage am;
+        public Meta meta { get; set; }
+        public Response response { get; set; }
 
         public ApiObject()
         {
             am = new ApiManage();
         }
 
-        public string name { get; set; }
-        public string description { get; set; }
-        public string date { get; set; }
-        public string type { get; set; }
-
-        public Task<List<ApiObject>> getFestivos()
+        public Task<List<DateTime>> getFestivos()
         {
             return am.obtenerFestivos();
         }

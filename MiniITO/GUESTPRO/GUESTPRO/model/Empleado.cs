@@ -15,6 +15,7 @@ namespace GUESTPRO.model
         public float csr { get; set; }
         public int idusuario { get; set; }
         public int idrol { get; set; }
+        public string nombrerolemple { get; set; }
 
         private EmpleadoManage em;
 
